@@ -1,0 +1,50 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  //   background: transparent url(../img/main-bg-min.png) no-repeat;
+  background-color: #031d25;
+  background-size: auto;
+  background-position: top center;
+  padding-bottom: 90px;
+  padding-top: 118px;
+  margin: 0;
+
+  @include mobile {
+    background: none;
+    background-color: #031d25;
+    padding-bottom: 16vw;
+    padding-top: 15px;
+  }
+}
+
+.container {
+  width: 940px;
+  margin: 0 auto;
+
+  @include mobile {
+    width: 100%;
+  }
+}

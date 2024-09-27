@@ -1,0 +1,17 @@
+$design-width: 375px;
+
+// @function ms($sizeinpx) {
+//   @return #{($sizeinpx * 100) / $design-width}vw;
+// }
+
+@function px($val) {
+  @return calc($val/5) + rem;
+}
+
+@function pl($val) {
+  @return calc($val/3.75) + vw;
+}
+
+@function pxe($val) {
+  @return calc($val/5) + em;
+}
