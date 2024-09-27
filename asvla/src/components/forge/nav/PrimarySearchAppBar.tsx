@@ -16,6 +16,8 @@ import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import "./PrimarySearchAppBar.scss";
+import { Category } from "@mui/icons-material";
+import ChoosCategory from "../category/ChoosCategory";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -186,6 +188,8 @@ export default function PrimarySearchAppBar() {
               inputProps={{ "aria-label": "search" }}
             />
           </Search>
+          <ChoosCategory />
+
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <IconButton
