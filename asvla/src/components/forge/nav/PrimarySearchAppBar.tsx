@@ -16,8 +16,9 @@ import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import "./PrimarySearchAppBar.scss";
-import { Category } from "@mui/icons-material";
+import { Category, Login } from "@mui/icons-material";
 import ChoosCategory from "../category/ChoosCategory";
+import LoginBox from "../logInBox/LogInBox";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -177,21 +178,22 @@ export default function PrimarySearchAppBar() {
             component="div"
             sx={{ display: { xs: "none", sm: "block" } }}
           >
-            MUI
+            <span className="asvla-header-span">ASVLA</span>
           </Typography>
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
-              placeholder="Search…"
+              placeholder="ძებნა..."
               inputProps={{ "aria-label": "search" }}
             />
           </Search>
-          <ChoosCategory />
 
           <Box sx={{ flexGrow: 1 }} />
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
+          <ChoosCategory />
+
+          {/* <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <IconButton
               size="large"
               aria-label="show 4 new mails"
@@ -221,7 +223,7 @@ export default function PrimarySearchAppBar() {
             >
               <AccountCircle />
             </IconButton>
-          </Box>
+          </Box> */}
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -234,6 +236,7 @@ export default function PrimarySearchAppBar() {
               <MoreIcon />
             </IconButton>
           </Box>
+          <LoginBox />
         </Toolbar>
       </AppBar>
       {renderMobileMenu}

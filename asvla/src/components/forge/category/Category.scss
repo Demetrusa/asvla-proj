@@ -1,0 +1,28 @@
+@import "../../../assets/styles/common.scss";
+
+.chooseCategory {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid rgb(99, 100, 99);
+  height: 60px;
+}
+.small-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin: 5px;
+  padding: 5px;
+}
+.small-menu .small-menu-category,
+.small-menu-addCard,
+.small-menu-contact {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.small-menu img {
+  width: 40px;
+}
