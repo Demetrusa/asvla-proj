@@ -13,7 +13,7 @@ const Promo: React.FC = () => {
         <Swiper
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           spaceBetween={10}
-          slidesPerView={1}
+          slidesPerView={1.03}
           navigation={{
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
