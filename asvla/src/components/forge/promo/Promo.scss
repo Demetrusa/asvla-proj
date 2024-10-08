@@ -1,4 +1,4 @@
-@import url("../../../assets/styles/common.scss");
+@import "../../../assets/styles/common.scss";
 
 .promoPage {
   margin-top: 70px;
@@ -19,9 +19,10 @@
 }
 
 .promoPage__swiper {
-  width: 100%;
+  width: 90%;
   height: 90%;
-  margin-top: 25px;
+  margin: 25px auto 0 auto;
+  position: relative;
 }
 .promoPage__swiper .swiper {
   width: 100%;
@@ -38,8 +39,8 @@
   visibility: hidden;
 }
 .promoPage .swiper-button-prev {
-  left: 128px;
-  top: 31%;
+  left: 17px;
+  top: 50%;
   display: flex;
   width: 50px;
   height: 50px;
@@ -48,17 +49,12 @@
   align-items: center;
 }
 .promoPage .swiper-button-next {
-  right: 128px;
-  top: 31%;
+  right: 17px;
+  top: 50%;
   display: flex;
   width: 50px;
   height: 50px;
   border-radius: 50%;
   background: #000000b3;
   align-items: center;
-}
-.promoPage .promoSlide {
-  height: 100%;
-  cursor: pointer;
-  background-color: red;
 }

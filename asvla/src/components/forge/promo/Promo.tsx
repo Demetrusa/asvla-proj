@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import PromoSlide from "../promoSildes/promoSlideOne/PromoSlideOne";
 
 const Promo: React.FC = () => {
   return (
@@ -21,28 +22,28 @@ const Promo: React.FC = () => {
           onSwiper={(swiper) => console.log(swiper)}
         >
           <SwiperSlide>
-            <div className="promoSlide">alo</div>
+            <PromoSlide />
           </SwiperSlide>
           <SwiperSlide>
-            <div className="promoSlide">alo</div>
+            <PromoSlide />
           </SwiperSlide>
           <SwiperSlide>
-            <div className="promoSlide"></div>
+            <PromoSlide />
           </SwiperSlide>
           <SwiperSlide>
-            <div className="promoSlide"></div>
+            <PromoSlide />
           </SwiperSlide>
           <SwiperSlide>
-            <div className="promoSlide"></div>
+            <PromoSlide />
           </SwiperSlide>
           <SwiperSlide>
-            <div className="promoSlide"></div>
+            <PromoSlide />
           </SwiperSlide>
           <SwiperSlide>
-            <div className="promoSlide"></div>
+            <PromoSlide />
           </SwiperSlide>
           <SwiperSlide>
-            <div className="promoSlide"></div>
+            <PromoSlide />
           </SwiperSlide>
         </Swiper>
         <div className="swiper-button-next"></div>
