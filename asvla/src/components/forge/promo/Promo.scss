@@ -28,8 +28,8 @@
   width: 100%;
   height: 100%;
 }
-.promoPage .swiper-button-next:after,
-.promoPage .swiper-button-prev:after {
+.promoPage .swiper-button-next::after,
+.promoPage .swiper-button-prev::after {
   color: white;
   z-index: 10;
   font-size: 20px;
