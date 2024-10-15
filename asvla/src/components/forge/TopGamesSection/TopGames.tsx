@@ -17,12 +17,28 @@ import slotimg5 from "./TopGamesIMg/kingdom-of-atlantis-jackpot-play-v.webp";
 import slotimg6 from "./TopGamesIMg/regal-spins-10-vertt.webp";
 import slotimg7 from "./TopGamesIMg/amazon's-battlevert.webp";
 import slotimg8 from "./TopGamesIMg/40-super-hot-vertic.webp";
+
 import slogImg9 from "./TopGamesIMg/monkey_kingdom-horiz_.webp";
 import slogImg10 from "./TopGamesIMg/big-chill.webp";
 import slogImg11 from "./TopGamesIMg/the-wild-rhino-horiz_.webp";
 import slogImg12 from "./TopGamesIMg/wizard_blizzard_x5horiz_.webp";
 import slogImg13 from "./TopGamesIMg/queen_of_flames-horiz.webp";
 import slogImg14 from "./TopGamesIMg/fruits_sweets-horiz.webp";
+
+import slogImg15 from "./TopGamesIMg/gates-of-olympusâ-¢.webp";
+import slogImg16 from "./TopGamesIMg/doctor_winstein-horiz.webp";
+import slogImg17 from "./TopGamesIMg/sugar-duke-h.webp";
+import slogImg18 from "./TopGamesIMg/pyramid-riddles-osiris-thumbnail-1680x1080.webp";
+import slogImg19 from "./TopGamesIMg/cosmo-classic-h.webp";
+import slogImg20 from "./TopGamesIMg/egg-rush-jackpot-play-h.webp";
+
+import slogImg21 from "./TopGamesIMg/tiki-hut-megaways-jackpot-play-h.webp";
+import slogImg22 from "./TopGamesIMg/5-lions-megaways-vers-2.webp";
+import slogImg23 from "./TopGamesIMg/book-of-realm-jumboways-thumbnail-1680x1080.webp";
+import slogImg24 from "./TopGamesIMg/gonzos-quest-megaways-version-1.webp";
+import slogImg25 from "./TopGamesIMg/divine-fortune-megaways.webp";
+import slogImg26 from "./TopGamesIMg/book-of-realm-jumboways-thumbnail-1680x1080.webp";
+
 import NewGames from "./NewGames";
 
 const topGamesData = [
@@ -44,6 +60,25 @@ const NewGamesData = [
   { imageSrc: slogImg13, link: "https://example.com/play-game" },
   { imageSrc: slogImg14, link: "https://example.com/play-game" },
 ];
+
+const BuyGamesData = [
+  { imageSrc: slogImg15, link: "https://example.com/play-game" },
+  { imageSrc: slogImg16, link: "https://example.com/play-game" },
+  { imageSrc: slogImg17, link: "https://example.com/play-game" },
+  { imageSrc: slogImg18, link: "https://example.com/play-game" },
+  { imageSrc: slogImg19, link: "https://example.com/play-game" },
+  { imageSrc: slogImg20, link: "https://example.com/play-game" },
+];
+
+const MegaWaysData = [
+  { imageSrc: slogImg21, link: "https://example.com/play-game" },
+  { imageSrc: slogImg22, link: "https://example.com/play-game" },
+  { imageSrc: slogImg23, link: "https://example.com/play-game" },
+  { imageSrc: slogImg24, link: "https://example.com/play-game" },
+  { imageSrc: slogImg25, link: "https://example.com/play-game" },
+  { imageSrc: slogImg26, link: "https://example.com/play-game" },
+];
+
 const TopGames: React.FC = () => {
   return (
     <div className="topGamesSection">
@@ -52,6 +87,9 @@ const TopGames: React.FC = () => {
           <span>Top თამაშები</span>
           <a href="#">მეტის ნახვა &gt;</a>
         </div>
+
+        {/* top games Sec */}
+
         <div className="topGamesSection__wrap-gamesBox">
           <div className="topGamesSection__swiper">
             <Swiper
@@ -71,15 +109,18 @@ const TopGames: React.FC = () => {
                   <TopGamesCard imageSrc={game.imageSrc} link={game.link} />
                 </SwiperSlide>
               ))}
+              <div className="topGames-swiper-button-next">
+                <FontAwesomeIcon icon={faAngleLeft} />
+              </div>
+              <div className="topGames-swiper-button-prev">
+                <FontAwesomeIcon icon={faAngleLeft} />
+              </div>
             </Swiper>
-            <div className="topGames-swiper-button-next">
-              <FontAwesomeIcon icon={faAngleLeft} />
-            </div>
-            <div className="topGames-swiper-button-prev">
-              <FontAwesomeIcon icon={faAngleLeft} />
-            </div>
           </div>
         </div>
+
+        {/* New games sec */}
+
         <div className="newGamesSection__title">
           <span>ახალი თამაშები</span>
           <a href="#">მეტის ნახვა &gt;</a>
@@ -102,13 +143,97 @@ const TopGames: React.FC = () => {
                 <NewGames imageSrc={game.imageSrc} link={game.link} />
               </SwiperSlide>
             ))}
+            <div className="NewGames-swiper-button-next">
+              <FontAwesomeIcon icon={faAngleLeft} />
+            </div>
+            <div className="NewGames-swiper-button-prev">
+              <FontAwesomeIcon icon={faAngleLeft} />
+            </div>
           </Swiper>
-          <div className="NewGames-swiper-button-next">
+        </div>
+
+        {/* buyBonusSection */}
+
+        <div className="newGamesSection__title buyBonusSection__title">
+          <span>იყიდე ბონუსი</span>
+          <a href="#">მეტის ნახვა &gt;</a>
+        </div>
+        <div className="buyBonusSection">
+          <Swiper
+            modules={[Navigation, Pagination, Scrollbar, A11y]}
+            spaceBetween={5}
+            slidesPerView={5}
+            loop={true}
+            navigation={{
+              nextEl: ".buyBonus-swiper-button-next",
+              prevEl: ".buyBonus-swiper-button-prev",
+            }}
+            onSlideChange={() => console.log("slide change")}
+            onSwiper={(swiper) => console.log(swiper)}
+          >
+            {BuyGamesData.map((game, index) => (
+              <SwiperSlide key={index}>
+                <NewGames imageSrc={game.imageSrc} link={game.link} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          <div className="buyBonus-swiper-button-next">
             <FontAwesomeIcon icon={faAngleLeft} />
           </div>
-          <div className="NewGames-swiper-button-prev">
+          <div className="buyBonus-swiper-button-prev">
             <FontAwesomeIcon icon={faAngleLeft} />
           </div>
+        </div>
+
+        {/* megaWays */}
+
+        <div className="newGamesSection__title megaWays__title">
+          <span>Megaways</span>
+          <a href="#">მეტის ნახვა &gt;</a>
+        </div>
+        <div className="megaWays">
+          <Swiper
+            modules={[Navigation, Pagination, Scrollbar, A11y]}
+            spaceBetween={5}
+            slidesPerView={5}
+            loop={true}
+            navigation={{
+              nextEl: ".megaWays-swiper-button-next",
+              prevEl: ".megaWays-swiper-button-prev",
+            }}
+            // breakpoints={{
+            //   1325: {
+            //     slidesPerView: 4, // Show 4 slides
+            //     spaceBetween: 10,
+            //   },
+            //   1024: {
+            //     slidesPerView: 3, // Show 3 slides
+            //     spaceBetween: 15, // Further reduce space
+            //   },
+            //   768: {
+            //     slidesPerView: 2, // Show 2 slides
+            //     spaceBetween: 20, // Adjust space for smaller screens
+            //   },
+            //   480: {
+            //     slidesPerView: 1, // Show 1 slide
+            //     spaceBetween: 10, // Smaller space on mobile
+            //   },
+            // }}
+            onSlideChange={() => console.log("slide change")}
+            onSwiper={(swiper) => console.log(swiper)}
+          >
+            {MegaWaysData.map((game, index) => (
+              <SwiperSlide key={index}>
+                <NewGames imageSrc={game.imageSrc} link={game.link} />
+              </SwiperSlide>
+            ))}
+            <div className="megaWays-swiper-button-next">
+              <FontAwesomeIcon icon={faAngleLeft} />
+            </div>
+            <div className="megaWays-swiper-button-prev">
+              <FontAwesomeIcon icon={faAngleLeft} />
+            </div>
+          </Swiper>
         </div>
       </div>
     </div>
