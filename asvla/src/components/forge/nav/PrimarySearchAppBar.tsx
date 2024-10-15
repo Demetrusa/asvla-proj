@@ -178,7 +178,7 @@ export default function PrimarySearchAppBar() {
             component="div"
             sx={{ display: { xs: "none", sm: "block" } }}
           >
-            <span className="asvla-header-span">ASVLA</span>
+            <span className="asvla-header-span">ACasino</span>
           </Typography>
           <Search>
             <SearchIconWrapper>
