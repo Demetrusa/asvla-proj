@@ -1,1 +1,67 @@
-@use "../../../assets/styles/common.scss";
+.weekGamesBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 940px;
+  margin: 20px auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid rgb(58, 8, 58);
+
+  &__animationBG {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    img {
+      height: 600px;
+      object-fit: cover;
+      height: 100%;
+    }
+
+    .game-of-the-week-background {
+      content: "";
+      position: absolute;
+      z-index: 0;
+      background: url(./weekgamesImg/animation.png) no-repeat;
+      background-position: 50%;
+      background-size: 150% 150%;
+      transform: rotate(0deg);
+      animation: rotate 12s linear infinite;
+      overflow: hidden;
+    }
+
+    .opacity-30 {
+      opacity: 0.3;
+    }
+
+    .w-\[120\%\] {
+      width: 120%;
+    }
+
+    .aspect-1 {
+      aspect-ratio: 1;
+    }
+
+    @keyframes rotate {
+      to {
+        transform: rotate(1turn);
+      }
+    }
+    .weekofGame {
+      position: absolute;
+      width: 480px;
+      height: 308px;
+
+      img {
+        object-fit: fill;
+        height: 100%;
+        border-radius: 10px;
+      }
+    }
+  }
+}

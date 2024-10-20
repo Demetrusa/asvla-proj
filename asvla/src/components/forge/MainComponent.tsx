@@ -3,6 +3,7 @@ import "./MainComponent.scss";
 import PrimarySearchAppBar from "./nav/PrimarySearchAppBar";
 import Promo from "./promo/Promo";
 import TopGames from "./TopGamesSection/TopGames";
+import Weekgames from "./weekGame/WeekGame";
 
 const MainComponent: React.FC = () => {
   return (
@@ -10,6 +11,7 @@ const MainComponent: React.FC = () => {
       <PrimarySearchAppBar />
       <Promo />
       <TopGames />
+      <Weekgames />
     </div>
   );
 };
