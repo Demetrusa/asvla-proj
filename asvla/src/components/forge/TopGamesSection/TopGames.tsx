@@ -78,6 +78,14 @@ const MegaWaysData = [
   { imageSrc: slogImg25, link: "https://example.com/play-game" },
   { imageSrc: slogImg26, link: "https://example.com/play-game" },
 ];
+const Ci_interactive = [
+  { imageSrc: slogImg10, link: "https://example.com/play-game" },
+  { imageSrc: slogImg21, link: "https://example.com/play-game" },
+  { imageSrc: slogImg14, link: "https://example.com/play-game" },
+  { imageSrc: slogImg23, link: "https://example.com/play-game" },
+  { imageSrc: slogImg20, link: "https://example.com/play-game" },
+  { imageSrc: slogImg13, link: "https://example.com/play-game" },
+];
 
 const TopGames: React.FC = () => {
   return (
@@ -118,9 +126,10 @@ const TopGames: React.FC = () => {
             </Swiper>
           </div>
         </div>
+      </div>
 
-        {/* New games sec */}
-
+      {/* New games sec */}
+      <div className="newgameSBox">
         <div className="newGamesSection__title">
           <span>ახალი თამაშები</span>
           <a href="#">მეტის ნახვა &gt;</a>
@@ -176,17 +185,19 @@ const TopGames: React.FC = () => {
                 <NewGames imageSrc={game.imageSrc} link={game.link} />
               </SwiperSlide>
             ))}
+            <div className="buyBonus-swiper-button-next">
+              <FontAwesomeIcon icon={faAngleLeft} />
+            </div>
+            <div className="buyBonus-swiper-button-prev">
+              <FontAwesomeIcon icon={faAngleLeft} />
+            </div>
           </Swiper>
-          <div className="buyBonus-swiper-button-next">
-            <FontAwesomeIcon icon={faAngleLeft} />
-          </div>
-          <div className="buyBonus-swiper-button-prev">
-            <FontAwesomeIcon icon={faAngleLeft} />
-          </div>
         </div>
+      </div>
 
-        {/* megaWays */}
+      {/* megaWays */}
 
+      <div className="megawasBox">
         <div className="newGamesSection__title megaWays__title">
           <span>Megaways</span>
           <a href="#">მეტის ნახვა &gt;</a>
@@ -231,6 +242,38 @@ const TopGames: React.FC = () => {
               <FontAwesomeIcon icon={faAngleLeft} />
             </div>
             <div className="megaWays-swiper-button-prev">
+              <FontAwesomeIcon icon={faAngleLeft} />
+            </div>
+          </Swiper>
+        </div>
+
+        <div className="newGamesSection__title  ci_interTitle">
+          <span>CT Interactive</span>
+          <a href="#">მეტის ნახვა &gt;</a>
+        </div>
+
+        <div className="ci_interactive">
+          <Swiper
+            modules={[Navigation, Pagination, Scrollbar, A11y]}
+            spaceBetween={5}
+            slidesPerView={5}
+            loop={true}
+            navigation={{
+              nextEl: ".ci_interactive-button-next",
+              prevEl: ".ci_interactive-button-prev",
+            }}
+            onSlideChange={() => console.log("slide change")}
+            onSwiper={(swiper) => console.log(swiper)}
+          >
+            {Ci_interactive.map((game, index) => (
+              <SwiperSlide key={index}>
+                <NewGames imageSrc={game.imageSrc} link={game.link} />
+              </SwiperSlide>
+            ))}
+            <div className="ci_interactive-button-next">
+              <FontAwesomeIcon icon={faAngleLeft} />
+            </div>
+            <div className="ci_interactive-button-prev">
               <FontAwesomeIcon icon={faAngleLeft} />
             </div>
           </Swiper>

@@ -163,7 +163,7 @@
   transform: rotate(180deg);
   cursor: pointer;
 }
-.topGamesSection .topGames-swiper-button-prev.swiper-button-disabled {
+.topGamesSection .topGames-swiper-button-prev .swiper-button-disabled {
   visibility: hidden;
 }
 .newGamesSection {
@@ -175,6 +175,7 @@
 .newGamesSection__inside img {
   width: 100%;
   height: 100%;
+  border-radius: 5px;
 }
 .newGamesSection__inside {
   width: 100%;
@@ -203,6 +204,7 @@
 }
 .newGamesSection__title {
   padding-top: 20px;
+  padding-left: 80px;
   gap: 10px;
   display: flex;
   justify-content: start;
@@ -224,25 +226,23 @@
 
 .NewGamesSwiper,
 .buyBonusSection,
-.megaWays {
+.megaWays,
+.ci_interactive {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 102%;
+  width: 100%;
   padding: 10px 5px;
   margin: 10px auto 0 auto;
   position: relative;
 }
-.NewGamesSwiper .swiper,
-.buyBonusSection .swiper {
-  width: 100%;
-  position: relative;
-}
+
 .NewGamesSwiper .NewGames-swiper-button-next,
 .buyBonusSection .buyBonus-swiper-button-next,
-.megaWays .megaWays-swiper-button-next {
+.megaWays .megaWays-swiper-button-next,
+.ci_interactive .ci_interactive-button-next {
   position: absolute;
-  right: 132px;
+  right: 100px;
   top: 40%;
   display: flex;
   width: 35px;
@@ -260,7 +260,8 @@
 
 .NewGamesSwiper .NewGames-swiper-button-prev,
 .buyBonusSection .buyBonus-swiper-button-prev,
-.megaWays .megaWays-swiper-button-prev {
+.megaWays .megaWays-swiper-button-prev,
+.ci_interactive .ci_interactive-button-prev {
   position: absolute;
   left: 17px;
   top: 40%;
@@ -275,4 +276,37 @@
   z-index: 10;
   font-size: 20px;
   cursor: pointer;
+}
+.newgameSBox {
+  background-image: url(./TopGamesIMg/bg-egt-hor.avif);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+.NewGamesSwiper .swiper,
+.buyBonusSection .swiper {
+  width: 90%;
+  position: relative;
+}
+
+.megawasBox {
+  background-image: url(./TopGamesIMg/bg-pragmatic-hor.avif);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+.megaWays .swiper,
+.ci_interactive .swiper {
+  width: 90%;
+  position: relative;
 }
