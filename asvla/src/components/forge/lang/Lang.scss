@@ -1,0 +1,47 @@
+@use "../../../assets/styles/common.scss";
+
+.lang-Box {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 132px;
+}
+
+.img-bg {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 32px;
+  height: 32px;
+  background: #001e28;
+  border: 1px solid #093948;
+  border-radius: 100px;
+  cursor: pointer;
+  opacity: 0.4;
+
+  &.active {
+    opacity: 1;
+  }
+}
+.footer__mainContent {
+  background: #00141e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+}
+.footer__mainContent-leftBox {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+.footer__mainContent-leftBox .leftBoxes {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.footer__mainContent-leftBox .leftBoxes h2 {
+  font-size: 14px;
+  color: #ffffff;
+}

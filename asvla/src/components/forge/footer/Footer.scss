@@ -1,0 +1,17 @@
+@use "../../../assets/styles/mediaQuerys.scss";
+@use "../../../assets/styles/fonts.scss";
+
+.footer {
+  width: 100%;
+  background: #001e28;
+  padding-top: 16px;
+
+  @include mediaQuerys.mobile {
+    width: 20%;
+  }
+  p {
+    font-family: "AdjaraBold";
+    font-size: 100px;
+    color: #ffff;
+  }
+}
