@@ -1,6 +1,5 @@
 import React from "react";
 import "./MainComponent.scss";
-import PrimarySearchAppBar from "./nav/PrimarySearchAppBar";
 import Promo from "./promo/Promo";
 import TopGames from "./TopGamesSection/TopGames";
 import Weekgames from "./weekGame/WeekGame";
@@ -8,10 +7,11 @@ import Weekgames from "./weekGame/WeekGame";
 const MainComponent: React.FC = () => {
   return (
     <div className="main-component">
-      <PrimarySearchAppBar />
+      {/* <PrimarySearchAppBar /> */}
       <Promo />
       <TopGames />
       <Weekgames />
+      {/* You can add content here if you want it on the homepage */}
     </div>
   );
 };
