@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import bogImg from "./footer-img/bog.svg";
 import libertyIMg from "./footer-img/liberty.svg";
 import tbcImg from "./footer-img/visa.svg";
-import visaImg from "./footer-img/visa.svg";
+import visaImg from "./footer-img/tbc.svg";
 
 const bankImages = [
   { src: bogImg, alt: "BOG", link: "https://bankofgeorgia.ge/ka/retail" },

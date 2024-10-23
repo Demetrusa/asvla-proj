@@ -4,6 +4,10 @@
   width: 100%;
   margin: 0 auto;
 
+  @include mediaQuerys.mobile {
+    margin: 20vw auto;
+  }
+
   &__wrap {
     width: 87%;
     height: 90%;
