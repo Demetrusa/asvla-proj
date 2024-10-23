@@ -1,3 +1,5 @@
+@use "../../../assets/styles/mediaQuerys.scss";
+
 .weekGamesBox {
   display: flex;
   justify-content: center;
@@ -9,6 +11,13 @@
   border-radius: 10px;
   border: 1px solid rgb(58, 8, 58);
 
+  @include mediaQuerys.mobile {
+    width: 100%;
+    margin: 5.33vw auto;
+    border-radius: 2.33vw;
+    border: none;
+  }
+
   &__animationBG {
     width: 80%;
     margin: 0 auto;
@@ -17,10 +26,18 @@
     align-items: center;
     position: relative;
 
+    @include mediaQuerys.mobile {
+      width: 100%;
+    }
+
     img {
       height: 600px;
       object-fit: cover;
       height: 100%;
+
+      @include mediaQuerys.mobile {
+        height: 50vw;
+      }
     }
 
     .game-of-the-week-background {
@@ -41,6 +58,10 @@
 
     .w-\[120\%\] {
       width: 120%;
+
+      @include mediaQuerys.mobile {
+        width: 86%;
+      }
     }
 
     .aspect-1 {
@@ -57,10 +78,38 @@
       width: 480px;
       height: 308px;
 
-      img {
+      @include mediaQuerys.mobile {
+        width: 100%;
+        height: 40vw;
+      }
+
+      .weekofGame__img {
         object-fit: fill;
-        height: 100%;
+        height: 286px;
         border-radius: 10px;
+
+        @include mediaQuerys.mobile {
+          height: 40vw;
+        }
+
+        img {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 0 auto;
+
+          @include mediaQuerys.mobile {
+            height: 40vw;
+          }
+        }
+      }
+      .weekGamesBox__animationBG img {
+        display: block;
+      }
+      @media (max-width: 940px) {
+        .weekGamesBox__animationBG img {
+          content: url("./weekgamesImg/game-of-mob.webp");
+        }
       }
     }
   }

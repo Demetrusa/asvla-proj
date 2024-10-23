@@ -7,6 +7,7 @@ import Weekgames from "./components/forge/weekGame/WeekGame";
 import RegistrationForm from "./components/forge/registrationForm/RegistrationForm";
 import LoginForm from "./components/forge/loginForm/LoginForm";
 import PrimarySearchAppBar from "./components/forge/nav/PrimarySearchAppBar";
+import Footer from "./components/forge/footer/Footer";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/register" element={<RegistrationForm />} />
           <Route path="/login" element={<LoginForm />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );

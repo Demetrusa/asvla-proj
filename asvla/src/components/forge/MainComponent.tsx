@@ -11,7 +11,6 @@ const MainComponent: React.FC = () => {
       <Promo />
       <TopGames />
       <Weekgames />
-      <Footer />
     </div>
   );
 };

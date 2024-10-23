@@ -1,4 +1,6 @@
-@use "../../../assets/styles/common.scss";
+@use "../../../assets/styles/mediaQuerys.scss";
+@use "../../../assets/styles/fonts.scss";
+@use "../../../assets/styles/functions.scss";
 
 .lang-Box {
   display: flex;
@@ -6,6 +8,11 @@
   align-items: center;
   width: 132px;
   margin: 10px auto;
+
+  @include mediaQuerys.mobile {
+    width: 35.2vw;
+    margin: 2.667vw auto;
+  }
 }
 
 .img-bg {
@@ -20,6 +27,13 @@
   cursor: pointer;
   opacity: 0.4;
 
+  @include mediaQuerys.mobile {
+    width: 8.533vw;
+    height: 8.533vw;
+    border: 0.2667vw solid #093948;
+    border-radius: 26.667vw;
+  }
+
   &.active {
     opacity: 1;
   }
@@ -30,6 +44,10 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 15px;
+
+  @include mediaQuerys.mobile {
+    padding: 0 3vw;
+  }
 }
 .footer__mainContent-leftBox {
   width: 50%;
@@ -45,4 +63,9 @@
 .footer__mainContent-leftBox .leftBoxes h2 {
   font-size: 14px;
   color: #ffffff;
+
+  @include mediaQuerys.mobile {
+    padding: 0 3vw;
+    font-size: 3.733vw;
+  }
 }
