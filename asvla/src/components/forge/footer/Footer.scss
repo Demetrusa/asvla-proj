@@ -3,15 +3,69 @@
 
 .footer {
   width: 100%;
-  background: #001e28;
+  background: #101829;
   padding-top: 16px;
 
   @include mediaQuerys.mobile {
-    width: 20%;
+    width: 100%;
   }
-  p {
-    font-family: "AdjaraBold";
-    font-size: 100px;
-    color: #ffff;
+
+  .footer__BankImg {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+  }
+  .footer__line {
+    width: 80%;
+    height: 1px;
+    background-color: aquamarine;
+    margin: 5px auto;
+  }
+  .footer__rules_review {
+    padding-top: 20px;
+    width: 100%;
+    background-color: #1d2239;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .footer__rules_review-box {
+    width: 20%;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: #272c43;
+    min-height: 130px;
+    height: auto;
+    border-radius: 20px;
+    border: 1px solid #84bbd2;
+    padding: 5px;
+
+    span {
+      color: #84bbd2;
+      font-size: 13px;
+    }
+  }
+  .footer__rules_review-box-two {
+    min-height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 50%;
+
+    span {
+      color: #84bbd2;
+    }
+    a {
+      color: #84bbd2;
+      text-decoration: underline;
+    }
   }
 }
