@@ -1,4 +1,4 @@
-@use "../../../assets/styles/common.scss";
+@use "../../../assets/styles/mediaQuerys.scss";
 
 .promoPage {
   margin-top: 70px;
@@ -10,12 +10,23 @@
   align-items: start;
   text-align: center;
   padding: 10px 120px;
+
+  @include mediaQuerys.mobile {
+    margin-top: 20vw;
+    width: 100%;
+    padding: 3vw;
+  }
 }
 
 .promoTitle {
   color: #ffffff;
   font-size: 18px;
   padding-top: 10px;
+
+  @include mediaQuerys.mobile {
+    font-size: 4.8vw;
+    padding-top: 3vw;
+  }
 }
 
 .promoPage__swiper {
@@ -23,6 +34,12 @@
   height: 90%;
   margin: 25px auto 0 auto;
   position: relative;
+
+  @include mediaQuerys.mobile {
+    height: 90%;
+    margin: 5vw auto 0 auto;
+    position: relative;
+  }
 }
 .promoPage__swiper .swiper {
   width: 100%;
@@ -33,6 +50,10 @@
   color: white;
   z-index: 10;
   font-size: 20px;
+
+  @include mediaQuerys.mobile {
+    font-size: 4vw;
+  }
 }
 
 .promoPage .swiper-button-prev.swiper-button-disabled {
@@ -47,6 +68,12 @@
   border-radius: 50%;
   background: #000000b3;
   align-items: center;
+
+  @include mediaQuerys.mobile {
+    left: 3vw;
+    width: 11.33vw;
+    height: 11.33vw;
+  }
 }
 .promoPage .swiper-button-next {
   right: 17px;
@@ -57,4 +84,10 @@
   border-radius: 50%;
   background: #000000b3;
   align-items: center;
+
+  @include mediaQuerys.mobile {
+    right: 5vw;
+    width: 11.33vw;
+    height: 11.33vw;
+  }
 }

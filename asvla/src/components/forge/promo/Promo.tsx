@@ -18,8 +18,6 @@ const Promo: React.FC = () => {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
           }}
-          onSlideChange={() => console.log("slide change")}
-          onSwiper={(swiper) => console.log(swiper)}
         >
           <SwiperSlide>
             <PromoSlide />

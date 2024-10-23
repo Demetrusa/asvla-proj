@@ -109,8 +109,24 @@ const TopGames: React.FC = () => {
                 nextEl: ".topGames-swiper-button-next",
                 prevEl: ".topGames-swiper-button-prev",
               }}
-              onSlideChange={() => console.log("slide change")}
-              onSwiper={(swiper) => console.log(swiper)}
+              breakpoints={{
+                1350: {
+                  slidesPerView: 5,
+                  spaceBetween: 15,
+                },
+                1150: {
+                  slidesPerView: 4,
+                  spaceBetween: 15,
+                },
+                940: {
+                  slidesPerView: 3,
+                  spaceBetween: 10,
+                },
+                320: {
+                  slidesPerView: 2,
+                  spaceBetween: 10,
+                },
+              }}
             >
               {topGamesData.map((game, index) => (
                 <SwiperSlide key={index}>
@@ -144,8 +160,24 @@ const TopGames: React.FC = () => {
               nextEl: ".NewGames-swiper-button-next",
               prevEl: ".NewGames-swiper-button-prev",
             }}
-            onSlideChange={() => console.log("slide change")}
-            onSwiper={(swiper) => console.log(swiper)}
+            breakpoints={{
+              1350: {
+                slidesPerView: 5,
+                spaceBetween: 15,
+              },
+              1150: {
+                slidesPerView: 4,
+                spaceBetween: 15,
+              },
+              940: {
+                slidesPerView: 3,
+                spaceBetween: 10,
+              },
+              320: {
+                slidesPerView: 3,
+                spaceBetween: 10,
+              },
+            }}
           >
             {NewGamesData.map((game, index) => (
               <SwiperSlide key={index}>
@@ -177,8 +209,24 @@ const TopGames: React.FC = () => {
               nextEl: ".buyBonus-swiper-button-next",
               prevEl: ".buyBonus-swiper-button-prev",
             }}
-            onSlideChange={() => console.log("slide change")}
-            onSwiper={(swiper) => console.log(swiper)}
+            breakpoints={{
+              1350: {
+                slidesPerView: 5,
+                spaceBetween: 15,
+              },
+              1150: {
+                slidesPerView: 4,
+                spaceBetween: 15,
+              },
+              940: {
+                slidesPerView: 3,
+                spaceBetween: 10,
+              },
+              320: {
+                slidesPerView: 3,
+                spaceBetween: 10,
+              },
+            }}
           >
             {BuyGamesData.map((game, index) => (
               <SwiperSlide key={index}>
@@ -212,26 +260,24 @@ const TopGames: React.FC = () => {
               nextEl: ".megaWays-swiper-button-next",
               prevEl: ".megaWays-swiper-button-prev",
             }}
-            // breakpoints={{
-            //   1325: {
-            //     slidesPerView: 4, // Show 4 slides
-            //     spaceBetween: 10,
-            //   },
-            //   1024: {
-            //     slidesPerView: 3, // Show 3 slides
-            //     spaceBetween: 15, // Further reduce space
-            //   },
-            //   768: {
-            //     slidesPerView: 2, // Show 2 slides
-            //     spaceBetween: 20, // Adjust space for smaller screens
-            //   },
-            //   480: {
-            //     slidesPerView: 1, // Show 1 slide
-            //     spaceBetween: 10, // Smaller space on mobile
-            //   },
-            // }}
-            onSlideChange={() => console.log("slide change")}
-            onSwiper={(swiper) => console.log(swiper)}
+            breakpoints={{
+              1350: {
+                slidesPerView: 5,
+                spaceBetween: 15,
+              },
+              1150: {
+                slidesPerView: 4,
+                spaceBetween: 15,
+              },
+              940: {
+                slidesPerView: 3,
+                spaceBetween: 10,
+              },
+              320: {
+                slidesPerView: 3,
+                spaceBetween: 10,
+              },
+            }}
           >
             {MegaWaysData.map((game, index) => (
               <SwiperSlide key={index}>
@@ -262,8 +308,24 @@ const TopGames: React.FC = () => {
               nextEl: ".ci_interactive-button-next",
               prevEl: ".ci_interactive-button-prev",
             }}
-            onSlideChange={() => console.log("slide change")}
-            onSwiper={(swiper) => console.log(swiper)}
+            breakpoints={{
+              1350: {
+                slidesPerView: 5,
+                spaceBetween: 15,
+              },
+              1150: {
+                slidesPerView: 4,
+                spaceBetween: 15,
+              },
+              940: {
+                slidesPerView: 3,
+                spaceBetween: 10,
+              },
+              320: {
+                slidesPerView: 3,
+                spaceBetween: 10,
+              },
+            }}
           >
             {Ci_interactive.map((game, index) => (
               <SwiperSlide key={index}>
