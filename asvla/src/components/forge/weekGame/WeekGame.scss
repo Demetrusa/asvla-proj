@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: center;
   width: 940px;
-  margin: 20px auto;
+  margin: 80px auto;
   position: relative;
   overflow: hidden;
   border-radius: 10px;
@@ -13,7 +13,7 @@
 
   @include mediaQuerys.mobile {
     width: 100%;
-    margin: 5.33vw auto;
+    margin: 27vw auto;
     border-radius: 2.33vw;
     border: none;
   }
