@@ -1,5 +1,9 @@
 // LoginForm.tsx
 import React, { useState } from "react";
+import "./LoginForm.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 const LoginDataSave = () => {
   fetch("https://fakestoreapi.com/auth/login", {
@@ -37,7 +41,9 @@ const LoginForm: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleLogin}>
+    <form onSubmit={handleLogin} className="LogForm">
+      <FontAwesomeIcon icon={faUser} className="LogLogo" />
+
       <div>
         <label>Email</label>
         <input

@@ -1,0 +1,86 @@
+@use "../../../assets/styles/mediaQuerys.scss";
+
+.LogForm {
+  max-width: 400px;
+  margin: 206px auto 199px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include mediaQuerys.mobile {
+    margin: 41vw auto;
+    max-width: 90%;
+  }
+
+  div {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 300px;
+
+    @include mediaQuerys.mobile {
+      margin-bottom: 3vw;
+      width: 70vw;
+      display: flex;
+      justify-content: center;
+      align-items: start;
+      margin: 2vw auto;
+    }
+  }
+  button {
+    padding: 10px;
+    width: 300px;
+    background-color: #15d61f;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    font-weight: bold;
+
+    @include mediaQuerys.mobile {
+      padding: 3vw;
+      width: 70vw;
+      display: flex;
+      justify-content: center;
+      align-items: start;
+      margin: 0 auto;
+      font-size: 5.5vw;
+      border-radius: 2vw;
+    }
+  }
+  input,
+  select {
+    width: 300px;
+    height: 28px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background: rgb(194, 191, 191);
+    margin-top: 5px;
+
+    @include mediaQuerys.mobile {
+      width: 70vw;
+      height: 8vw;
+      font-size: 3vw;
+      margin-top: 1.3vw;
+    }
+  }
+  label {
+    font-size: 18px;
+    color: #ffff;
+
+    @include mediaQuerys.mobile {
+      font-size: 4vw;
+    }
+  }
+  .LogLogo {
+    font-size: 40px;
+    color: #15d61f;
+
+    @include mediaQuerys.mobile {
+      font-size: 15vw;
+    }
+  }
+}
