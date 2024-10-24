@@ -9,7 +9,8 @@ import LoginForm from "./components/forge/loginForm/LoginForm";
 import PrimarySearchAppBar from "./components/forge/nav/PrimarySearchAppBar";
 import Footer from "./components/forge/footer/Footer";
 import TermsComponent from "./components/forge/terms/TermsComponent";
-import WheelinatorComponent from "./components/forge/wheel/WheelinatorComponent";
+// import WheelinatorComponent from "./components/forge/wheel/WheelinatorComponent";
+import Wheel from "./components/forge/wheel/Wheel.jsx";
 
 function App() {
   return (
@@ -29,8 +30,10 @@ function App() {
         </Routes>
         <TermsComponent />
         <div className="wheel-container">
-          <WheelinatorComponent layers={1} />
+          {/* <WheelinatorComponent layers={1} /> */}
+          <Wheel />
         </div>
+
         <Footer />
       </div>
     </Router>
