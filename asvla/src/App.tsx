@@ -8,6 +8,7 @@ import RegistrationForm from "./components/forge/registrationForm/RegistrationFo
 import LoginForm from "./components/forge/loginForm/LoginForm";
 import PrimarySearchAppBar from "./components/forge/nav/PrimarySearchAppBar";
 import Footer from "./components/forge/footer/Footer";
+import TermsComponent from "./components/forge/terms/TermsComponent";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/register" element={<RegistrationForm />} />
           <Route path="/login" element={<LoginForm />} />
         </Routes>
+        <TermsComponent />
         <Footer />
       </div>
     </Router>
