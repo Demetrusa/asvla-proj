@@ -238,9 +238,10 @@
 // }
 .newTerms-container {
   width: 940px;
-  margin: 0 auto;
+  margin: 20px auto;
 
   @include mediaQuerys.mobile {
     width: 95%;
+    margin: 5vw auto;
   }
 }
