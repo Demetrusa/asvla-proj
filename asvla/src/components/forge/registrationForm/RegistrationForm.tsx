@@ -12,6 +12,7 @@ interface User {
 }
 
 const countries = [
+  "Georgia",
   "USA",
   "Canada",
   "Germany",
@@ -26,7 +27,6 @@ const countries = [
   "Russia",
   "Mexico",
   "South Africa",
-  "Argentina",
 ];
 
 const returnRegisterData = () => {
@@ -162,7 +162,7 @@ const RegistrationForm: React.FC = () => {
       </div>
 
       <div>
-        <label>Password Requirements:</label>
+        <label className="passReq">Password Requirements</label>
         <ul>
           <li style={{ color: passwordValidations.length ? "green" : "red" }}>
             6-20 symbols
