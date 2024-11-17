@@ -1,0 +1,375 @@
+@use "../../../../assets/styles/mediaQuerys.scss";
+
+.threePlusOneBody {
+  background: transparent url(./threeplusone-imgs/web-am.webp) no-repeat 50%;
+  background-position: top center;
+
+  @include mediaQuerys.mobile {
+    width: none;
+  }
+
+  .container {
+    width: 940px;
+    margin: 0 auto;
+    padding-top: 650px;
+
+    @include mediaQuerys.mobile {
+      width: 100%;
+      background: transparent url(./threeplusone-imgs/mob-am.webp) no-repeat 50%;
+      background-size: 100%;
+      padding-bottom: 40vw;
+      background-position: top center;
+      background-color: #000000;
+      padding-top: 170vw;
+    }
+
+    &__header {
+      width: 100%;
+      margin-top: 40px;
+      background-color: #183c73a6;
+      border-radius: 8px;
+      margin: 15px;
+
+      @include mediaQuerys.mobile {
+        border-radius: 1.0666666667vw;
+        width: 95%;
+        margin: 5vw auto;
+      }
+
+      .header-title {
+        padding: 28px 0;
+        background: linear-gradient(180deg, #224b89 0%, #001532 100%);
+        border: 1px solid #6ba8ff;
+        border-radius: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include mediaQuerys.mobile {
+          padding: 4vw 10.6666666667vw;
+          border: 0.266vw solid #6ba8ff;
+          border-radius: 1.6vw 1.6vw 0 0;
+          border-bottom: 0;
+        }
+
+        p {
+          margin: 0;
+          font: 18px AdjaraRegular;
+          color: #fff;
+          text-align: center;
+          padding: 0 10px;
+
+          @include mediaQuerys.mobile {
+            font-size: 3.7333333333vw;
+            padding: 0 2vw;
+          }
+        }
+      }
+    }
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 2px solid #6ba8ff;
+      border-radius: 8px;
+      border-top: 0;
+      background: #092349;
+      margin-top: -4px;
+      padding: 5px;
+
+      @include mediaQuerys.mobile {
+        border-radius: 2.1333333333vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 0 0.8vw;
+        border: 0.2667vw solid #6ba8ff;
+        margin-top: -2vw;
+        padding-top: 0.2vw;
+        border-top: 0;
+      }
+
+      .content-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #0965e1;
+        width: 230px;
+        height: 82px;
+        border-radius: 6px;
+        padding: 9px;
+
+        @include mediaQuerys.mobile {
+          width: 45.533333vw;
+          border-radius: 1.6vw;
+          height: 17.933vw;
+          padding-inline-start: 1.56vw;
+          margin: 0.266vw;
+        }
+
+        span {
+          text-align: center;
+        }
+        span:first-child {
+          font: 15px AdjaraRegular;
+          color: #fff;
+
+          @include mediaQuerys.mobile {
+            font-size: 2.7333333333vw;
+          }
+        }
+        span:last-child {
+          font: 24px AdjaraBold;
+          color: #fff;
+          padding-top: 8px;
+
+          @include mediaQuerys.mobile {
+            font-size: 3.266667vw;
+          }
+        }
+      }
+    }
+  }
+  .iconRules {
+    width: 572.977px;
+    height: 84px;
+    margin: 35px auto 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include mediaQuerys.mobile {
+      width: 87.067vw;
+      height: 25.6vw;
+      margin: 8.533vw auto 0 auto;
+    }
+
+    &__icon {
+      flex-direction: column;
+
+      align-items: center;
+
+      .iconRules__firstIcon--img {
+        background-repeat: no-repeat;
+        background-size: 100%;
+      }
+      .firstIcon {
+        width: 68.88px;
+        height: 83.25px;
+        background-image: url(./threeplusone-imgs/tkt-icons.png);
+
+        @include mediaQuerys.mobile {
+          width: 13.1893vw;
+          height: 15.933vw;
+        }
+      }
+      .secondIcon {
+        background-image: url(./threeplusone-imgs/time-icon.png);
+        width: 43.79px;
+        height: 58.34px;
+
+        @include mediaQuerys.mobile {
+          width: 8.208vw;
+          height: 10.93vw;
+        }
+      }
+      .thirdIcon {
+        background-image: url(./threeplusone-imgs/tkt-prize-icon.png);
+        width: 69.68px;
+        height: 73.61px;
+
+        @include mediaQuerys.mobile {
+          width: 12.0026vw;
+          height: 13.13867vw;
+        }
+      }
+    }
+    .iconRules__line {
+      background-image: url(./threeplusone-imgs/line.png);
+      background-repeat: no-repeat;
+      background-size: 100%;
+      width: 111.255px;
+      height: 11.453px;
+
+      @include mediaQuerys.mobile {
+        width: 18.13vw;
+        height: 1.867vw;
+      }
+    }
+  }
+  .iconRulestxt {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto 30px auto;
+    width: 572.977px;
+
+    @include mediaQuerys.mobile {
+      width: 87.067vw;
+      margin: -2vw auto 8.533vw auto;
+    }
+
+    span {
+      color: #fff;
+      font-size: 15px;
+      font-family: adjaraSemiBold;
+
+      @include mediaQuerys.mobile {
+        font-size: 3vw;
+      }
+    }
+    span:nth-child(1) {
+      margin-left: -7px;
+
+      @include mediaQuerys.mobile {
+        margin-left: 0;
+      }
+    }
+  }
+  .user-details {
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    column-gap: 25px;
+
+    .progress {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid #9bc1f7;
+      border-radius: 6px;
+
+      &__header {
+        padding: 18px 20px;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #1a3868;
+        position: relative;
+
+        span {
+          font: 18px AdjaraSemiBold;
+          color: #fff;
+        }
+        img {
+          width: 24px;
+          height: 24px;
+          cursor: pointer;
+        }
+        img:hover + .progress__info {
+          display: block;
+        }
+        .progress__info {
+          background: #fff;
+          border-radius: 8px;
+          padding: 32px 23px;
+          position: absolute;
+          bottom: 70px;
+          right: 0;
+          display: none;
+
+          ul li {
+            font: 11px AdjaraRegular;
+            color: #000;
+          }
+        }
+      }
+    }
+    .progress__content {
+      background: #183c73;
+      width: 100%;
+      padding-bottom: 24px;
+      border-bottom-left-radius: 6px;
+      border-bottom-right-radius: 6px;
+
+      .progress__description {
+        display: flex;
+        flex-direction: column;
+        padding: 18px 20px;
+        /* background: linear-gradient(0deg, #183c73 0%, #245882 60%, #3e90b0 100%); */
+        background: linear-gradient(
+          180deg,
+          rgba(73, 143, 244, 0.6) 0%,
+          rgba(16, 49, 67, 0) 98.44%
+        );
+        border-bottom: 1px solid #1c4771;
+
+        span {
+          font: 14px AdjaraSemiBold;
+          color: #fff;
+        }
+        span:nth-child(2) {
+          padding-top: 10px;
+          font: 11px AdjaraLight;
+          color: #fff;
+          opacity: 0.5;
+        }
+      }
+      .progress__box {
+        width: 90%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        position: relative;
+        margin: 0 auto;
+        height: 40px;
+        background-color: red;
+      }
+      .progress__prize {
+        position: relative;
+        z-index: 5;
+
+        .progress__tkt.active .progress__tkt--img {
+          background-image: url(./threeplusone-imgs/active-ticket.svg);
+          color: #ffffff;
+        }
+        .progress__tkt {
+          margin: 15px auto;
+          background: linear-gradient(
+            180deg,
+            #4a95ff 0%,
+            rgba(75, 89, 109, 0) 100%
+          );
+          border-radius: 20px;
+          width: 355px;
+          height: 127px;
+          padding: 0 32px;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          position: relative;
+          box-shadow: 4px 3px 0px 1px #0a191e7a;
+
+          .progress__tkt--img {
+            background: url(../img/tiket.png) no-repeat;
+            background-size: contain;
+            background-position: center;
+            width: 202.725px;
+            height: 102.5125px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #2e4f81;
+            font-size: 20px;
+            line-height: 22px;
+            font-family: adjaraBold;
+          }
+        }
+        .progress__prize--about {
+          font: 12px AdjaraLight;
+          color: #fff;
+          display: block;
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+}

@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
-import PromoSlide from "../promoSildes/promoSlideOne/PromoSlideOne";
+import PromoSlideOne from "../promoSildes/promoSlideOne/PromoSlideOne";
 
 const Promo: React.FC = () => {
   return (
@@ -19,29 +19,29 @@ const Promo: React.FC = () => {
             prevEl: ".swiper-button-prev",
           }}
         >
-          <SwiperSlide>
-            <PromoSlide />
+          <SwiperSlide className="promoSLIdes">
+            <PromoSlideOne />
           </SwiperSlide>
           <SwiperSlide>
-            <PromoSlide />
+            <PromoSlideOne />
           </SwiperSlide>
           <SwiperSlide>
-            <PromoSlide />
+            <PromoSlideOne />
           </SwiperSlide>
           <SwiperSlide>
-            <PromoSlide />
+            <PromoSlideOne />
           </SwiperSlide>
           <SwiperSlide>
-            <PromoSlide />
+            <PromoSlideOne />
           </SwiperSlide>
           <SwiperSlide>
-            <PromoSlide />
+            <PromoSlideOne />
           </SwiperSlide>
           <SwiperSlide>
-            <PromoSlide />
+            <PromoSlideOne />
           </SwiperSlide>
           <SwiperSlide>
-            <PromoSlide />
+            <PromoSlideOne />
           </SwiperSlide>
         </Swiper>
         <div className="swiper-button-next"></div>
