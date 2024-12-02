@@ -8,7 +8,7 @@ import RegistrationForm from "./components/forge/registrationForm/RegistrationFo
 import LoginForm from "./components/forge/loginForm/LoginForm";
 import PrimarySearchAppBar from "./components/forge/nav/PrimarySearchAppBar";
 import Footer from "./components/forge/footer/Footer";
-import TermsComponent from "./components/forge/terms/TermsComponent";
+// import TermsComponent from "./components/forge/terms/TermsComponent";
 // import WheelinatorComponent from "./components/forge/wheel/WheelinatorComponent";
 import Wheel from "./components/forge/wheel/Wheel.jsx";
 import ThreePlusOne from "./components/forge/sportPromos/three-plus-one/ThreePlusOne.js";
@@ -30,7 +30,7 @@ function App() {
           <Route path="/login" element={<LoginForm />} />
         </Routes>
         <ThreePlusOne />
-        <TermsComponent />
+        {/* <TermsComponent /> */}
         <div className="wheel-container">
           {/* <WheelinatorComponent layers={1} /> */}
           <Wheel />

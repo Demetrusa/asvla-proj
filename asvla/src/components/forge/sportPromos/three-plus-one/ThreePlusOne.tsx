@@ -1,8 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ThreePlusOne.scss";
 import infoICon from "./threeplusone-imgs/info.svg";
 
+import priseICon from "./threeplusone-imgs/prize-icon.svg";
+import TermsComponent from "../../terms/TermsComponent";
+
 const ThreePlusOne: React.FC = () => {
+  const [progress, setProgress] = useState(0); // Progress state
+  const [inputValue, setInputValue] = useState(""); // Input value state
+
+  const [isActive, setIsActive] = useState(false);
+
+  const handleProgressChange = () => {
+    const numericValue = parseFloat(inputValue);
+    if (!isNaN(numericValue) && numericValue >= 0 && numericValue <= 100) {
+      setProgress(numericValue); // Set progress width directly
+    } else {
+      alert("Please enter a valid percentage between 0 and 100.");
+    }
+  };
+
+  const toggleContent = () => {
+    setIsActive((prev) => !prev);
+    // Optional: Smooth scroll to content when it becomes visible
+  };
+
   const contentItems = [
     { label: "Minimum odds for each selection in bet", value: "1.5" },
     { label: "Minimum number of selections in each bet", value: "3" },
@@ -49,6 +71,17 @@ const ThreePlusOne: React.FC = () => {
           <span>Get Freebets</span>
         </div>
 
+        {/* Input box to control progress */}
+        <div className="progressControl">
+          <input
+            type="text"
+            placeholder="Enter progress (%)"
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+          />
+          <button onClick={handleProgressChange}>Set Progress</button>
+        </div>
+
         <div className="user-details">
           <div className="progress">
             <div className="progress__header">
@@ -75,7 +108,37 @@ const ThreePlusOne: React.FC = () => {
                 <span>Place live bets and get freebets!</span>
                 <span>* Progress bar updates every 5 minutes</span>
               </div>
-              <div className="progress__box"></div>
+              <div className="progress__box">
+                <div className="progress__bar">
+                  <div
+                    className="progress__indicator"
+                    style={{ width: `${progress}%` }}
+                  ></div>
+                </div>
+                <div className="progress__checkpoints">
+                  <div
+                    className={`progress__checkpoint ${
+                      progress >= 33 ? "completed" : ""
+                    }`}
+                  >
+                    <span className="progress__checkpoint-label">1</span>
+                  </div>
+                  <div
+                    className={`progress__checkpoint ${
+                      progress >= 66 ? "completed" : ""
+                    }`}
+                  >
+                    <span className="progress__checkpoint-label">2</span>
+                  </div>
+                  <div
+                    className={`progress__checkpoint ${
+                      progress >= 100 ? "completed" : ""
+                    }`}
+                  >
+                    <span className="progress__checkpoint-label">3</span>
+                  </div>
+                </div>
+              </div>
               <div className="progress__prize">
                 <div className="progress__tkt active">
                   <div className="progress__tkt--img">
@@ -91,7 +154,88 @@ const ThreePlusOne: React.FC = () => {
               </div>
             </div>
           </div>
+          <div className="prizes">
+            <div className="prizes__header">
+              <img src={priseICon} alt="" />
+              <span>Prize</span>
+            </div>
+            <div className="prizes__title">
+              <span>Freebets</span>
+              <span>Date</span>
+              <span>Expiration Date</span>
+            </div>
+            <div className="prizes__box">
+              <div className="prizes__container">
+                <div className="prizes__space active">
+                  <div className="prizes__empty"></div>
+                  <span>Minimum number of selections in each bet</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+        {/* howto */}
+        <div className="how-to">
+          <div className="how-to__header" onClick={toggleContent}>
+            <div className="how-to__left">
+              <div className="how-to__item"></div>
+              <div className="how-to__description">
+                <span>HOW TO WIN IN 3+1 ? </span>
+              </div>
+            </div>
+            <div className="how-to__right">
+              <div
+                className={`how-to__icon ${isActive ? "rotated" : ""}`}
+              ></div>
+            </div>
+          </div>
+          <div className={`how-to__content ${isActive ? "active" : ""}`}>
+            <div className="how-to__list">
+              <ul>
+                <li>
+                  To participate in the promotion, the participant should place
+                  <span className="highlight"> 3 </span>
+                  Express bets on
+                  <span className="highlight"> 3 </span>
+                  different selections for any sports type.
+                </li>
+              </ul>
+            </div>
+            <div className="how-to__list">
+              <ul>
+                <li>
+                  The minimum bet amount (for each bet) is
+                  <span className="highlight"> 500 AMD</span>
+                </li>
+              </ul>
+            </div>
+            <div className="how-to__list">
+              <ul>
+                <li>
+                  Minimum odds per selection in bet –
+                  <span className="highlight"> 1.5</span>
+                </li>
+              </ul>
+            </div>
+            <div className="how-to__list">
+              <ul>
+                <li>
+                  Minimum number of selections in each bet
+                  <span className="highlight"> 3</span>
+                </li>
+              </ul>
+            </div>
+            <div className="how-to__list">
+              <ul>
+                <li>
+                  Freebet daily max cap for each participant is
+                  <span className="highlight"> 30 000 AMD</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <TermsComponent TermsBg />
       </div>
     </div>
   );

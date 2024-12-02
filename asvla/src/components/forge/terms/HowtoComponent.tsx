@@ -3,11 +3,12 @@ import React, { useState } from "react";
 type DropdownState = {
   parent: string | null;
   child: string | null;
+  TermsBg: boolean;
 };
 
-const HowtoComponent: React.FC = () => {
+const HowtoComponent: React.FC<DropdownState> = ({ TermsBg }) => {
   const [activeTab, setActiveTab] = useState<"one" | "two">("one");
-  const [openDropdown, setOpenDropdown] = useState<DropdownState>({
+  const [openDropdown, setOpenDropdown] = useState({
     parent: null,
     child: null,
   });
@@ -22,7 +23,9 @@ const HowtoComponent: React.FC = () => {
   return (
     <div className="newTerms newTerms__howto">
       <div
-        className="newTerms__head newTerms__howto--head"
+        className={
+          TermsBg ? "threePlusOneTerms" : "newTerms__head newTerms__howto--head"
+        }
         onClick={() => toggleContent("parent", "head")}
       >
         <div>აქციის პირობები</div>
@@ -31,7 +34,7 @@ const HowtoComponent: React.FC = () => {
       <div
         className={`newTerms__content ${
           openDropdown.parent === "head" ? "open" : ""
-        } newTerms__howto--content`}
+        } ${TermsBg ? "threePlusOneTerms-2" : "newTerms__howto--content"}`}
       >
         <div className="newTerms__tabs">
           <div
@@ -55,7 +58,7 @@ const HowtoComponent: React.FC = () => {
           <div className="newTerms__contentOne">
             <div className="newTerms">
               <div
-                className="newTerms__head"
+                className={TermsBg ? "rame-3" : "newTerms__head"}
                 onClick={() => toggleContent("child", "one")}
               >
                 <div>დროპდაუნ 1</div>
@@ -74,7 +77,7 @@ const HowtoComponent: React.FC = () => {
             </div>
             <div className="newTerms">
               <div
-                className="newTerms__head"
+                className={TermsBg ? "rame-3" : "newTerms__head"}
                 onClick={() => toggleContent("child", "two")}
               >
                 <div>დროპდაუნ 2</div>

@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 
-const RulesComponent: React.FC = () => {
+type DropdownStateRules = {
+  TermsBg: boolean;
+};
+const RulesComponent: React.FC<DropdownStateRules> = ({ TermsBg }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const handleToggle = () => {
@@ -10,7 +13,11 @@ const RulesComponent: React.FC = () => {
   return (
     <div className="newTerms newTerms__rules">
       <div
-        className="newTerms__head newTerms__rules--head"
+        className={
+          TermsBg
+            ? "threePlusOneTerms "
+            : "newTerms__head newTerms__rules--head"
+        }
         onClick={handleToggle}
       >
         <p>დამატებითი წესები</p>
@@ -22,15 +29,15 @@ const RulesComponent: React.FC = () => {
         }`}
       >
         <ol>
-          <li>
+          <li className={TermsBg ? "li-terms-bg" : "rules-p"}>
             შეგახსენებთ, რომ ჩვენი საიტის წესების მიხედვით, ერთზე მეტი ანგარიშის
             გახსნა ...
           </li>
-          <li>
+          <li className={TermsBg ? "li-terms-bg" : "rules-p"}>
             შეგახსენებთ, რომ ჩვენი საიტის წესების მიხედვით, ერთზე მეტი ანგარიშის
             გახსნა ...
           </li>
-          <li>
+          <li className={TermsBg ? "li-terms-bg" : "rules-p"}>
             შეგახსენებთ, რომ ჩვენი საიტის წესების მიხედვით, ერთზე მეტი ანგარიშის
             გახსნა ...
           </li>
