@@ -3,15 +3,28 @@
 .promoSlideOne {
   height: 100%;
   cursor: pointer;
-  background-color: rgb(16, 5, 56);
-  background-image: url(./promoSlideImg/bdb605dd99229bb048b21dcbb1ebab2b.webp);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100%;
+  // background-color: rgb(16, 5, 56);
+  // background-image: url(./promoSlideImg/bdb605dd99229bb048b21dcbb1ebab2b.webp);
+  // background-repeat: no-repeat;
+  // background-position: center;
+  // background-size: 100%;
   width: 100%;
 
-  @include mediaQuerys.mobile {
-    background-image: url(./promoSlideImg/434dc5578d3294e42a717b164369df0b-crop-mobile.webp);
-    background-position: top center;
+  // @include mediaQuerys.mobile {
+  //   background-image: url(./promoSlideImg/434dc5578d3294e42a717b164369df0b-crop-mobile.webp);
+  //   background-position: top center;
+  // }
+
+  img {
+    width: 100%;
+    // height: 100%;
+    // object-fit: fill;
+    display: flex;
+    justify-content: center;
+
+    @include mediaQuerys.mobile {
+      // background-image: url(./promoSlideImg/434dc5578d3294e42a717b164369df0b-crop-mobile.webp);
+      // background-position: top center;
+    }
   }
 }

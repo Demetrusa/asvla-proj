@@ -449,10 +449,18 @@
               text-align: center;
 
               @include mediaQuerys.mobile {
-                top: 8vw;
+                top: 6vw;
                 font-size: 3.2vw;
               }
             }
+          }
+          .progress__checkpoint:nth-child(3) {
+            right: 0;
+          }
+
+          @include mediaQuerys.mobile {
+            top: 6vw;
+            font-size: 3.2vw;
           }
         }
       }
@@ -837,7 +845,7 @@
     padding: 3.7333333333vw 9.3333333333vw 3.7333333333vw 5.0666666667vw;
   }
 
-  .progressControl input {
+  input {
     width: 200px;
     padding: 8px 10px;
     border: 1px solid #ccc;
@@ -849,7 +857,7 @@
     }
   }
 
-  .progressControl button {
+  button {
     padding: 8px 16px;
     background-color: #4caf50;
     color: #fff;

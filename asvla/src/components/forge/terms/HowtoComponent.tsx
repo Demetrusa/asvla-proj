@@ -4,9 +4,10 @@ type DropdownState = {
   parent: string | null;
   child: string | null;
   TermsBg: boolean;
+  headerText: string;
 };
 
-const HowtoComponent: React.FC<DropdownState> = ({ TermsBg }) => {
+const HowtoComponent: React.FC<DropdownState> = ({ TermsBg, headerText }) => {
   const [activeTab, setActiveTab] = useState<"one" | "two">("one");
   const [openDropdown, setOpenDropdown] = useState({
     parent: null,
@@ -28,7 +29,7 @@ const HowtoComponent: React.FC<DropdownState> = ({ TermsBg }) => {
         }
         onClick={() => toggleContent("parent", "head")}
       >
-        <div>აქციის პირობები</div>
+        <div>{headerText}</div>
         <div className="newTerms__arrow"></div>
       </div>
       <div
@@ -43,7 +44,7 @@ const HowtoComponent: React.FC<DropdownState> = ({ TermsBg }) => {
             }`}
             onClick={() => setActiveTab("one")}
           >
-            პრომოს შესახებ
+            Promotion rules
           </div>
           <div
             className={`newTerms__tabs--item newTerms__tabs--two ${
@@ -51,7 +52,7 @@ const HowtoComponent: React.FC<DropdownState> = ({ TermsBg }) => {
             }`}
             onClick={() => setActiveTab("two")}
           >
-            პრიზები
+            Prizes
           </div>
         </div>
         {activeTab === "one" && (
@@ -61,7 +62,7 @@ const HowtoComponent: React.FC<DropdownState> = ({ TermsBg }) => {
                 className={TermsBg ? "rame-3" : "newTerms__head"}
                 onClick={() => toggleContent("child", "one")}
               >
-                <div>დროპდაუნ 1</div>
+                <div>HOW TO PARTICIPATE? </div>
                 <div className="newTerms__arrow"></div>
               </div>
               <div
@@ -69,18 +70,24 @@ const HowtoComponent: React.FC<DropdownState> = ({ TermsBg }) => {
                   openDropdown.child === "one" ? "open" : ""
                 }`}
               >
-                <p>კაი გამარჯობა თქვენი</p>
+                <p>
+                  To participate in the promotion, the participant should visit
+                  the promotion page, register or log in and Opt-in.
+                </p>
                 <ul>
-                  <li>Content for Terms Item 1 goes here.</li>
+                  <li>
+                    Only bets placed after verification and opt-in will be
+                    considered in the framework of the promotion.
+                  </li>
                 </ul>
               </div>
             </div>
             <div className="newTerms">
               <div
-                className={TermsBg ? "rame-3" : "newTerms__head"}
+                className={TermsBg ? "threePlusOneTerms" : "newTerms__head"}
                 onClick={() => toggleContent("child", "two")}
               >
-                <div>დროპდაუნ 2</div>
+                <div>WHAT ARE THE DATES THE PROMOTION? </div>
                 <div className="newTerms__arrow"></div>
               </div>
               <div
@@ -88,9 +95,12 @@ const HowtoComponent: React.FC<DropdownState> = ({ TermsBg }) => {
                   openDropdown.child === "two" ? "open" : ""
                 }`}
               >
-                <p>კაი გამარჯობა თქვენი</p>
+                <p></p>
                 <ul>
-                  <li>Content for Terms Item 2 goes here.</li>
+                  <li>
+                    The promotion launches on June 14, 2024 at 00:00:00 and
+                    concludes on December 31, at 23:59:59
+                  </li>
                 </ul>
               </div>
             </div>
@@ -100,10 +110,10 @@ const HowtoComponent: React.FC<DropdownState> = ({ TermsBg }) => {
           <div className="newTerms__contentTwo">
             <div className="newTerms">
               <div
-                className="newTerms__head"
+                className={TermsBg ? "threePlusOneTerms" : "newTerms__head"}
                 onClick={() => toggleContent("child", "three")}
               >
-                <div>დროპდაუნ 4</div>
+                <div>WHEN DO I RECEIVE THE PRIZE? </div>
                 <div className="newTerms__arrow"></div>
               </div>
               <div
@@ -111,7 +121,10 @@ const HowtoComponent: React.FC<DropdownState> = ({ TermsBg }) => {
                   openDropdown.child === "three" ? "open" : ""
                 }`}
               >
-                <p>Content for Terms Item 3 goes here</p>
+                <p>
+                  The prizes will be awarded within 24 hours after all 3
+                  eligible express bets are settled.
+                </p>
               </div>
             </div>
           </div>

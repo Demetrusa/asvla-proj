@@ -10,7 +10,7 @@ import PrimarySearchAppBar from "./components/forge/nav/PrimarySearchAppBar";
 import Footer from "./components/forge/footer/Footer";
 // import TermsComponent from "./components/forge/terms/TermsComponent";
 // import WheelinatorComponent from "./components/forge/wheel/WheelinatorComponent";
-import Wheel from "./components/forge/wheel/Wheel.jsx";
+// import Wheel from "./components/forge/wheel/Wheel.jsx";
 import ThreePlusOne from "./components/forge/sportPromos/three-plus-one/ThreePlusOne.js";
 
 function App() {
@@ -28,12 +28,12 @@ function App() {
           <Route path="/week-games" element={<Weekgames />} />
           <Route path="/register" element={<RegistrationForm />} />
           <Route path="/login" element={<LoginForm />} />
+          <Route path="/threeplusone" element={<ThreePlusOne />} />
         </Routes>
-        <ThreePlusOne />
         {/* <TermsComponent /> */}
         <div className="wheel-container">
           {/* <WheelinatorComponent layers={1} /> */}
-          <Wheel />
+          {/* <Wheel /> */}
         </div>
 
         <Footer />

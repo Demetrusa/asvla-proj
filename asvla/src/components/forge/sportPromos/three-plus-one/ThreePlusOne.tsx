@@ -22,7 +22,6 @@ const ThreePlusOne: React.FC = () => {
 
   const toggleContent = () => {
     setIsActive((prev) => !prev);
-    // Optional: Smooth scroll to content when it becomes visible
   };
 
   const contentItems = [
@@ -235,7 +234,7 @@ const ThreePlusOne: React.FC = () => {
             </div>
           </div>
         </div>
-        <TermsComponent TermsBg />
+        <TermsComponent TermsBg={true} headerText="Terms and Conditions" />
       </div>
     </div>
   );

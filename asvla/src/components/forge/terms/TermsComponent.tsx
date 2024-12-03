@@ -3,14 +3,19 @@ import React from "react";
 import HowtoComponent from "./HowtoComponent";
 import RulesComponent from "./RulesComponent";
 
-type TermsComponentState = {
+type TermsComponentProps = {
   TermsBg: boolean;
+  headerText: string;
 };
-const TermsComponent: React.FC<TermsComponentState> = ({ TermsBg }) => {
+
+const TermsComponent: React.FC<TermsComponentProps> = ({
+  TermsBg,
+  headerText,
+}) => {
   return (
     <div className="newTerms-container">
-      <HowtoComponent TermsBg />
-      <RulesComponent TermsBg />
+      <HowtoComponent TermsBg={TermsBg} headerText={headerText} />
+      <RulesComponent TermsBg={TermsBg} />
     </div>
   );
 };

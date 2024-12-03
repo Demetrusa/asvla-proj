@@ -2,10 +2,14 @@ import React from "react";
 
 import "./PromoSlideOne.scss";
 
-const PromoSlideOne: React.FC = () => {
+type PromoSlideOneProps = {
+  image: string; // Accept image as a prop
+};
+
+const PromoSlideOne: React.FC<PromoSlideOneProps> = ({ image }) => {
   return (
-    <div className="promoSlideOne">
-      <span></span>
+    <div className="promoSlideOne ">
+      <img src={image} alt="Promo Slide" className="promo-slide-image" />
     </div>
   );
 };
