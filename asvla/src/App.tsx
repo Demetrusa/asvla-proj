@@ -12,6 +12,7 @@ import Footer from "./components/forge/footer/Footer";
 // import WheelinatorComponent from "./components/forge/wheel/WheelinatorComponent";
 // import Wheel from "./components/forge/wheel/Wheel.jsx";
 import ThreePlusOne from "./components/forge/sportPromos/three-plus-one/ThreePlusOne.js";
+import ChampionCashback from "./components/forge/champion-cashback/ChampionCashback.js";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/register" element={<RegistrationForm />} />
           <Route path="/login" element={<LoginForm />} />
           <Route path="/threeplusone" element={<ThreePlusOne />} />
+          <Route path="/championCashback" element={<ChampionCashback />} />
         </Routes>
         {/* <TermsComponent /> */}
         <div className="wheel-container">

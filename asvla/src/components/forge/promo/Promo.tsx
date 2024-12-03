@@ -8,7 +8,10 @@ import PromoSlideOne from "../promoSildes/promoSlideOne/PromoSlideOne";
 import { useNavigate } from "react-router-dom";
 
 import threePlusOnebanner from "./PromoImg/bdb605dd99229bb048b21dcbb1ebab2b.webp";
-import mobileImage from "./PromoImg/434dc5578d3294e42a717b164369df0b-crop-mobile.webp"; // Add your mobile-specific image
+import mobileImage from "./PromoImg/434dc5578d3294e42a717b164369df0b-crop-mobile.webp";
+
+import ChampionCashbackBannerDesc from "./PromoImg/cd2ae01edf686feac3a8da7386010447.webp";
+import ChampionCashbackBannerMob from "./PromoImg/73a02b623ecb380d7295ec94fd1c75d0-crop-mobile.webp";
 
 const Promo: React.FC = () => {
   const navigate = useNavigate();
@@ -38,8 +41,10 @@ const Promo: React.FC = () => {
       imageDesc: isMobile ? mobileImage : threePlusOnebanner,
     }, // First slide
     {
-      route: "/route2",
-      imageDesc: isMobile ? mobileImage : threePlusOnebanner,
+      route: "/championCashback",
+      imageDesc: isMobile
+        ? ChampionCashbackBannerMob
+        : ChampionCashbackBannerDesc,
     }, // Second slide
     {
       route: "/route3",

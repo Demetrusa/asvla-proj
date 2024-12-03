@@ -1,0 +1,143 @@
+@use "../../../assets/styles/mediaQuerys.scss";
+
+.championCashback {
+  background: transparent url(./championCash-img/web-100-en-1.webp) no-repeat
+    50%;
+  background-position: top center;
+  padding-bottom: 50px;
+}
+.championCashback .container {
+  width: 940px;
+  margin: 0 auto;
+
+  @include mediaQuerys.mobile {
+    width: 100%;
+    background: transparent url(./championCash-img/mob-100-en.jpg) no-repeat 50%;
+    background-size: 100%;
+    padding-bottom: 40vw;
+    background-position: top center;
+    background-color: #000000;
+    padding-top: 170vw;
+  }
+}
+
+.container .rulesC {
+  display: flex;
+  flex-direction: column;
+  padding-top: 800px;
+
+  @include mediaQuerys.mobile {
+    padding-top: 9vw;
+  }
+}
+.rulesC .rulesC__title {
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  font-family: PantonMtav3Bold;
+  font-size: 30px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.23;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 5px 10px;
+  background: #02163f;
+
+  @include mediaQuerys.mobile {
+    text-shadow: 0 0.6rem 1.2rem rgba(0, 0, 0, 0.16);
+    font-size: 3vw;
+    line-height: 1.24;
+    background: #02163f;
+    padding: 2vw;
+  }
+}
+.rulesC .rulesC__container {
+  width: 100%;
+  height: auto;
+  margin-top: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #02163f;
+  padding: 20px;
+
+  @include mediaQuerys.mobile {
+    width: 100%;
+    margin-top: 0;
+    height: auto;
+    padding: 5vw;
+  }
+}
+.rulesC__container .rulesC__section {
+  width: 259px;
+  height: 190px;
+  border-radius: 8px;
+  background-color: #1d5bec;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include mediaQuerys.mobile {
+    width: 32%;
+    height: 35vw;
+    border-radius: 1.66vw;
+    padding: 2vw;
+  }
+}
+.rulesC__container .rulesC__section-text {
+  font-family: FontBold;
+  font-size: 18px;
+  line-height: 1.71;
+  text-align: center;
+  color: #ffffff;
+  text-transform: uppercase;
+
+  @include mediaQuerys.mobile {
+    margin-top: 0;
+    font-size: 2.7vw;
+    font-weight: 500;
+    line-height: 1.5;
+    text-align: center;
+    font-weight: bold;
+  }
+}
+
+.championCashback button {
+  width: 190px;
+  height: 47px;
+  border-radius: 6px;
+  margin-top: 37px;
+  background-color: #14a234;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: PantonMtav3Bold;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #ffffff;
+  padding: 15px 0;
+  margin: 15px auto;
+  border: none;
+
+  @include mediaQuerys.mobile {
+    margin-top: 5vw;
+    width: 31vw;
+    height: 9.5vw;
+    border-radius: 1.33vw;
+    font-size: 3vw;
+    line-height: 1.23;
+    padding: 4vw 0;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}

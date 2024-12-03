@@ -234,7 +234,7 @@ const ThreePlusOne: React.FC = () => {
             </div>
           </div>
         </div>
-        <TermsComponent TermsBg={true} headerText="Terms and Conditions" />
+        <TermsComponent TermsBg={true} />
       </div>
     </div>
   );

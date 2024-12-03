@@ -5,16 +5,16 @@ import RulesComponent from "./RulesComponent";
 
 type TermsComponentProps = {
   TermsBg: boolean;
-  headerText: string;
+  // headerText: string;
 };
 
 const TermsComponent: React.FC<TermsComponentProps> = ({
   TermsBg,
-  headerText,
+  // headerText,
 }) => {
   return (
     <div className="newTerms-container">
-      <HowtoComponent TermsBg={TermsBg} headerText={headerText} />
+      <HowtoComponent TermsBg={TermsBg} />
       <RulesComponent TermsBg={TermsBg} />
     </div>
   );

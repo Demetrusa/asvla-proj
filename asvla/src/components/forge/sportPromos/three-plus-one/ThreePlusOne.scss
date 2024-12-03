@@ -6,7 +6,7 @@
   padding-bottom: 50px;
 
   @include mediaQuerys.mobile {
-    width: none;
+    background: none;
     padding-bottom: 15vw;
   }
 
