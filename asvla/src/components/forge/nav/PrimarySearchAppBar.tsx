@@ -4,8 +4,29 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faAddressCard } from "@fortawesome/free-solid-svg-icons";
 import "./PrimarySearchAppBar.scss";
 
-const PrimarySearchAppBar: React.FC = () => {
-  return (
+const PrimarySearchAppBar: React.FC = ({ token, setToken }) => {
+  const logout = () => {
+    localStorage.clear();
+    setToken(null);
+    console.log(localStorage, " deme");
+  };
+  return !!token ? (
+    <nav className="navigationHeader">
+      <div>
+        <Link to="/">Home</Link>
+      </div>
+      <div>
+        <Link to="/promo">Promo</Link>
+      </div>
+      <div>
+        <Link to="/top-games">Top Game</Link>
+      </div>
+      <div>
+        <Link to="/week-games">Week Games</Link>
+      </div>
+      <button onClick={logout}>logout</button>
+    </nav>
+  ) : (
     <nav className="navigationHeader">
       <div>
         <Link to="/">Home</Link>

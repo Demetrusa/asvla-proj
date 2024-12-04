@@ -22,7 +22,7 @@ const Promo: React.FC = () => {
   useEffect(() => {
     // Check the screen width and set isMobile
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 940); // Set 940px as the breakpoint for mobile
+      setIsMobile(window.innerWidth <= 940);
     };
 
     // Add event listener on component mount
@@ -94,7 +94,6 @@ const Promo: React.FC = () => {
               className="promoSLIdes"
               onClick={() => handleSlideClick(slide.route)}
             >
-              {/* Pass the image based on screen size */}
               <PromoSlideOne image={slide.imageDesc} />
             </SwiperSlide>
           ))}
