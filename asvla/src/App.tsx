@@ -13,8 +13,8 @@ import Footer from "./components/forge/footer/Footer";
 // import Wheel from "./components/forge/wheel/Wheel.jsx";
 import ThreePlusOne from "./components/forge/sportPromos/three-plus-one/ThreePlusOne.js";
 import ChampionCashback from "./components/forge/champion-cashback/ChampionCashback.js";
-import Slotmasters from "./components/forge/slotmasters/Slotmasters.js";
 import { useEffect, useState } from "react";
+import Winterveil from "./components/forge/winterVeilPromo/Winterveil.js";
 
 function App() {
   const [token, setToken] = useState<string | null>(
@@ -67,7 +67,7 @@ function App() {
             <Route path="/login" element={<LoginForm setToken={setToken} />} />
           </Routes>
         )}
-        <Slotmasters />
+        <Winterveil />
 
         {/* <TermsComponent /> */}
         <div className="wheel-container">
