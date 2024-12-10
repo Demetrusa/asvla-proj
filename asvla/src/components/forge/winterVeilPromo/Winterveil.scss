@@ -7,12 +7,18 @@
 .winterVeil .container {
   width: 940px;
   margin: 0 auto;
+  margin-top: 100px;
   position: relative;
 }
 
-// .container .container__header {
-
-// }
+.container .container__header {
+  width: 353px;
+  height: 120px;
+  margin: 50px auto;
+  background-image: url(./winter-img/offerHeader.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
 
 .container .container__tree {
   background-image: url(./winter-img/dem-treee.png);
@@ -83,23 +89,42 @@
 .progress-bar-container {
   position: relative;
   width: 100%;
+  height: 25px;
+  background: #ddd;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
 .progress-bar {
-  width: 100%;
-  height: 10px;
-  background: #ddd;
+  height: 100%;
+  background: linear-gradient(to right, #4caf50, #81c784);
+  border-radius: 0 10px 10px 0;
+  position: relative;
+}
+
+.progress-bar-amount {
+  position: absolute;
+  top: -25px;
+  transform: translateX(-50%);
+  font-size: 12px;
+  font-weight: bold;
+  color: #000;
 }
 
 .progress-bar-value {
-  position: absolute;
-  top: -25px;
-  left: 50%;
-  transform: translateX(-50%);
+  margin: 20px auto;
+  width: min-content;
 }
 
 .progress-bar-label {
   display: flex;
   justify-content: space-between;
   margin-top: 5px;
+}
+.progress-bar span {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-top: 3px;
+  padding-right: 2px;
 }

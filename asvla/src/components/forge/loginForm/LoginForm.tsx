@@ -1,14 +1,19 @@
-// LoginForm.tsx
 import React, { useState } from "react";
 import "./LoginForm.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 
-const LoginForm: React.FC = ({ setToken }) => {
-  const LoginDataSave = () => {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+// Define the type for the props
+interface LoginFormProps {
+  setToken: React.Dispatch<React.SetStateAction<string | null>>;
+}
+
+const LoginForm: React.FC<LoginFormProps> = ({ setToken }) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const LoginDataSave = (e: React.FormEvent) => {
+    e.preventDefault(); // Prevent default form submission behavior
 
     fetch("https://fakestoreapi.com/auth/login", {
       method: "POST",
@@ -26,26 +31,17 @@ const LoginForm: React.FC = ({ setToken }) => {
         if (json.token) {
           // Save the token to localStorage
           localStorage.setItem("authToken", json.token);
-          setToken(localStorage.setItem("authToken", json.token));
-
-          console.log(localStorage, "oeeeee");
+          setToken(json.token); // Pass the token to the parent via setToken
+          console.log(
+            "Token saved to localStorage",
+            localStorage.getItem("authToken")
+          );
         }
       })
       .catch((err) => {
         console.error("Login failed:", err);
       });
   };
-
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  // const handleLogin = (e: React.FormEvent) => {
-  //   e.preventDefault();
-
-  //   // Here you would send the login data to an API and handle the response (token)
-  //   console.log("Logging in:", { email, password });
-  //   // If success, save token to localStorage or sessionStorage
-  // };
 
   return (
     <form onSubmit={LoginDataSave} className="LogForm">
@@ -71,12 +67,9 @@ const LoginForm: React.FC = ({ setToken }) => {
           required
         />
       </div>
-      <button type="submit" onClick={LoginDataSave}>
-        Login
-      </button>
+      <button type="submit">Login</button>
     </form>
   );
 };
-// localStorage.setItem("token", "your-jwt-token");
 
 export default LoginForm;

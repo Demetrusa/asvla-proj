@@ -1,0 +1,48 @@
+.countdown-timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  color: #eedbdb;
+  margin-top: 44px;
+}
+
+.time {
+  display: flex;
+  gap: 5px;
+}
+
+.time-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 13px;
+}
+
+.value {
+  font-size: 23px;
+  font-weight: bold;
+  //   animation: countdown 1s ease-out infinite;
+}
+
+.label {
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.countdown-complete {
+  font-size: 32px;
+  color: #e6ff00;
+}
+
+@keyframes countdown {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

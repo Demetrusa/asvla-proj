@@ -4,7 +4,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faAddressCard } from "@fortawesome/free-solid-svg-icons";
 import "./PrimarySearchAppBar.scss";
 
-const PrimarySearchAppBar: React.FC = ({ token, setToken }) => {
+interface PrimarySearchAppBarProps {
+  token: string | null;
+  setToken: React.Dispatch<React.SetStateAction<string | null>>;
+}
+
+const PrimarySearchAppBar: React.FC<PrimarySearchAppBarProps> = ({
+  token,
+  setToken,
+}) => {
   const logout = () => {
     localStorage.clear();
     setToken(null);

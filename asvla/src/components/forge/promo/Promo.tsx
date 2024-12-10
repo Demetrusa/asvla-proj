@@ -13,6 +13,9 @@ import mobileImage from "./PromoImg/434dc5578d3294e42a717b164369df0b-crop-mobile
 import ChampionCashbackBannerDesc from "./PromoImg/cd2ae01edf686feac3a8da7386010447.webp";
 import ChampionCashbackBannerMob from "./PromoImg/73a02b623ecb380d7295ec94fd1c75d0-crop-mobile.webp";
 
+import winterDESCBG from "./PromoImg/test.jpg";
+import winterMobBG from "./PromoImg/mob-1.jpg";
+
 const Promo: React.FC = () => {
   const navigate = useNavigate();
 
@@ -47,29 +50,29 @@ const Promo: React.FC = () => {
         : ChampionCashbackBannerDesc,
     }, // Second slide
     {
-      route: "/route3",
-      imageDesc: isMobile ? mobileImage : "/path/to/image3.jpg",
+      route: "/winterveil",
+      imageDesc: isMobile ? winterMobBG : winterDESCBG,
     }, // Third slide
-    {
-      route: "/route4",
-      imageDesc: isMobile ? mobileImage : "/path/to/image4.jpg",
-    }, // Fourth slide
-    {
-      route: "/route5",
-      imageDesc: isMobile ? mobileImage : "/path/to/image5.jpg",
-    }, // Fifth slide
-    {
-      route: "/route6",
-      imageDesc: isMobile ? mobileImage : "/path/to/image6.jpg",
-    }, // Sixth slide
-    {
-      route: "/route7",
-      imageDesc: isMobile ? mobileImage : "/path/to/image7.jpg",
-    }, // Seventh slide
-    {
-      route: "/route8",
-      imageDesc: isMobile ? mobileImage : "/path/to/image8.jpg",
-    }, // Eighth slide
+    // {
+    //   route: "/route4",
+    //   imageDesc: isMobile ? mobileImage : "/path/to/image4.jpg",
+    // }, // Fourth slide
+    // {
+    //   route: "/route5",
+    //   imageDesc: isMobile ? mobileImage : "/path/to/image5.jpg",
+    // }, // Fifth slide
+    // {
+    //   route: "/route6",
+    //   imageDesc: isMobile ? mobileImage : "/path/to/image6.jpg",
+    // }, // Sixth slide
+    // {
+    //   route: "/route7",
+    //   imageDesc: isMobile ? mobileImage : "/path/to/image7.jpg",
+    // }, // Seventh slide
+    // {
+    //   route: "/route8",
+    //   imageDesc: isMobile ? mobileImage : "/path/to/image8.jpg",
+    // }, // Eighth slide
   ];
 
   const handleSlideClick = (route: string) => {

@@ -52,8 +52,6 @@ function App() {
             <Route path="/promo" element={<Promo />} />
             <Route path="/top-games" element={<TopGames />} />
             <Route path="/week-games" element={<Weekgames />} />
-            <Route path="/threeplusone" element={<ThreePlusOne />} />
-            <Route path="/championCashback" element={<ChampionCashback />} />
           </Routes>
         ) : (
           <Routes>
@@ -64,11 +62,10 @@ function App() {
             <Route path="/threeplusone" element={<ThreePlusOne />} />
             <Route path="/championCashback" element={<ChampionCashback />} />
             <Route path="/register" element={<RegistrationForm />} />
+            <Route path="/winterveil" element={<Winterveil />} />
             <Route path="/login" element={<LoginForm setToken={setToken} />} />
           </Routes>
         )}
-        <Winterveil />
-
         {/* <TermsComponent /> */}
         <div className="wheel-container">
           {/* <WheelinatorComponent layers={1} /> */}

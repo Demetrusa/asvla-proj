@@ -1,9 +1,9 @@
-// Winterveil.tsx
 import React, { useState } from "react";
 
 import "./Winterveil.scss";
 import DonationPopup from "../DonateButton/DonationPopup";
 import DonateButton from "../DonateButton/DonateButton";
+import CountdownTimer from "../CountdownTimer/CountdownTimer";
 
 const Winterveil: React.FC = () => {
   const [donationAmount, setDonationAmount] = useState<number>(0);
@@ -36,7 +36,9 @@ const Winterveil: React.FC = () => {
   return (
     <div className="winterVeil">
       <div className="container">
-        <div className="container__header"></div>
+        <div className="container__header">
+          <CountdownTimer targetDate="2024-12-31T23:59:59Z" />
+        </div>
         <div className="container__tree"></div>
         <div className="container__claimBtn">
           <p>CLAIM 3 PRIZES</p>
@@ -47,23 +49,24 @@ const Winterveil: React.FC = () => {
             <p>WAGER</p>
             <p>My Prizes: 3</p>
           </div>
-
+          <div className="progress-bar-value">
+            <span>{progress}₾</span>
+          </div>
           <div className="container__wage-body">
             <div className="progress-bar-container">
-              <input
-                type="range"
-                min="0"
-                max="100000"
-                value={progress}
-                readOnly
+              <div
                 className="progress-bar"
-              />
+                style={{ width: `${(progress / 100000) * 100}%` }}
+              >
+                <span>{progress}₾</span>
+                <div
+                  className="progress-bar-amount"
+                  style={{ left: `${(progress / 100000) * 100}%` }}
+                ></div>
+              </div>
               <div className="progress-bar-label">
                 <span>0</span>
                 <span>100000</span>
-              </div>
-              <div className="progress-bar-value">
-                <span>{progress}₾</span>
               </div>
             </div>
           </div>
