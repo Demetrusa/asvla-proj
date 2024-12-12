@@ -1,4 +1,5 @@
 import React from "react";
+import "./Donate.scss";
 
 interface DonateButtonProps {
   onClick: () => void;

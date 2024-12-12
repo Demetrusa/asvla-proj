@@ -2,22 +2,26 @@
 
 .winterVeil {
   padding-bottom: 50px;
+  background: #8b0828;
 }
 
 .winterVeil .container {
   width: 940px;
   margin: 0 auto;
-  margin-top: 100px;
+  margin-top: 69px;
   position: relative;
 }
 
 .container .container__header {
   width: 353px;
   height: 120px;
-  margin: 50px auto;
+  margin: 50px auto 20px auto;
   background-image: url(./winter-img/offerHeader.png);
   background-repeat: no-repeat;
   background-size: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container .container__tree {
@@ -28,78 +32,210 @@
   height: 490px;
   margin: 0 auto;
   background-position: top 10px center;
+  position: relative;
 }
-
-.container__donateBtn {
-  margin-top: 20px;
-  button {
-    padding: 10px 20px;
-    background-color: #f5a623;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-}
-
-.donation-popup {
+.tree__box {
   position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  bottom: 0;
+  width: 29px;
+  height: 33px;
+  background-image: url(./winter-img/1.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: none;
+  animation: firstBox 1.5s ease-in-out forwards;
 }
 
-.donation-popup-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.tree__box.visible {
+  display: block;
 }
 
-.donation-popup input {
-  padding: 10px;
-  margin-bottom: 10px;
-  width: 200px;
+.tree__box.hidden {
+  display: none;
 }
 
-.donation-popup button {
-  padding: 8px 16px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  cursor: pointer;
-  margin: 5px;
+.tree__box:first-child {
+  animation: secondBox 1.5s ease-in-out forwards;
 }
 
-.preset-amounts {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 10px;
+.tree__box:nth-child(2) {
+  animation: secondBox 1.5s ease-in-out forwards;
+}
 
-  button {
-    padding: 8px 16px;
-    background-color: #ccc;
-    border: none;
-    cursor: pointer;
+.tree__box:nth-child(3) {
+  animation: thirdBox 1.5s ease-in-out forwards;
+}
+
+.tree__box:nth-child(4) {
+  z-index: 1;
+  animation: fourBox 1.5s ease-in-out forwards;
+}
+
+.tree__box:nth-child(5) {
+  z-index: 2;
+  animation: fiveBox 1.5s ease-in-out forwards;
+}
+
+.tree__box:nth-child(6) {
+  bottom: 60px;
+  left: 220px;
+  animation: sixBox 1.5s ease-in-out forwards;
+}
+
+.tree__box:nth-child(7) {
+  animation: sevenBox 1.5s ease-in-out forwards;
+}
+
+.tree__box:nth-child(8) {
+  animation: eightBox 1.5s ease-in-out forwards;
+}
+
+.tree__box:nth-child(9) {
+  animation: nineBox 1.5s ease-in-out forwards;
+}
+
+.tree__box:nth-child(10) {
+  animation: tenBox 1.5s ease-in-out forwards;
+}
+
+/* Keyframes for each box */
+@keyframes firstBox {
+  0% {
+    bottom: -175px;
+    left: 270px;
   }
+  100% {
+    bottom: 11px;
+    left: 160px;
+  }
+}
+
+@keyframes secondBox {
+  0% {
+    bottom: -175px;
+    left: 270px;
+  }
+  100% {
+    bottom: 16px;
+    left: 66px;
+  }
+}
+
+@keyframes thirdBox {
+  0% {
+    bottom: -175px;
+    left: 270px;
+  }
+  100% {
+    bottom: 15px;
+    left: 90px;
+  }
+}
+
+@keyframes fourBox {
+  0% {
+    bottom: -175px;
+    left: 270px;
+  }
+  100% {
+    bottom: 15px;
+    left: 121px;
+  }
+}
+
+@keyframes fiveBox {
+  0% {
+    bottom: -175px;
+    left: 270px;
+  }
+  100% {
+    bottom: 16px;
+    left: 109px;
+  }
+}
+
+@keyframes sixBox {
+  0% {
+    bottom: -175px;
+    left: 270px;
+  }
+  100% {
+    bottom: 13px;
+    left: 178px;
+  }
+}
+
+@keyframes sevenBox {
+  0% {
+    bottom: -175px;
+    left: 270px;
+  }
+  100% {
+    bottom: 13px;
+    left: 202px;
+  }
+}
+@keyframes eightBox {
+  0% {
+    bottom: -175px;
+    left: 270px;
+  }
+  100% {
+    bottom: 13px;
+    left: 223px;
+  }
+}
+@keyframes nineBox {
+  0% {
+    bottom: -175px;
+    left: 270px;
+  }
+  100% {
+    bottom: 13px;
+    left: 247px;
+  }
+}
+@keyframes tenBox {
+  0% {
+    bottom: -175px;
+    left: 270px;
+  }
+  100% {
+    bottom: 13px;
+    left: 149px;
+  }
+}
+
+.container__tree .tree__carpet {
+  position: absolute;
+  width: 226px;
+  height: 11px;
+  background-color: #281d17;
+  left: 0;
+  right: 0;
+  bottom: 5px;
+  margin: 0 auto;
 }
 
 .progress-bar-container {
   position: relative;
-  width: 100%;
+  width: 80%;
   height: 25px;
   background: #ddd;
   border-radius: 5px;
   overflow: hidden;
+  margin: 10px auto 5px auto;
 }
 
 .progress-bar {
   height: 100%;
-  background: linear-gradient(to right, #4caf50, #81c784);
   border-radius: 0 10px 10px 0;
   position: relative;
+  background-image: url(./winter-img/wager-img.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left center;
+  transition: ease-in-out 0.8s;
 }
 
 .progress-bar-amount {
@@ -113,13 +249,41 @@
 
 .progress-bar-value {
   margin: 20px auto;
-  width: min-content;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+  color: #fff;
+}
+.progress-bar-value .valueBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.valueBox .valueLogo {
+  height: 50px;
+}
+.container .valueTitle {
+  margin: 5px;
+  padding: 5px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  display: flex;
+  justify-content: flex-start;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .progress-bar-label {
   display: flex;
   justify-content: space-between;
   margin-top: 5px;
+  width: 80%;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 15px;
 }
 .progress-bar span {
   display: flex;
@@ -127,4 +291,82 @@
   align-items: center;
   padding-top: 3px;
   padding-right: 2px;
+  color: #000;
+  font-weight: bolder;
+}
+.container .container__claimBtn {
+  width: 244px;
+  height: 46px;
+  border-radius: 24.5px;
+  border: 1px solid #414a5e;
+  background: #5a8359;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto 10px auto;
+  color: #ffff;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+
+  &.deactive {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+}
+
+.container .container__wager {
+  border-radius: 29px;
+  border: 2px solid #414a5e;
+  background: #555f74;
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 25px;
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+.container__wage-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #292f3d;
+  width: 100%;
+  padding: 20px 0;
+}
+.container__wage-header span {
+  color: #fff;
+  font-size: 17px;
+  font-weight: bold;
+}
+.container__wage-header .myPrizeBox {
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container__wage-header .myPrizeBox .wagerPrizeIcon {
+  background-image: url(./winter-img/1.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 29px;
+  height: 33px;
+  margin-left: 5px;
+  position: relative;
+  z-index: 2;
+}
+.container__wage-header .myPrizeBox .wagerPrize-amount {
+  border-radius: 12.5px;
+  border: 1px solid #555f74;
+  background: #1d212a;
+  width: 57px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -15px;
 }
