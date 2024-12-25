@@ -6,12 +6,15 @@ import DonateButton from "../DonateButton/DonateButton";
 import CountdownTimer from "../CountdownTimer/CountdownTimer";
 
 import WalletImg from "./winter-img/wallet.png";
+import CreateItem from "../Axios-test/CreateItem";
+import DeleteItem from "../Axios-test/DeleteItem";
 
 const Winterveil: React.FC = () => {
   const [donationAmount, setDonationAmount] = useState<number>(0);
   const [isPopupVisible, setIsPopupVisible] = useState<boolean>(false);
   const [progress, setProgress] = useState<number>(0);
   const [visibleBoxes, setVisibleBoxes] = useState<number>(0); // State to track visible boxes
+  const [items, setItems] = useState<string[]>([]); // State to manage list of items
 
   // Handle donation amount input
   const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -51,6 +54,17 @@ const Winterveil: React.FC = () => {
   const handleClaimClick = () => {
     const prizeCount = calculateWagerPrize(progress);
     setVisibleBoxes(prizeCount);
+  };
+
+  // Add a new item
+  const handleCreateItem = () => {
+    const newItem = `Item ${items.length + 1}`;
+    setItems((prevItems) => [...prevItems, newItem]);
+  };
+
+  // Delete the last item
+  const handleDeleteItem = () => {
+    setItems((prevItems) => prevItems.slice(0, -1));
   };
 
   return (
@@ -128,6 +142,17 @@ const Winterveil: React.FC = () => {
           onPresetAmountClick={handleStaticAmountClick}
         />
       </div>
+      <div className="axiosDelete">
+        <button onClick={handleCreateItem}>Create Item</button>
+        <button onClick={handleDeleteItem}>Delete Item</button>
+        <div>
+          {items.map((item, index) => (
+            <p key={index}>{item}</p>
+          ))}
+        </div>
+      </div>
+      <CreateItem />
+      <DeleteItem />
     </div>
   );
 };

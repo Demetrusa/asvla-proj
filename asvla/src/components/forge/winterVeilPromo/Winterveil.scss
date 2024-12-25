@@ -370,3 +370,30 @@
   align-items: center;
   margin-left: -15px;
 }
+
+.container .prizes-img {
+  margin: 20px auto;
+  width: 341px;
+  height: 202px;
+}
+
+.container .prizes-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.container .openPrizesBtn {
+  width: 244px;
+  height: 46px;
+  border-radius: 24.5px;
+  border: 1px solid #414a5e;
+  background: #54b152;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto 10px auto;
+  color: #ffff;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}

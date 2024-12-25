@@ -2,6 +2,7 @@ import React from "react";
 import Lang from "../lang/Lang";
 import "./Footer.scss";
 import { Link } from "react-router-dom";
+// import jwt from "jwt-decode";
 
 import bogImg from "./footer-img/bog.svg";
 import libertyIMg from "./footer-img/liberty.svg";
@@ -18,6 +19,19 @@ const bankImages = [
   { src: tbcImg, alt: "TBC", link: "https://beta.tbcbank.ge/" },
   { src: visaImg, alt: "Visa", link: "https://www.visa.com.ge/en_GE" },
 ];
+
+// const token = localStorage.getItem("token");
+// if (token) {
+//   const decodedToken = jwt.decode(token); // Use jwt-decode library to decode the token
+//   const currentTime = Date.now() / 1000; // Get current time in seconds
+//   if (decodedToken.exp < currentTime) {
+//     console.log("Token has expired");
+//     localStorage.removeItem("token"); // Clear expired token
+//     // Redirect user to login page
+//   } else {
+//     console.log("Token is valid");
+//   }
+// }
 
 const Footer: React.FC = () => {
   return (
