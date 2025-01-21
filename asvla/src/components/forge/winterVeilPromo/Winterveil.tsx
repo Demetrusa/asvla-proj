@@ -9,6 +9,7 @@ import WalletImg from "./winter-img/wallet.png";
 import myPrizeIcon from "./winter-img/prizesimg.png";
 import Snowfall from "../snowing/Snowfall";
 import TermsComponent from "../terms/TermsComponent";
+import Redeem from "../redeem/Redeem";
 // import CreateItem from "../Axios-test/CreateItem";
 // import DeleteItem from "../Axios-test/DeleteItem";
 
@@ -148,6 +149,7 @@ const Winterveil: React.FC = () => {
         >
           CLAIM MY PRIZES
         </button>
+        <Redeem />
         <TermsComponent TermsBg={true} />
       </div>
     </div>
