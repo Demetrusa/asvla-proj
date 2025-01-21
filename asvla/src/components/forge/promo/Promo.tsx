@@ -13,28 +13,22 @@ import mobileImage from "./PromoImg/434dc5578d3294e42a717b164369df0b-crop-mobile
 import ChampionCashbackBannerDesc from "./PromoImg/cd2ae01edf686feac3a8da7386010447.webp";
 import ChampionCashbackBannerMob from "./PromoImg/73a02b623ecb380d7295ec94fd1c75d0-crop-mobile.webp";
 
-import winterDESCBG from "./PromoImg/test.jpg";
-import winterMobBG from "./PromoImg/mob-1.jpg";
+import winterDESCBG from "./PromoImg/main-promo-banner.webp";
+import winterMobBG from "./PromoImg/main-promo-banner-mob.webp";
 
 const Promo: React.FC = () => {
   const navigate = useNavigate();
 
-  // State to detect if it's mobile view
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Check the screen width and set isMobile
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 940);
     };
 
-    // Add event listener on component mount
     window.addEventListener("resize", handleResize);
-
-    // Initial check
     handleResize();
 
-    // Cleanup event listener on component unmount
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 

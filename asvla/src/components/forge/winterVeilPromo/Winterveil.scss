@@ -3,6 +3,9 @@
 .winterVeil {
   padding-bottom: 50px;
   background: #8b0828;
+  background: transparent url(./winter-img/ice-web-en.webp) no-repeat 50%;
+  background-position: top center;
+  padding-bottom: 50px;
 }
 
 .winterVeil .container {
@@ -10,6 +13,18 @@
   margin: 0 auto;
   margin-top: 69px;
   position: relative;
+  padding-top: 680px;
+  z-index: 10;
+
+  @include mediaQuerys.mobile {
+    width: 100%;
+    background: transparent url(./winter-img/mob-en.webp) no-repeat 50%;
+    background-size: 100%;
+    padding-bottom: 40vw;
+    background-position: top -24px center;
+    background-color: #000000;
+    padding-top: 170vw;
+  }
 }
 
 .winterVeil .container__header {
@@ -22,6 +37,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @include mediaQuerys.mobile {
+    //
+  }
 }
 
 .container .container__tree {
@@ -33,6 +52,11 @@
   margin: 0 auto;
   background-position: top 10px center;
   position: relative;
+
+  @include mediaQuerys.mobile {
+    width: 80.234%;
+    height: 113vw;
+  }
 }
 .tree__box {
   position: absolute;
@@ -44,6 +68,11 @@
   background-size: cover;
   display: none;
   animation: firstBox 1.5s ease-in-out forwards;
+
+  @include mediaQuerys.mobile {
+    width: 7.733vw;
+    height: 8.8vw;
+  }
 }
 
 .tree__box.visible {
@@ -210,11 +239,18 @@
   position: absolute;
   width: 226px;
   height: 11px;
+
   background-color: #281d17;
   left: 0;
   right: 0;
   bottom: 5px;
   margin: 0 auto;
+
+  @include mediaQuerys.mobile {
+    width: 60vw;
+    height: 2.933vw;
+    bottom: 1.33vw;
+  }
 }
 
 .progress-bar-container {
@@ -225,6 +261,11 @@
   border-radius: 5px;
   overflow: hidden;
   margin: 10px auto 5px auto;
+
+  @include mediaQuerys.mobile {
+    width: 80%;
+    height: 8.8vw;
+  }
 }
 
 .progress-bar {
@@ -236,6 +277,11 @@
   background-size: cover;
   background-position: left center;
   transition: ease-in-out 0.8s;
+
+  @include mediaQuerys.mobile {
+    height: 100%;
+    border-radius: 0 3.333vw 3.333vw 0;
+  }
 }
 
 .progress-bar-amount {
@@ -245,6 +291,11 @@
   font-size: 12px;
   font-weight: bold;
   color: #000;
+
+  @include mediaQuerys.mobile {
+    top: -6.67vw;
+    font-size: 3.2vw;
+  }
 }
 
 .progress-bar-value {
@@ -254,6 +305,12 @@
   flex-direction: column;
   font-size: 15px;
   color: #fff;
+
+  @include mediaQuerys.mobile {
+    width: 40vw;
+    margin: 5.33vw auto;
+    font-size: 4vw;
+  }
 }
 .progress-bar-value .valueBox {
   display: flex;
@@ -263,6 +320,10 @@
 
 .valueBox .valueLogo {
   height: 50px;
+
+  @include mediaQuerys.mobile {
+    height: 13.333vw;
+  }
 }
 .container .valueTitle {
   margin: 5px;
@@ -274,6 +335,13 @@
   justify-content: flex-start;
   width: 80%;
   margin: 0 auto;
+
+  @include mediaQuerys.mobile {
+    font-size: 4vw;
+    margin: 1.33vw;
+    padding: 1.33vw;
+    margin-left: 15vw;
+  }
 }
 
 .progress-bar-label {
@@ -284,6 +352,11 @@
   margin: 0 auto;
   color: #fff;
   font-size: 15px;
+
+  @include mediaQuerys.mobile {
+    font-size: 4vw;
+    margin-top: 1.33vw;
+  }
 }
 .progress-bar span {
   display: flex;
@@ -291,8 +364,13 @@
   align-items: center;
   padding-top: 3px;
   padding-right: 2px;
-  color: #000;
+  color: #180404;
   font-weight: bolder;
+  font-size: 20px;
+
+  @include mediaQuerys.mobile {
+    font-size: 5.333vw;
+  }
 }
 .container .container__claimBtn {
   width: 244px;
@@ -308,6 +386,13 @@
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
+
+  @include mediaQuerys.mobile {
+    width: 85%;
+    border-radius: 6.533vw;
+    font-size: 4.8vw;
+    margin: 6.67vw auto 1.33vw auto;
+  }
 
   &.deactive {
     pointer-events: none;
@@ -327,6 +412,14 @@
   margin-top: 25px;
   overflow: hidden;
   padding-bottom: 20px;
+
+  @include mediaQuerys.mobile {
+    width: 85%;
+    border-radius: 7.733vw;
+    border: 0.533vw solid #414a5e;
+    margin-top: 6.67vw;
+    padding-bottom: 5.33vw;
+  }
 }
 .container__wage-header {
   display: flex;
@@ -335,11 +428,19 @@
   background: #292f3d;
   width: 100%;
   padding: 20px 0;
+
+  @include mediaQuerys.mobile {
+    padding: 2.67vw 0;
+  }
 }
 .container__wage-header span {
   color: #fff;
   font-size: 17px;
   font-weight: bold;
+
+  @include mediaQuerys.mobile {
+    font-size: 4.533vw;
+  }
 }
 .container__wage-header .myPrizeBox {
   color: #fff;
@@ -348,6 +449,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @include mediaQuerys.mobile {
+    font-size: 3.2vw;
+  }
 }
 .container__wage-header .myPrizeBox .wagerPrizeIcon {
   background-image: url(./winter-img/1.svg);
@@ -358,6 +463,12 @@
   margin-left: 5px;
   position: relative;
   z-index: 2;
+
+  @include mediaQuerys.mobile {
+    width: 7.733vw;
+    margin-left: 1.33vw;
+    height: 8.8vw;
+  }
 }
 .container__wage-header .myPrizeBox .wagerPrize-amount {
   border-radius: 12.5px;
@@ -369,12 +480,23 @@
   justify-content: center;
   align-items: center;
   margin-left: -15px;
+
+  @include mediaQuerys.mobile {
+    width: 15.2vw;
+    height: 6.67vw;
+    margin-left: -4vw;
+  }
 }
 
 .container .prizes-img {
   margin: 20px auto;
   width: 341px;
   height: 202px;
+
+  @include mediaQuerys.mobile {
+    width: 90vw;
+    height: 53.333vw;
+  }
 }
 
 .container .prizes-img img {
@@ -396,4 +518,24 @@
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
+
+  @include mediaQuerys.mobile {
+    width: 85%;
+    border-radius: 6.533vw;
+    font-size: 4.8vw;
+    margin: 6.67vw auto 1.33vw auto;
+  }
+}
+
+.container .myPryzesIcon {
+  margin: 30px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include mediaQuerys.mobile {
+    margin: 28vw auto;
+    width: 60%;
+    height: 10vw;
+  }
 }

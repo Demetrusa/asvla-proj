@@ -6,8 +6,11 @@ import DonateButton from "../DonateButton/DonateButton";
 import CountdownTimer from "../CountdownTimer/CountdownTimer";
 
 import WalletImg from "./winter-img/wallet.png";
-import CreateItem from "../Axios-test/CreateItem";
-import DeleteItem from "../Axios-test/DeleteItem";
+import myPrizeIcon from "./winter-img/prizesimg.png";
+import Snowfall from "../snowing/Snowfall";
+import TermsComponent from "../terms/TermsComponent";
+// import CreateItem from "../Axios-test/CreateItem";
+// import DeleteItem from "../Axios-test/DeleteItem";
 
 const Winterveil: React.FC = () => {
   const [donationAmount, setDonationAmount] = useState<number>(0);
@@ -56,23 +59,13 @@ const Winterveil: React.FC = () => {
     setVisibleBoxes(prizeCount);
   };
 
-  // Add a new item
-  const handleCreateItem = () => {
-    const newItem = `Item ${items.length + 1}`;
-    setItems((prevItems) => [...prevItems, newItem]);
-  };
-
-  // Delete the last item
-  const handleDeleteItem = () => {
-    setItems((prevItems) => prevItems.slice(0, -1));
-  };
-
   return (
     <div className="winterVeil">
       <div className="container">
         <div className="container__header">
           <CountdownTimer targetDate="2024-12-31T23:59:59Z" />
         </div>
+        <Snowfall />
         <div className="container__tree">
           <div className="tree__carpet"></div>
           {Array.from({ length: 10 }).map((_, index) => (
@@ -141,18 +134,22 @@ const Winterveil: React.FC = () => {
           onConfirm={handleConfirmClick}
           onPresetAmountClick={handleStaticAmountClick}
         />
-      </div>
-      <div className="axiosDelete">
-        <button onClick={handleCreateItem}>Create Item</button>
-        <button onClick={handleDeleteItem}>Delete Item</button>
-        <div>
-          {items.map((item, index) => (
-            <p key={index}>{item}</p>
-          ))}
+        <div
+          className="myPryzesIcon"
+          style={{ opacity: progress > 1 ? 1 : 0.5 }}
+        >
+          <img src={myPrizeIcon} alt="myPrizeIcon" />
         </div>
+        <button
+          className={`container__claimBtn ${
+            calculateWagerPrize(progress) <= 0 ? "deactive" : ""
+          }`}
+          onClick={handleClaimClick}
+        >
+          CLAIM MY PRIZES
+        </button>
       </div>
-      <CreateItem />
-      <DeleteItem />
+      <TermsComponent TermsBg={true} />
     </div>
   );
 };

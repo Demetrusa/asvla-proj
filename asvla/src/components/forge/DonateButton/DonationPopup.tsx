@@ -1,5 +1,5 @@
 // DonationPopup.tsx
-import React from "react";
+import React, { useState } from "react";
 
 interface DonationPopupProps {
   isVisible: boolean;
@@ -18,6 +18,8 @@ const DonationPopup: React.FC<DonationPopupProps> = ({
   onConfirm,
   onPresetAmountClick,
 }) => {
+  const [donationHistory, setDonationHistory] = useState<number[]>([]);
+
   if (!isVisible) return null;
 
   return (
@@ -37,7 +39,14 @@ const DonationPopup: React.FC<DonationPopupProps> = ({
           <button onClick={() => onPresetAmountClick(50000)}>50k</button>
           <button onClick={() => onPresetAmountClick(100000)}>100k</button>
         </div>
-        <button onClick={onClose}>Cancel</button>
+        <button onClick={onClose}>Cancel</button> 
+      <div className="donation-history">
+          <ul>
+            {donationHistory.map((amount: number, index: number) => (
+              <li key={index}>{amount}</li>
+            ))}
+          </ul>
+      </div>
       </div>
     </div>
   );
