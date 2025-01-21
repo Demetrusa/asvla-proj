@@ -28,7 +28,7 @@ const AxiosLogin: React.FC = () => {
   return (
     <div className="login-box">
       <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="login-form">
         <input
           type="email"
           placeholder="Email"

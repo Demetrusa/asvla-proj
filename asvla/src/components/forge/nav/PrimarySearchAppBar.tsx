@@ -37,23 +37,27 @@ const PrimarySearchAppBar: React.FC = () => {
       </div>
       {!isAuthenticated ? (
         <>
-          <div>
-            <Link to="/login">
-              <button>
-                <FontAwesomeIcon icon={faUser} /> Login
-              </button>
-            </Link>
-          </div>
-          <div>
-            <Link to="/register">
-              <button>
-                <FontAwesomeIcon icon={faAddressCard} /> Register
-              </button>
-            </Link>
+          <div className="authBox">
+            <div className="loginButton">
+              <Link to="/login">
+                <button>
+                  <FontAwesomeIcon icon={faUser} />{" "}
+                  <span className="buttonText">Login</span>
+                </button>
+              </Link>
+            </div>
+            <div className="registerButton">
+              <Link to="/register">
+                <button>
+                  <FontAwesomeIcon icon={faAddressCard} />{" "}
+                  <span className="buttonText">Register</span>
+                </button>
+              </Link>
+            </div>
           </div>
         </>
       ) : (
-        <div>
+        <div className="logoutButton">
           <button onClick={handleLogout}>Logout</button>
         </div>
       )}

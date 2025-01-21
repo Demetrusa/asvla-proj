@@ -148,8 +148,8 @@ const Winterveil: React.FC = () => {
         >
           CLAIM MY PRIZES
         </button>
+        <TermsComponent TermsBg={true} />
       </div>
-      <TermsComponent TermsBg={true} />
     </div>
   );
 };

@@ -119,4 +119,85 @@
       width: 20vw;
     }
   }
+
+  .authBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+    @include mediaQuerys.mobile {
+      gap: 1.33vw;
+    }
+  }
+  .loginButton button {
+    background: #039855;
+    width: 120px;
+    border-radius: 8px;
+    height: 40px;
+    font-size: 15px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+
+    @include mediaQuerys.mobile {
+      width: 9vw;
+      height: 5vw;
+      font-size: 4vw;
+    }
+  }
+  .loginButton button:hover {
+    background: #2fdc2f;
+    transition: 0.2s ease-in-out;
+  }
+  .registerButton button {
+    background: #323b43;
+    width: 120px;
+    border-radius: 8px;
+    height: 40px;
+    font-size: 15px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+
+    @include mediaQuerys.mobile {
+      width: 9vw;
+      height: 5vw;
+      font-size: 4vw;
+    }
+  }
+  .registerButton button:hover {
+    background: #000000;
+    transition: 0.2s ease-in-out;
+  }
+  .registerButton .loginButton {
+    background: #323b43;
+    width: 120px;
+    border-radius: 8px;
+    height: 40px;
+    font-size: 15px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+
+    @include mediaQuerys.mobile {
+      width: 9vw;
+      height: 5vw;
+      font-size: 4vw;
+    }
+  }
+  .registerButton button:hover {
+    background: #000000;
+    transition: 0.2s ease-in-out;
+  }
+  .buttonText {
+    display: block;
+
+    @include mediaQuerys.mobile {
+      display: none;
+    }
+  }
 }

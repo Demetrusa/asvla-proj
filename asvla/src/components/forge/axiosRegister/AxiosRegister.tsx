@@ -33,6 +33,7 @@ const RegistrationForm: React.FC = () => {
       <h2>Register</h2>
       <form onSubmit={handleSubmit}>
         <input
+          className="input-Name"
           type="text"
           placeholder="Name"
           value={name}
@@ -40,6 +41,7 @@ const RegistrationForm: React.FC = () => {
           required
         />
         <input
+          className="input-Email"
           type="email"
           placeholder="Email"
           value={email}
@@ -47,6 +49,7 @@ const RegistrationForm: React.FC = () => {
           required
         />
         <input
+          className="input-Password"
           type="password"
           placeholder="Password"
           value={password}
@@ -54,6 +57,7 @@ const RegistrationForm: React.FC = () => {
           required
         />
         <input
+          className="input-ConfirmPassword"
           type="password"
           placeholder="Confirm Password"
           value={confirmPassword}
