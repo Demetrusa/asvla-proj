@@ -1,44 +1,45 @@
-import React, { useState } from "react";
-
+import React, { useState, useRef } from "react";
 import "./Winterveil.scss";
 import DonationPopup from "../DonateButton/DonationPopup";
 import DonateButton from "../DonateButton/DonateButton";
 import CountdownTimer from "../CountdownTimer/CountdownTimer";
-
 import WalletImg from "./winter-img/wallet.png";
 import myPrizeIcon from "./winter-img/prizesimg.png";
 import Snowfall from "../snowing/Snowfall";
 import TermsComponent from "../terms/TermsComponent";
 import Redeem from "../redeem/Redeem";
-// import CreateItem from "../Axios-test/CreateItem";
-// import DeleteItem from "../Axios-test/DeleteItem";
+import RedeemBtn from "../redeem/RedeemBtn";
 
 const Winterveil: React.FC = () => {
   const [donationAmount, setDonationAmount] = useState<number>(0);
   const [isPopupVisible, setIsPopupVisible] = useState<boolean>(false);
   const [progress, setProgress] = useState<number>(0);
-  const [visibleBoxes, setVisibleBoxes] = useState<number>(0); // State to track visible boxes
-  const [items, setItems] = useState<string[]>([]); // State to manage list of items
+  const [visibleBoxes, setVisibleBoxes] = useState<number>(0);
+  const [isRedeemVisible, setIsRedeemVisible] = useState<boolean>(false);
+  const redeemRef = useRef<HTMLDivElement | null>(null);
 
-  // Handle donation amount input
+  const handleRedeemBtnClick = () => {
+    setIsRedeemVisible(true);
+    setTimeout(() => {
+      redeemRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
+    }, 100);
+  };
+
   const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = Number(e.target.value);
     setDonationAmount(value);
   };
 
-  // Handle static donation amounts
   const handleStaticAmountClick = (amount: number) => {
     setDonationAmount(amount);
   };
 
-  // Confirm donation and update progress
   const handleConfirmClick = () => {
     const newProgress = Math.min(progress + donationAmount, 100000);
     setProgress(newProgress);
     setIsPopupVisible(false);
   };
 
-  // Close the popup
   const handleClosePopup = () => {
     setIsPopupVisible(false);
   };
@@ -135,6 +136,15 @@ const Winterveil: React.FC = () => {
           onConfirm={handleConfirmClick}
           onPresetAmountClick={handleStaticAmountClick}
         />
+
+        <RedeemBtn onClick={handleRedeemBtnClick} />
+
+        {isRedeemVisible && (
+          <div ref={redeemRef}>
+            <Redeem />
+          </div>
+        )}
+
         <div
           className="myPryzesIcon"
           style={{ opacity: progress > 1 ? 1 : 0.5 }}
@@ -149,7 +159,7 @@ const Winterveil: React.FC = () => {
         >
           CLAIM MY PRIZES
         </button>
-        <Redeem />
+
         <TermsComponent TermsBg={true} />
       </div>
     </div>

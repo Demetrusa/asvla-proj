@@ -15,6 +15,15 @@ const Redeem: React.FC = () => {
       setIsVisible(false);
     }
   };
+  const redeemArray = [
+    { title: "Reward 1", image: "https://via.placeholder.com/32?text=1" },
+    { title: "Reward 2", image: "https://via.placeholder.com/32?text=2" },
+    { title: "Reward 3", image: "https://via.placeholder.com/32?text=3" },
+    { title: "Reward 4", image: "https://via.placeholder.com/32?text=4" },
+    { title: "Reward 5", image: "https://via.placeholder.com/32?text=5" },
+    { title: "Reward 6", image: "https://via.placeholder.com/32?text=6" },
+    { title: "Reward 7", image: "https://via.placeholder.com/32?text=7" },
+  ];
 
   if (!isVisible) return null;
 
@@ -28,8 +37,9 @@ const Redeem: React.FC = () => {
           ×
         </button>
       </div>
+      <div className="EgtRedeem">EGT -&gt; Slots</div>
       <form className="redeem-form">
-        {items.map((_, index) => (
+        {redeemArray.map((item, index) => (
           <div
             key={index}
             className="redeem-item"
@@ -42,12 +52,8 @@ const Redeem: React.FC = () => {
               checked={selected === index}
               onChange={() => handleCheckboxChange(index)}
             />
-            <span className="redeem-title">Item {index + 1}</span>
-            <img
-              src={`https://via.placeholder.com/32`}
-              alt={`Item ${index + 1}`}
-              className="redeem-image"
-            />
+            <span className="redeem-title">{item.title}</span>
+            <img src={item.image} alt={item.title} className="redeem-image" />
           </div>
         ))}
       </form>
