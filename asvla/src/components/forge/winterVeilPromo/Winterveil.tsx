@@ -9,6 +9,8 @@ import Snowfall from "../snowing/Snowfall";
 import TermsComponent from "../terms/TermsComponent";
 import Redeem from "../redeem/Redeem";
 import RedeemBtn from "../redeem/RedeemBtn";
+import FallingSlot from "../fallinSlotGame/FallingSlot";
+import WinPopup from "../popups/WinPopup";
 
 const Winterveil: React.FC = () => {
   const [donationAmount, setDonationAmount] = useState<number>(0);
@@ -161,6 +163,9 @@ const Winterveil: React.FC = () => {
         </button>
 
         <TermsComponent TermsBg={true} />
+
+        {/* <FallingSlot /> */}
+        {/* <WinPopup /> */}
       </div>
     </div>
   );

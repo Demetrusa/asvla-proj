@@ -1,0 +1,57 @@
+@use "../../../assets/styles/mediaQuerys.scss";
+
+
+.fallingSlotGame .fallingSlotGame__container {
+  width: 450px;
+  height: 270px;
+  background: black;
+  margin: 0 auto;
+  position: relative;
+  margin-top: 30px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); // 3 columns
+  grid-template-rows: repeat(3, 1fr); // 3 rows
+  gap: 0; // No gaps between boxes
+  top: -300px;
+}
+
+.fallingSlotGame .box {
+  width: 150px; // Width = container width / 3
+  height: 90px; // Height = container height / 3
+  position: relative; // Relative for grid alignment
+  top: 0; // Default position
+  animation: none; // No animation by default
+  top: -300px;
+}
+
+/* Animation for falling effect */
+.fallingSlotGame .fall {
+  animation: fall 1s forwards;
+}
+
+@keyframes fall {
+  from {
+    top: -300px; // Off-screen start
+  }
+  to {
+    top: 0; // Align with grid cell
+  }
+}
+
+.fallingSlotGame .spinBtn {
+  width: 100px;
+  height: 40px;
+  background: black;
+  color: white;
+  font-size: 20px;
+  margin: 0 auto;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  margin-top: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
