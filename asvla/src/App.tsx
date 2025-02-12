@@ -16,6 +16,7 @@ import ChampionCashback from "./components/forge/champion-cashback/ChampionCashb
 import Winterveil from "./components/forge/winterVeilPromo/Winterveil.js";
 import AxiosRegister from "./components/forge/axiosRegister/AxiosRegister";
 import AxiosLogin from "./components/forge/axiosRegister/AxiosLogin.js";
+import { NewLogin, NewLogout, NewRegister } from "./components/forge/NewReg/NewRegister.js";
 
 function App() {
   return (
@@ -31,8 +32,11 @@ function App() {
           <Route path="/championCashback" element={<ChampionCashback />} />
           <Route path="/winterveil" element={<Winterveil />} />
           <Route path="/register" element={<AxiosRegister />} />
-          <Route path="/login" element={<AxiosLogin />} />
+          <Route path="/login" element={<AxiosLogin />} />\
         </Routes>
+        <NewRegister />
+        <NewLogin />
+        <NewLogout />
         <Footer />
       </div>
     </Router>
