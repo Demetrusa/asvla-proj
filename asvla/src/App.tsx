@@ -18,6 +18,8 @@ import AxiosRegister from "./components/forge/axiosRegister/AxiosRegister";
 import AxiosLogin from "./components/forge/axiosRegister/AxiosLogin.js";
 import { NewLogin, NewLogout, NewRegister } from "./components/forge/NewReg/NewRegister.js";
 
+// "proxy": "http://10.10.12.165:3306/ in sjon file"
+
 function App() {
   return (
     <Router>
