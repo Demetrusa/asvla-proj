@@ -15,7 +15,6 @@ const PrimarySearchAppBar: React.FC = () => {
       setIsAuthenticated(!!token);
     };
 
-    // Check initial authentication status
     checkAuthStatus();
 
     // Set up an event listener to update the state when the custom event is dispatched
@@ -59,7 +58,7 @@ const PrimarySearchAppBar: React.FC = () => {
           <div className="loginButton">
             <Link to="/new-login">
               <button>
-                <FontAwesomeIcon icon={faUser} />{" "}
+                <FontAwesomeIcon icon={faUser} />
                 <span className="buttonText">Login</span>
               </button>
             </Link>
@@ -67,7 +66,7 @@ const PrimarySearchAppBar: React.FC = () => {
           <div className="registerButton">
             <Link to="/new-register">
               <button>
-                <FontAwesomeIcon icon={faAddressCard} />{" "}
+                <FontAwesomeIcon icon={faAddressCard} />
                 <span className="buttonText">Register</span>
               </button>
             </Link>

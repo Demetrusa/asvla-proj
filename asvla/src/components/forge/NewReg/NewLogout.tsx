@@ -11,7 +11,6 @@ const NewLogout: React.FC<NewLogoutProps> = ({ onLogout }) => {
     alert("Logged out successfully!");
     onLogout();
   
-    // Dispatch custom event
     window.dispatchEvent(new Event("authStatusChanged"));
   };
 

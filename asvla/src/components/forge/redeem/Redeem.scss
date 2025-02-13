@@ -4,8 +4,6 @@
   width: 500px;
   height: auto;
   margin: 0 auto;
-  background-color: #f9f9f9;
-  border: 1px solid #ccc;
   border-radius: 8px;
   padding: 16px;
   display: flex;
@@ -16,24 +14,33 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1000;
+  background: linear-gradient(153.65deg, #1A6C52 17.38%, #000906 75.84%);
+  border: 1px solid #AFA68ECC;
 }
 .redeem-container .EgtRedeem {
-  width: 300px;
-  height: 30px;
-  background: black;
   margin: 10px auto;
   color: #fff;
   font-size: 30px;
+  font-weight: bold;
+
 }
 
 .redeem-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 5px;
+  background: linear-gradient(179.55deg, #6BA38B 0.39%, #0C180F 54.71%);
+  width: 99%;
+  border-radius: 8px;
+
 }
 
 .redeem-header h2 {
-  margin: 0;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 25px;
+  font-weight: bold;
 }
 
 .close-btn {
@@ -41,6 +48,7 @@
   border: none;
   font-size: 24px;
   cursor: pointer;
+  color: #fff;
 }
 
 .redeem-form {
@@ -61,6 +69,7 @@
   border-radius: 4px;
   background-color: #fff;
   transition: opacity 0.3s ease;
+  background: #455B4C;
 }
 
 .redeem-item input {
@@ -73,21 +82,109 @@
 }
 
 .redeem-footer {
+  width: 70%;
+  margin: 20px auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: #fff;
+}
+
+.redeem-title{
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: bold;
+  font-size: 18;
+}
+.redeem-footer p span {
+  text-transform: uppercase;
 }
 
 .redeem-button {
   padding: 8px 16px;
-  background-color: #007bff;
+  // margin: 20px auto;
+  border-top: 1px solid #ffad148c;
+  background: linear-gradient(152.72deg, #A86802 1.7%, #4B350A 114.52%);
   color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
+.redeem-button:hover {
+  background: linear-gradient(152.72deg, #e99a1a 1.7%, #e7ba60 114.52%);
+}
 
 .redeem-button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
+}
+.popup {
+  position: fixed;
+  width: 350px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(153.65deg, #1A6C52 17.38%, #000906 75.84%);
+  border: 1px solid #AFA68ECC;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-title {
+  margin: 0;
+  color: #fff;
+  font-size: 20px;
+  margin: 10px;
+  text-transform: uppercase;
+}
+
+.popup-image {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.popup-close-button {
+  margin: 20px auto;
+  margin-bottom: 0;
+  width: 120px;
+  height: 46px;
+  font-weight: bold;
+  color: #261203;
+  color: #fff;
+  font-size: 18px;
+  text-transform: uppercase;
+  background: linear-gradient(180deg, #04b928 0%, #003401 100%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  border: none;
+    outline: none;
+    cursor: pointer;
+}
+.popup-close-button:hover {
+  background: linear-gradient(180deg, #0ce037 0%, rgb(39, 173, 39) 100%);
+}
+.container__redeemBtn {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+}
+.container__redeemBtn button {
+  width: 200px;
+  height: 50px;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 20px;
+  border-top: 1px solid #ffad148c;
+  background: linear-gradient(152.72deg, #A86802 1.7%, #4B350A 114.52%);
+}
+.container__redeemBtn button:hover {
+  background: linear-gradient(152.72deg, #e99a1a 1.7%, #e7ba60 114.52%);
 }

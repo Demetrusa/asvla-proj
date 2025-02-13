@@ -24,9 +24,9 @@ const handleLogin = () => {
     alert("Login successful!");
     onLogin();
 
-    // Dispatch custom event
-    navigate("/"); // Redirect to the main page
+    navigate("/");
 
+    
     window.dispatchEvent(new Event("authStatusChanged"));
   } else {
     alert("Invalid email or password.");

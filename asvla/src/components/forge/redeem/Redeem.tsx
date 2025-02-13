@@ -1,5 +1,16 @@
 import React, { useState } from "react";
+import ReactDOM from "react-dom/client";
 import "./Redeem.scss";
+
+// redeem images start
+import superhotTwenty from "./redeem-img/20superhot.webp";
+import burninghot from "./redeem-img/burninghot.webp";
+import extrastars from "./redeem-img/extra-stars2.webp";
+import shiningcrown from "./redeem-img/shiningcrown.webp";
+import starlight from "./redeem-img/starlight_princess.webp";
+import sweetBonanza from "./redeem-img/sweet_bonanza.webp";
+import thedoghouse from "./redeem-img/the_dog_house.webp";
+// redeem images end
 
 const Redeem: React.FC = () => {
   const [selected, setSelected] = useState<number | null>(null);
@@ -11,23 +22,48 @@ const Redeem: React.FC = () => {
 
   const handleRedeem = () => {
     if (selected !== null) {
-      alert(`Redeemed item ${selected + 1}`);
+      const selectedItem = redeemArray[selected];
+      const popupContainer = document.createElement("div");
+      popupContainer.className = "popup-container";
+
+      const popup = (
+        <div className="popup">
+          <h3 className="popup-title">{selectedItem.title}</h3>
+          <img
+            className="popup-image"
+            src={selectedItem.image}
+            alt={selectedItem.title}
+          />
+          <button
+            className="popup-close-button"
+            onClick={() => {
+              setIsVisible(false);
+              document.body.removeChild(popupContainer);
+            }}
+          >
+            Close
+          </button>
+        </div>
+      );
+
+      document.body.appendChild(popupContainer);
+      const root = ReactDOM.createRoot(popupContainer);
+      root.render(popup);
       setIsVisible(false);
     }
   };
+
   const redeemArray = [
-    { title: "Reward 1", image: "https://via.placeholder.com/32?text=1" },
-    { title: "Reward 2", image: "https://via.placeholder.com/32?text=2" },
-    { title: "Reward 3", image: "https://via.placeholder.com/32?text=3" },
-    { title: "Reward 4", image: "https://via.placeholder.com/32?text=4" },
-    { title: "Reward 5", image: "https://via.placeholder.com/32?text=5" },
-    { title: "Reward 6", image: "https://via.placeholder.com/32?text=6" },
-    { title: "Reward 7", image: "https://via.placeholder.com/32?text=7" },
+    { title: "superhotTwenty", image: superhotTwenty },
+    { title: "burninghot", image: burninghot },
+    { title: "extrastars", image: extrastars },
+    { title: "shiningcrown", image: shiningcrown },
+    { title: "starlight", image: starlight },
+    { title: "sweetBonanza", image: sweetBonanza },
+    { title: "thedoghouse", image: thedoghouse },
   ];
 
   if (!isVisible) return null;
-
-  const items = Array(7).fill(null); // Array for the 7 divs
 
   return (
     <div className="redeem-container">
@@ -37,7 +73,7 @@ const Redeem: React.FC = () => {
           ×
         </button>
       </div>
-      <div className="EgtRedeem">EGT -&gt; Slots</div>
+      <div className="EgtRedeem">Slots</div>
       <form className="redeem-form">
         {redeemArray.map((item, index) => (
           <div
@@ -46,6 +82,7 @@ const Redeem: React.FC = () => {
             style={{
               opacity: selected === null || selected === index ? 1 : 0.5,
             }}
+            onClick={() => handleCheckboxChange(index)}
           >
             <input
               type="checkbox"
@@ -59,9 +96,12 @@ const Redeem: React.FC = () => {
       </form>
       <div className="redeem-footer">
         <p>
-          {selected !== null
-            ? `Selected: Item ${selected + 1}`
+          Selected:&nbsp;
+          <span>
+            {selected !== null
+            ? ` ${redeemArray[selected].title}`
             : "No item selected"}
+          </span>
         </p>
         <button
           className="redeem-button"

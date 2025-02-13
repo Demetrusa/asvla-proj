@@ -141,26 +141,27 @@ const Winterveil: React.FC = () => {
 
         <RedeemBtn onClick={handleRedeemBtnClick} />
 
-        {isRedeemVisible && (
-          <div ref={redeemRef}>
-            <Redeem />
-          </div>
-        )}
-
+     
         <div
           className="myPryzesIcon"
           style={{ opacity: progress > 1 ? 1 : 0.5 }}
         >
           <img src={myPrizeIcon} alt="myPrizeIcon" />
         </div>
-        <button
+        {/* <button
           className={`container__claimBtn ${
             calculateWagerPrize(progress) <= 0 ? "deactive" : ""
           }`}
           onClick={handleClaimClick}
         >
           CLAIM MY PRIZES
-        </button>
+        </button> */}
+
+        {isRedeemVisible && (
+          <div ref={redeemRef}>
+            <Redeem />
+          </div>
+        )}
 
         <TermsComponent TermsBg={true} />
 
