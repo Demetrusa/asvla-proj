@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faAddressCard } from "@fortawesome/free-solid-svg-icons";
 import "./PrimarySearchAppBar.scss";
-import NewLogout from "../NewReg/NewLogout";
+import NewLogout from "../NewReg/NewLogout"; // Import NewLogout
 
 const PrimarySearchAppBar: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
@@ -18,12 +18,16 @@ const PrimarySearchAppBar: React.FC = () => {
     // Check initial authentication status
     checkAuthStatus();
 
-    // Set up an event listener to update the state when the localStorage changes
-    window.addEventListener("storage", checkAuthStatus);
+    // Set up an event listener to update the state when the custom event is dispatched
+    const handleAuthStatusChanged = () => {
+      checkAuthStatus();
+    };
+
+    window.addEventListener("authStatusChanged", handleAuthStatusChanged);
 
     // Clean up the event listener when the component unmounts
     return () => {
-      window.removeEventListener("storage", checkAuthStatus);
+      window.removeEventListener("authStatusChanged", handleAuthStatusChanged);
     };
   }, []);
 
@@ -31,6 +35,9 @@ const PrimarySearchAppBar: React.FC = () => {
     localStorage.removeItem("authToken");
     setIsAuthenticated(false);
     navigate("/new-login");
+
+    // Dispatch custom event
+    window.dispatchEvent(new Event("authStatusChanged"));
   };
 
   return (
@@ -67,10 +74,7 @@ const PrimarySearchAppBar: React.FC = () => {
           </div>
         </div>
       ) : (
-        <div className="logoutButton">
-          <button onClick={handleLogout}>Logout</button>
-        </div>
-        // <NewLogout />
+        <NewLogout onLogout={handleLogout} /> 
       )}
     </nav>
   );

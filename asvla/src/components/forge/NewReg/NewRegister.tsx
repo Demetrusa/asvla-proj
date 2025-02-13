@@ -28,8 +28,10 @@ const NewRegister: React.FC<NewRegisterProps> = ({ onRegister }) => {
     alert("Registration successful! You can now log in.");
     onRegister();
 
+    window.dispatchEvent(new Event("authStatusChanged"));
+
     // Redirect to the main page (or the desired page) after successful registration
-    navigate("/Login"); // Redirect to the main page
+    navigate("/new-login"); // Redirect to the main page
   };
 
   return (

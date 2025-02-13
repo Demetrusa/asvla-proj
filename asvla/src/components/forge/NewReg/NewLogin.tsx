@@ -17,26 +17,25 @@ const navigate = useNavigate();
   
   
 const handleLogin = () => {
-    console.log("Login button clicked");
-    const storedUser = JSON.parse(localStorage.getItem("user") || "null");
-    if (storedUser && storedUser.email === email && storedUser.password === password) {
-        const token = Math.random().toString(36).substring(2);
-        localStorage.setItem("authToken", token);
-        console.log("Login successful, token generated:", token);
-        alert("Login successful!");
-        onLogin();
+  const storedUser = JSON.parse(localStorage.getItem("user") || "null");
+  if (storedUser && storedUser.email === email && storedUser.password === password) {
+    const token = Math.random().toString(36).substring(2);
+    localStorage.setItem("authToken", token);
+    alert("Login successful!");
+    onLogin();
 
-        
-        navigate("/"); 
-    } else {
-        console.log("Invalid email or password");
-        alert("Invalid email or password.");
-    }
+    // Dispatch custom event
+    navigate("/"); // Redirect to the main page
+
+    window.dispatchEvent(new Event("authStatusChanged"));
+  } else {
+    alert("Invalid email or password.");
+  }
 };
 
   return (
     <div className="register-box">
-      <h2>Login</h2>
+      <h2>Logino</h2>
       <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
       <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
       <button onClick={handleLogin}>Login</button>

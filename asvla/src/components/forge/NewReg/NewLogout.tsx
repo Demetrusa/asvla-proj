@@ -10,6 +10,9 @@ const NewLogout: React.FC<NewLogoutProps> = ({ onLogout }) => {
     localStorage.removeItem("authToken");
     alert("Logged out successfully!");
     onLogout();
+  
+    // Dispatch custom event
+    window.dispatchEvent(new Event("authStatusChanged"));
   };
 
   return (
