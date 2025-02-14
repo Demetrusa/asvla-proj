@@ -99,8 +99,8 @@ const Redeem: React.FC = () => {
           Selected:&nbsp;
           <span>
             {selected !== null
-            ? ` ${redeemArray[selected].title}`
-            : "No item selected"}
+              ? ` ${redeemArray[selected].title}`
+              : "No item selected"}
           </span>
         </p>
         <button

@@ -14,8 +14,14 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1000;
-  background: linear-gradient(153.65deg, #1A6C52 17.38%, #000906 75.84%);
-  border: 1px solid #AFA68ECC;
+  background: linear-gradient(153.65deg, #1a6c52 17.38%, #000906 75.84%);
+  border: 1px solid #afa68ecc;
+
+  @include mediaQuerys.mobile {
+    width: 95%;
+    border-radius: 2.133vw;
+    padding: 3vw;
+  }
 }
 .redeem-container .EgtRedeem {
   margin: 10px auto;
@@ -23,6 +29,10 @@
   font-size: 30px;
   font-weight: bold;
 
+  @include mediaQuerys.mobile {
+    margin: 2.66vw auto;
+    font-size: 6vw;
+  }
 }
 
 .redeem-header {
@@ -30,10 +40,14 @@
   justify-content: space-between;
   align-items: center;
   padding: 5px;
-  background: linear-gradient(179.55deg, #6BA38B 0.39%, #0C180F 54.71%);
+  background: linear-gradient(179.55deg, #6ba38b 0.39%, #0c180f 54.71%);
   width: 99%;
   border-radius: 8px;
 
+  @include mediaQuerys.mobile {
+    padding: 1.33vw;
+    border-radius: 2.133vw;
+  }
 }
 
 .redeem-header h2 {
@@ -41,6 +55,10 @@
   color: #fff;
   font-size: 25px;
   font-weight: bold;
+
+  @include mediaQuerys.mobile {
+    font-size: 6.33vw;
+  }
 }
 
 .close-btn {
@@ -49,6 +67,10 @@
   font-size: 24px;
   cursor: pointer;
   color: #fff;
+
+  @include mediaQuerys.mobile {
+    font-size: 6vw;
+  }
 }
 
 .redeem-form {
@@ -56,6 +78,10 @@
   flex-direction: column;
   gap: 8px;
   align-items: center;
+
+  @include mediaQuerys.mobile {
+    gap: 2.133vw;
+  }
 }
 
 .redeem-item {
@@ -69,16 +95,29 @@
   border-radius: 4px;
   background-color: #fff;
   transition: opacity 0.3s ease;
-  background: #455B4C;
+  background: #455b4c;
+
+  @include mediaQuerys.mobile {
+    width: 84.8vw;
+    height: 12.8vw;
+    padding: 2.133vw;
+  }
 }
 
 .redeem-item input {
   margin-right: 8px;
+
+  @include mediaQuerys.mobile {
+    margin-right: 2.133vw;
+  }
 }
 
 .redeem-image {
-  width: 32px;
-  height: 32px;
+  width: 110px;
+
+  @include mediaQuerys.mobile {
+    width: 29.33vw;
+  }
 }
 
 .redeem-footer {
@@ -88,27 +127,45 @@
   justify-content: space-between;
   align-items: center;
   color: #fff;
+
+  @include mediaQuerys.mobile {
+    width: 92%;
+    margin: 5.33vw auto;
+  }
 }
 
-.redeem-title{
+.redeem-title {
   text-transform: uppercase;
   color: #fff;
   font-weight: bold;
-  font-size: 18;
+  font-size: 14px;
+
+  @include mediaQuerys.mobile {
+    font-size: 3.73vw;
+  }
 }
 .redeem-footer p span {
   text-transform: uppercase;
+
+  @include mediaQuerys.mobile {
+    font-size: 3.9vw;
+  }
 }
 
 .redeem-button {
   padding: 8px 16px;
   // margin: 20px auto;
   border-top: 1px solid #ffad148c;
-  background: linear-gradient(152.72deg, #A86802 1.7%, #4B350A 114.52%);
+  background: linear-gradient(152.72deg, #a86802 1.7%, #4b350a 114.52%);
   color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+
+  @include mediaQuerys.mobile {
+    padding: 2.133vw 4.266vw;
+    // margin: 5.33vw auto;
+  }
 }
 .redeem-button:hover {
   background: linear-gradient(152.72deg, #e99a1a 1.7%, #e7ba60 114.52%);
@@ -124,8 +181,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: linear-gradient(153.65deg, #1A6C52 17.38%, #000906 75.84%);
-  border: 1px solid #AFA68ECC;
+  background: linear-gradient(153.65deg, #1a6c52 17.38%, #000906 75.84%);
+  border: 1px solid #afa68ecc;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -134,6 +191,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @include mediaQuerys.mobile {
+    width: 95%;
+    border-radius: 2.133vw;
+    padding: 3vw;
+  }
 }
 
 .popup-title {
@@ -142,11 +205,20 @@
   font-size: 20px;
   margin: 10px;
   text-transform: uppercase;
+
+  @include mediaQuerys.mobile {
+    font-size: 5.33vw;
+    margin: 2.66vw;
+  }
 }
 
 .popup-image {
   max-width: 100%;
   max-height: 100%;
+
+  @include mediaQuerys.mobile {
+    height: 20vw;
+  }
 }
 
 .popup-close-button {
@@ -163,8 +235,15 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   border: none;
-    outline: none;
-    cursor: pointer;
+  outline: none;
+  cursor: pointer;
+
+  @include mediaQuerys.mobile {
+    width: 31.9vw;
+    height: 13.33vw;
+    font-size: 4.8vw;
+    margin: 5.33vw auto;
+  }
 }
 .popup-close-button:hover {
   background: linear-gradient(180deg, #0ce037 0%, rgb(39, 173, 39) 100%);
@@ -173,6 +252,10 @@
   display: flex;
   justify-content: center;
   margin: 20px auto;
+
+  @include mediaQuerys.mobile {
+    margin: 5.33vw auto;
+  }
 }
 .container__redeemBtn button {
   width: 200px;
@@ -183,7 +266,13 @@
   cursor: pointer;
   font-size: 20px;
   border-top: 1px solid #ffad148c;
-  background: linear-gradient(152.72deg, #A86802 1.7%, #4B350A 114.52%);
+  background: linear-gradient(152.72deg, #a86802 1.7%, #4b350a 114.52%);
+
+  @include mediaQuerys.mobile {
+    width: 52.6vw;
+    height: 13.33vw;
+    font-size: 4.8vw;
+  }
 }
 .container__redeemBtn button:hover {
   background: linear-gradient(152.72deg, #e99a1a 1.7%, #e7ba60 114.52%);
