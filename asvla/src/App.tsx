@@ -20,6 +20,7 @@ import AxiosLogin from "./components/forge/axiosRegister/AxiosLogin";
 import NewRegister from "./components/forge/NewReg/NewRegister";
 import NewLogin from "./components/forge/NewReg/NewLogin";
 import NewLogout from "./components/forge/NewReg/NewLogout";
+import CarPromo from "./components/forge/carpromo/CarPromo";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -52,13 +53,25 @@ function App() {
           <Route path="/winterveil" element={<Winterveil />} />
           <Route path="/register" element={<AxiosRegister />} />
           <Route path="/login" element={<AxiosLogin />} />
-
+          <Route path="/carpromo" element={<CarPromo />} />
           {/* New Register/Login Routes */}
-          <Route path="/new-register" element={<NewRegister onRegister={handleLogin} />} />
-          <Route path="/new-login" element={<NewLogin onLogin={handleLogin} />} />
+          <Route
+            path="/new-register"
+            element={<NewRegister onRegister={handleLogin} />}
+          />
+          <Route
+            path="/new-login"
+            element={<NewLogin onLogin={handleLogin} />}
+          />
           <Route
             path="/logout"
-            element={isAuthenticated ? <NewLogout onLogout={handleLogout} /> : <Navigate to="/new-login" />}
+            element={
+              isAuthenticated ? (
+                <NewLogout onLogout={handleLogout} />
+              ) : (
+                <Navigate to="/new-login" />
+              )
+            }
           />
         </Routes>
         <Footer />

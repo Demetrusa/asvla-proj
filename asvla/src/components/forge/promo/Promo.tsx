@@ -16,6 +16,9 @@ import ChampionCashbackBannerMob from "./PromoImg/73a02b623ecb380d7295ec94fd1c75
 import winterDESCBG from "./PromoImg/main-promo-banner.webp";
 import winterMobBG from "./PromoImg/main-promo-banner-mob.webp";
 
+import carPromoImg from "./PromoImg/carPromoDesc.webp";
+import carPromoImgMob from "./PromoImg/carpormoMob.webp";
+
 const Promo: React.FC = () => {
   const navigate = useNavigate();
 
@@ -47,10 +50,10 @@ const Promo: React.FC = () => {
       route: "/winterveil",
       imageDesc: isMobile ? winterMobBG : winterDESCBG,
     }, // Third slide
-    // {
-    //   route: "/route4",
-    //   imageDesc: isMobile ? mobileImage : "/path/to/image4.jpg",
-    // }, // Fourth slide
+    {
+      route: "/carpromo",
+      imageDesc: isMobile ? carPromoImgMob : carPromoImg,
+    }, // Fourth slide
     // {
     //   route: "/route5",
     //   imageDesc: isMobile ? mobileImage : "/path/to/image5.jpg",

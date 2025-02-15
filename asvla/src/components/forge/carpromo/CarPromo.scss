@@ -1,0 +1,15 @@
+@use "../../../assets/styles/mediaQuerys.scss";
+
+.carpromoBody {
+  background: transparent url(./carpromo-img/bg-main-en.webp) no-repeat 50%;
+  background-position: top center;
+  padding-bottom: 50px;
+}
+.carpromo__container {
+  width: 940px;
+  margin: 0 auto;
+  padding-top: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
