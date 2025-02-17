@@ -6,10 +6,204 @@
   padding-bottom: 50px;
 }
 .carpromo__container {
-  width: 940px;
   margin: 0 auto;
+  width: 940px;
   padding-top: 900px;
+}
+.multiple__progresses {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  margin: 20px auto;
+}
+.multiple__progresses .progresses-prize {
+  background: linear-gradient(82deg, #ffaa0e 0%, #ffd80a 94.98%);
+  height: 185px;
+  width: 48%;
+  border-radius: 16px;
+  position: relative;
+}
+.prize-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 5px;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+.prize-title .prize-img {
+  background-image: url(./carpromo-img/prize2-title-icon.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 51px;
+  height: 34px;
+}
+.prize-title .prize-img-2 {
+  background-image: url(./carpromo-img/prize1-title-icon.svg);
+  width: 46px;
+  height: 46px;
+}
+.prize-title span {
+  font-weight: bolder;
+  font-size: 24px;
+  color: #000;
+}
+.car-progress {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 170px;
+  margin-top: 90px;
+  margin-left: 24px;
+}
+.carIconOne.active {
+  background-image: url(./carpromo-img/prize2-small-icon.svg);
+}
+.carIconOne {
+  background-image: url(./carpromo-img/incative-car-icon-one.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 30px;
+  height: 30px;
+}
+.carIconTwo.active {
+  background-image: url(./carpromo-img/prize1-small-icon.svg);
+}
+.carIconTwo {
+  background-image: url(./carpromo-img/prize1-small-icon-inactive.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 30px;
+  height: 30px;
+}
+.bigCar-icon {
+  position: absolute;
+  right: 15px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 220px;
+  height: 120px;
+}
+
+.bigCar-one {
+  top: 40px;
+  background-image: url(./carpromo-img/prize2-big-icon.png);
+}
+.bigCar-two {
+  top: 65px;
+  background-image: url(./carpromo-img/prize1-big-icon.png);
+}
+.minorPrize__progressBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px auto;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  width: 50%;
+}
+.minorPrize {
+  width: 32.3%;
   display: flex;
   flex-direction: column;
+  justify-content: start;
   align-items: center;
+  background: linear-gradient(264deg, #ca13c5 8.59%, #6d3cd0 100%);
+  padding: 25px;
+  border-radius: 8px;
+  position: relative;
+}
+.minorPrize-titleOne {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.minorPrize-icon {
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 100px;
+  height: 30px;
+  position: absolute;
+  left: 44px;
+  top: 19px;
+}
+.minorPrize-icon.cashIcon-1 {
+  background-image: url(./carpromo-img/10k.png);
+}
+.minorPrize-icon.iponeIcon-1 {
+  background-image: url(./carpromo-img/Screenshot_3.png);
+  width: 130px;
+  height: 30px;
+  top: 8px;
+}
+.minorPrize-icon.OneGIcon-1 {
+  background-image: url(./carpromo-img/1k.png);
+  width: 95px;
+  height: 30px;
+}
+
+.minorPrize-winIcon {
+  background-image: url(./carpromo-img/case-10.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  left: 174px;
+}
+.minorPrize-winIcon.cashIcon-2 {
+  background-image: url(./carpromo-img/case-10.png);
+}
+.minorPrize-winIcon.iponeIcon-2 {
+  background-image: url(./carpromo-img/apple.svg);
+  top: 6px;
+  left: 176px;
+  z-index: 2;
+}
+.minorPrize-winIcon.OneGIcon-2 {
+  background-image: url(./carpromo-img/case-1.png);
+  top: 1px;
+  left: 176px;
+  z-index: 2;
+}
+.minorPrize-Amount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 6px 6px 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  gap: 5px;
+  padding: 5px;
+  position: absolute;
+  left: 222px;
+  top: 13px;
+}
+.minorPrize-Amount span {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+.minorPrize-Amount span:nth-child(1) {
+  color: rgb(147, 243, 4);
+  font-weight: bolder;
+}
+.minorPrizePoints {
+  display: flex;
+  justify-content: space-between;
+  width: 265px;
+  margin-top: 40px;
+}
+.minorPrizePoints span.active {
+  background-color: #7dff25;
+}
+.minorPrizePoints span {
+  width: 22px;
+  flex: 0 0 22px;
+  height: 3px;
+  border-radius: 1px;
+  background-color: rgba(0, 0, 0, 0.4);
 }
