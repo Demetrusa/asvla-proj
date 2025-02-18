@@ -11,7 +11,7 @@
   padding-top: 900px;
 }
 .multiple__progresses {
-  width: 50%;
+  width: 800px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -35,18 +35,28 @@
   left: 20px;
   top: 20px;
 }
-.prize-title .prize-img {
-  background-image: url(./carpromo-img/prize2-title-icon.svg);
+
+
+.progresses-prize {
+  .prize-title {
+    .prize-img {
+      background-repeat: no-repeat;
+      background-size: 100%;
+      width: 51px;
+      height: 34px;
+    }
+  }
+}
+.progresses-prize:nth-of-type(2) .prize-title .prize-img {
+  height: 53px;
   background-repeat: no-repeat;
   background-size: 100%;
-  width: 51px;
-  height: 34px;
+
 }
-.prize-title .prize-img-2 {
-  background-image: url(./carpromo-img/prize1-title-icon.svg);
-  width: 46px;
-  height: 46px;
+.progresses-prize:nth-of-type(2) .prize-title {
+  top: 10px;
 }
+
 .prize-title span {
   font-weight: bolder;
   font-size: 24px;
@@ -56,7 +66,7 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  width: 170px;
+  width: 140px;
   margin-top: 90px;
   margin-left: 24px;
 }
@@ -82,11 +92,12 @@
 }
 .bigCar-icon {
   position: absolute;
-  right: 15px;
+  right: 5%;
+  top: 39%;
   background-repeat: no-repeat;
   background-size: 100%;
-  width: 220px;
-  height: 120px;
+  width: 48%;
+  height: 64%;
 }
 
 .bigCar-one {
@@ -104,7 +115,7 @@
   margin: 10px auto;
   flex-wrap: wrap;
   margin-top: 20px;
-  width: 50%;
+  width: 800px;
 }
 .minorPrize {
   width: 32.3%;
@@ -128,7 +139,7 @@
   width: 100px;
   height: 30px;
   position: absolute;
-  left: 44px;
+  left: 16px;
   top: 19px;
 }
 .minorPrize-icon.cashIcon-1 {
@@ -147,14 +158,32 @@
 }
 
 .minorPrize-winIcon {
-  background-image: url(./carpromo-img/case-10.png);
+  // background-image: url(./carpromo-img/case-10.png);
   background-repeat: no-repeat;
   background-size: 100%;
   height: 50px;
   width: 50px;
   position: absolute;
-  left: 174px;
+  left: 150px;
+    top: 1px;
+  z-index: 2;
 }
+.minorPrize:nth-of-type(2) .minorPrize-winIcon {
+  width: 45px;
+  top: 5px;
+  left: 154px;
+}
+.minorPrize:nth-of-type(3) .minorPrize-winIcon {
+  width: 45px;
+  top: 5px;
+  left: 154px;
+}
+.minorPrize:nth-of-type(2) .minorPrize-icon{
+  left: 16px;
+  top: 5px;
+  width: 129px;
+}
+
 .minorPrize-winIcon.cashIcon-2 {
   background-image: url(./carpromo-img/case-10.png);
 }
@@ -179,7 +208,7 @@
   gap: 5px;
   padding: 5px;
   position: absolute;
-  left: 222px;
+  left: 196px;
   top: 13px;
 }
 .minorPrize-Amount span {
@@ -194,7 +223,7 @@
 .minorPrizePoints {
   display: flex;
   justify-content: space-between;
-  width: 265px;
+  width: 245px;
   margin-top: 40px;
 }
 .minorPrizePoints span.active {
@@ -206,4 +235,12 @@
   height: 3px;
   border-radius: 1px;
   background-color: rgba(0, 0, 0, 0.4);
+}
+
+
+.carIcon{ 
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 25px;
+  height: 25px;
 }

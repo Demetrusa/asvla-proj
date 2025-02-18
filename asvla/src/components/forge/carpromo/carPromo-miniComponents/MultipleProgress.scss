@@ -1,0 +1,87 @@
+@use "../../../../assets/styles/mediaQuerys.scss";
+
+.CarBox{
+
+    background: linear-gradient(82deg, #ffaa0e 0%, #ffd80a 94.98%);
+    height: 185px;
+    width: 390px;
+    border-radius: 16px;
+    position: relative;
+    pointer-events: none;
+}
+
+.carBox__title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 5px;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+.carBox__title span {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+}
+.carBox__carIcon{
+    position: absolute;
+    top: 61px;
+    right: 9px;
+}
+.carBox__carIcon img {
+    object-fit: contain;
+    width: 180px;
+}
+.carBox__icons{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 175px;
+    gap: 5px;
+    position: absolute;
+    left: 10px;
+    top: 77px;
+}
+.car-icons img {
+    width: 25px;
+    height: 25px;
+}
+
+.CarBox:nth-child(2) .carBox__title img{
+    height: 35px;
+}
+
+// Minor Progess
+
+.cash {
+    width: 312px;
+    height: 100px;
+    background: linear-gradient(264deg, #CA13C5 8.59%, #6D3CD0 100%);
+    border-radius: 16px;
+    position: relative;
+    padding: 10px;
+}
+.cash__title img{
+    width: 130px;
+    position: absolute;
+    left: 20px;
+    top: 24px;
+}
+.cash__icon{
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    right: 80px;
+    z-index: 2;
+}
+.cash__iconAmount {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 5px;
+    color: #fff;
+    position: absolute;
+    right: 44px;
+    top: 25px;
+    border-radius: 4px;
+}
