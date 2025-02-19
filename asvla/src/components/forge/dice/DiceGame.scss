@@ -121,9 +121,11 @@
 .diceNumber {
   color: #fff;
   font-size: 15px;
+  height: 15px;
 
   @include mediaQuerys.mobile {
     font-size: 4vw;
+    height: 4vw;
   }
 }
 
