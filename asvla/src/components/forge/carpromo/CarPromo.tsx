@@ -90,24 +90,52 @@ const CarPromo: React.FC = () => {
   const [isFlipped, setIsFlipped] = useState(Array(12).fill(false));
   const [showPopup, setShowPopup] = useState(false);
   const [popupMessage, setPopupMessage] = useState("");
+  const [popupTitle, setPopupTitle] = useState("");
   const [remainingFlips, setRemainingFlips] = useState(0);
+  const [showCongratsPopup, setShowCongratsPopup] = useState(false);
+  const [congratsIcon, setCongratsIcon] = useState<string | null>(null);
 
   // Function to update prize progress based on flipped card
   const updatePrizeProgress = (cardId: number) => {
     if (cardId === 4) {
-      setActiveCount1((prev) => prev + 1); // Toyota
+      setActiveCount1((prev) => {
+        const newCount = prev + 1;
+        if (newCount === 10) {
+          setCongratsIcon(toyotaActiveIcon);
+          setShowCongratsPopup(true);
+        }
+        return newCount;
+      }); // Toyota
     } else if (cardId === 5) {
-      setActiveCount2((prev) => prev + 1); // Dodge
+      setActiveCount2((prev) => {
+        const newCount = prev + 1;
+        if (newCount === 10) {
+          setCongratsIcon(dodgeActiveIcon);
+          setShowCongratsPopup(true);
+        }
+        return newCount;
+      }); // Dodge
     } else if (cardId >= 1 && cardId <= 3) {
       setMinorActiveCounts((prev) => {
         const newCounts = [...prev];
         newCounts[cardId - 1] += 1;
+        if (newCounts[cardId - 1] === 10) {
+          setCongratsIcon(cardPrizes[cardId - 1].icon);
+          setShowCongratsPopup(true);
+        }
         return newCounts;
       });
     }
   };
 
   const handleRoll = () => {
+    if (remainingFlips > 0) {
+      setPopupTitle("Please");
+      setPopupMessage("Use all your flips before rolling again");
+      setShowPopup(true);
+      return;
+    }
+
     setIsRolling(true);
     setTimeout(() => {
       const randomNumber = Math.floor(Math.random() * 6) + 1;
@@ -139,6 +167,7 @@ const CarPromo: React.FC = () => {
 
   const handleCardClick = (index: number) => {
     if (remainingFlips <= 0) {
+      setPopupTitle("Don't give up yet!");
       setPopupMessage("Roll the dice again");
       setShowPopup(true);
       return;
@@ -157,6 +186,7 @@ const CarPromo: React.FC = () => {
       setPopupMessage("You found the bomb! Start again?");
       setShowPopup(true);
     } else if (remainingFlips - 1 === 0) {
+      setPopupTitle("Please");
       setPopupMessage("Roll the dice again");
       setShowPopup(true);
     }
@@ -166,6 +196,11 @@ const CarPromo: React.FC = () => {
     setShowPopup(false);
     setIsFlipped(Array(12).fill(false));
     setRemainingFlips(0);
+  };
+
+  const handleCloseCongratsPopup = () => {
+    setShowCongratsPopup(false);
+    setCongratsIcon(null);
   };
 
   return (
@@ -211,9 +246,19 @@ const CarPromo: React.FC = () => {
         {showPopup && (
           <div className="cardPopup">
             <div className="cardPopup__content">
-              <h2>Game Over</h2>
+              <h2>{popupTitle}</h2>
               <p>{popupMessage}</p>
               <button onClick={handleClosePopup}>Close</button>
+            </div>
+          </div>
+        )}
+        {showCongratsPopup && (
+          <div className="cardPopup">
+            <div className="cardPopup__content">
+              <h2>Congratulations!</h2>
+              <p>You have collected all 10x items</p>
+              {congratsIcon && <img src={congratsIcon} alt="Collected Icon" />}
+              <button onClick={handleCloseCongratsPopup}>Close</button>
             </div>
           </div>
         )}
