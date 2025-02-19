@@ -92,6 +92,21 @@ const CarPromo: React.FC = () => {
   const [popupMessage, setPopupMessage] = useState("");
   const [remainingFlips, setRemainingFlips] = useState(0);
 
+  // Function to update prize progress based on flipped card
+  const updatePrizeProgress = (cardId: number) => {
+    if (cardId === 4) {
+      setActiveCount1((prev) => prev + 1); // Toyota
+    } else if (cardId === 5) {
+      setActiveCount2((prev) => prev + 1); // Dodge
+    } else if (cardId >= 1 && cardId <= 3) {
+      setMinorActiveCounts((prev) => {
+        const newCounts = [...prev];
+        newCounts[cardId - 1] += 1;
+        return newCounts;
+      });
+    }
+  };
+
   const handleRoll = () => {
     setIsRolling(true);
     setTimeout(() => {
@@ -122,14 +137,6 @@ const CarPromo: React.FC = () => {
     }
   };
 
-  const setMinorActiveCount = (index: number, count: number) => {
-    setMinorActiveCounts((prevCounts) => {
-      const newCounts = [...prevCounts];
-      newCounts[index] = count;
-      return newCounts;
-    });
-  };
-
   const handleCardClick = (index: number) => {
     if (remainingFlips <= 0) {
       setPopupMessage("Roll the dice again");
@@ -142,7 +149,11 @@ const CarPromo: React.FC = () => {
     setIsFlipped(newFlippedState);
     setRemainingFlips(remainingFlips - 1);
 
-    if (cardPrizes[index % cardPrizes.length].id === 6) {
+    // Get the prize from the flipped card and update progress
+    const flippedCard = cardPrizes[index % cardPrizes.length];
+    updatePrizeProgress(flippedCard.id);
+
+    if (flippedCard.id === 6) {
       setPopupMessage("You found the bomb! Start again?");
       setShowPopup(true);
     } else if (remainingFlips - 1 === 0) {
@@ -184,7 +195,11 @@ const CarPromo: React.FC = () => {
               icon={prize.icon}
               winIcon={prize.winIcon}
               activeCount={minorActiveCounts[index]}
-              setActiveCount={(count) => setMinorActiveCount(index, count)}
+              setActiveCount={(count) => {
+                const newCounts = [...minorActiveCounts];
+                newCounts[index] = count;
+                setMinorActiveCounts(newCounts);
+              }}
             />
           ))}
         </div>
