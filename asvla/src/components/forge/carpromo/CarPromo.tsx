@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+
+// components
 import "./CarPromo.scss";
 import DiceGame from "../dice/DiceGame";
 import MultipleProgresses from "./carPromo-miniComponents/MultipleProgresses";
 import MinorProgress from "./carPromo-miniComponents/MinorProgress";
+import CardGame from "../cardGame/CardGame";
 
 // major prize icons
 import toyotaActiveIcon from "./carpromo-img/prize2-small-icon.svg";
@@ -22,6 +25,8 @@ import iphoneIcon from "./carpromo-img/Screenshot_3.png";
 import iphoneWinIcon from "./carpromo-img/apple.svg";
 import gelIcon from "./carpromo-img/1k.png";
 import gelWinIcon from "./carpromo-img/case-1.png";
+
+import bomb from "./carpromo-img/cross.svg";
 
 const majorPrizes = [
   {
@@ -63,10 +68,59 @@ const minorPrizes = [
   },
 ];
 
+const cardPrizes = [
+  { id: 1, icon: cashWinIcon },
+  { id: 2, icon: iphoneWinIcon },
+  { id: 3, icon: gelWinIcon },
+  { id: 4, icon: toyotaActiveIcon },
+  { id: 5, icon: dodgeActiveIcon },
+  { id: 6, icon: bomb },
+];
+
 const CarPromo: React.FC = () => {
-  const [activeCount1, setActiveCount1] = useState(3);
-  const [activeCount2, setActiveCount2] = useState(7);
-  const [minorActiveCounts, setMinorActiveCounts] = useState([1, 3, 5]);
+  const [activeCount1, setActiveCount1] = useState(0);
+  const [activeCount2, setActiveCount2] = useState(0);
+  const [minorActiveCounts, setMinorActiveCounts] = useState([0, 0, 0]);
+  const [diceNumber, setDiceNumber] = useState<number | null>(null);
+  const [isRolling, setIsRolling] = useState<boolean>(false);
+  const [rotation, setRotation] = useState<{ x: number; y: number }>({
+    x: 0,
+    y: 0,
+  });
+  const [isFlipped, setIsFlipped] = useState(Array(12).fill(false));
+  const [showPopup, setShowPopup] = useState(false);
+  const [popupMessage, setPopupMessage] = useState("");
+  const [remainingFlips, setRemainingFlips] = useState(0);
+
+  const handleRoll = () => {
+    setIsRolling(true);
+    setTimeout(() => {
+      const randomNumber = Math.floor(Math.random() * 6) + 1;
+      setDiceNumber(randomNumber);
+      setRotation(getRotation(randomNumber));
+      setRemainingFlips(randomNumber);
+      setIsRolling(false);
+    }, 1000); // Duration of the animation
+  };
+
+  const getRotation = (number: number) => {
+    switch (number) {
+      case 1:
+        return { x: 0, y: 0 };
+      case 2:
+        return { x: 0, y: 180 };
+      case 3:
+        return { x: 0, y: -90 };
+      case 4:
+        return { x: 0, y: 90 };
+      case 5:
+        return { x: -90, y: 0 };
+      case 6:
+        return { x: 90, y: 0 };
+      default:
+        return { x: 0, y: 0 };
+    }
+  };
 
   const setMinorActiveCount = (index: number, count: number) => {
     setMinorActiveCounts((prevCounts) => {
@@ -76,13 +130,43 @@ const CarPromo: React.FC = () => {
     });
   };
 
+  const handleCardClick = (index: number) => {
+    if (remainingFlips <= 0) {
+      setPopupMessage("Roll the dice again");
+      setShowPopup(true);
+      return;
+    }
+
+    const newFlippedState = [...isFlipped];
+    newFlippedState[index] = !newFlippedState[index];
+    setIsFlipped(newFlippedState);
+    setRemainingFlips(remainingFlips - 1);
+
+    if (cardPrizes[index % cardPrizes.length].id === 6) {
+      setPopupMessage("You found the bomb! Start again?");
+      setShowPopup(true);
+    } else if (remainingFlips - 1 === 0) {
+      setPopupMessage("Roll the dice again");
+      setShowPopup(true);
+    }
+  };
+
+  const handleClosePopup = () => {
+    setShowPopup(false);
+    setIsFlipped(Array(12).fill(false));
+    setRemainingFlips(0);
+  };
+
   return (
     <div className="carpromoBody">
       <div className="carpromo__container">
-        <DiceGame />
-        <h2 className="carpRomoTitle">
-          Collect symbols and win relevant prizes
-        </h2>
+        <DiceGame
+          diceNumber={diceNumber}
+          isRolling={isRolling}
+          rotation={rotation}
+          handleRoll={handleRoll}
+        />
+        <h2 className="carpRomoTitle">Card Title</h2>
         <div className="multiple__progresses">
           {majorPrizes.map((prize, index) => (
             <MultipleProgresses
@@ -104,6 +188,20 @@ const CarPromo: React.FC = () => {
             />
           ))}
         </div>
+        <CardGame
+          cardPrizes={cardPrizes}
+          handleCardClick={handleCardClick}
+          isFlipped={isFlipped}
+        />
+        {showPopup && (
+          <div className="cardPopup">
+            <div className="cardPopup__content">
+              <h2>Game Over</h2>
+              <p>{popupMessage}</p>
+              <button onClick={handleClosePopup}>Close</button>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

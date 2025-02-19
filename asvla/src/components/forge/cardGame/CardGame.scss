@@ -1,0 +1,102 @@
+@use "../../../assets/styles/mediaQuerys.scss";
+
+.CardGame {
+  position: relative;
+}
+.cardGame h1 {
+  color: #fff;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.cardGame__Container {
+  width: 800;
+  height: 700px;
+  border-radius: 30px;
+  background: linear-gradient(
+    180deg,
+    rgba(205, 39, 250, 0.7) 0%,
+    rgba(64, 60, 208, 0.7) 100%
+  );
+  backdrop-filter: blur(10px);
+  margin: 20px auto;
+  padding: 15px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cardGame__rule {
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+  text-align: center;
+  color: #ffffff;
+  margin-top: 15px;
+}
+
+.cardGame__rule .cross {
+  width: 22px;
+  height: 20px;
+  display: inline-block;
+  background-size: contain;
+  vertical-align: middle;
+  margin: 0 5px 0 5px;
+}
+
+.card__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  gap: 10px;
+  width: 530px;
+  height: 580px;
+  background-color: black;
+}
+.card__container .cardGame__card {
+  width: 100px;
+  height: 155px;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+}
+.card__container .cardGame__card .backCard.active {
+  visibility: visible;
+}
+.card__container .cardGame__card .backCard {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 50px;
+  line-height: 120px;
+  cursor: pointer;
+  color: #6d1124;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  background: #e7e7e7;
+  border-radius: 10px;
+}
+.card__container .cardGame__card .frontCard.active {
+  visibility: visible;
+}
+.card__container .cardGame__card .frontCard {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  background: #e7e7e7;
+  border-radius: 10px;
+}

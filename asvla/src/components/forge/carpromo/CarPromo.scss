@@ -415,3 +415,38 @@
     height: 6.7vw;
   }
 }
+.cardPopup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardPopup__content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.cardPopup__content h2 {
+  margin: 0 0 10px;
+}
+
+.cardPopup__content p {
+  margin: 0 0 20px;
+}
+
+.cardPopup__content button {
+  padding: 10px 20px;
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}

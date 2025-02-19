@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./DiceGame.scss";
 
 import diceOne from "./dice-img/dice1.png";
@@ -8,43 +8,19 @@ import diceFour from "./dice-img/dice4.png";
 import diceFive from "./dice-img/dice5.png";
 import diceSix from "./dice-img/dice6.png";
 
-const DiceGame: React.FC = () => {
-  const [diceNumber, setDiceNumber] = useState<number | null>(null);
-  const [isRolling, setIsRolling] = useState<boolean>(false);
-  const [rotation, setRotation] = useState<{ x: number; y: number }>({
-    x: 0,
-    y: 0,
-  });
+interface DiceGameProps {
+  diceNumber: number | null;
+  isRolling: boolean;
+  rotation: { x: number; y: number };
+  handleRoll: () => void;
+}
 
-  const handleRoll = () => {
-    setIsRolling(true);
-    setTimeout(() => {
-      const randomNumber = Math.floor(Math.random() * 6) + 1;
-      setDiceNumber(randomNumber);
-      setRotation(getRotation(randomNumber));
-      setIsRolling(false);
-    }, 1000); // Duration of the animation
-  };
-
-  const getRotation = (number: number) => {
-    switch (number) {
-      case 1:
-        return { x: 0, y: 0 };
-      case 2:
-        return { x: 0, y: 180 };
-      case 3:
-        return { x: 0, y: -90 };
-      case 4:
-        return { x: 0, y: 90 };
-      case 5:
-        return { x: -90, y: 0 };
-      case 6:
-        return { x: 90, y: 0 };
-      default:
-        return { x: 0, y: 0 };
-    }
-  };
-
+const DiceGame: React.FC<DiceGameProps> = ({
+  diceNumber,
+  isRolling,
+  rotation,
+  handleRoll,
+}) => {
   return (
     <div className="dice-game">
       <div
