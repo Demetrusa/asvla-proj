@@ -38,7 +38,7 @@ const MultipleProgresses: React.FC<MultipleProgressesProps> = ({
             src={icon}
             alt="Car Progress"
             className={icon === prize.iconActive ? "carActive" : "carInactive"}
-            onClick={() => setActiveCount(index + 1)} // Example click handler to change active count
+            onClick={() => setActiveCount(index + 1)}
           />
         ))}
       </div>

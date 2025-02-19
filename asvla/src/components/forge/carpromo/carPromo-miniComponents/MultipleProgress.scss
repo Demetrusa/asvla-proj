@@ -1,87 +1,230 @@
 @use "../../../../assets/styles/mediaQuerys.scss";
 
-.CarBox{
+.CarBox {
+  background: linear-gradient(82deg, #ffaa0e 0%, #ffd80a 94.98%);
+  height: 185px;
+  width: 390px;
+  border-radius: 16px;
+  position: relative;
+  pointer-events: none;
 
-    background: linear-gradient(82deg, #ffaa0e 0%, #ffd80a 94.98%);
-    height: 185px;
-    width: 390px;
-    border-radius: 16px;
-    position: relative;
-    pointer-events: none;
+  @include mediaQuerys.mobile {
+    width: 95%;
+    height: 45vw;
+  }
 }
 
-.carBox__title{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    padding: 5px;
-    position: absolute;
-    left: 20px;
-    top: 20px;
+.carBox__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 5px;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+
+  @include mediaQuerys.mobile {
+    gap: 3.5vw;
+    padding: 1.5vw;
+    left: 5vw;
+    top: 5vw;
+  }
 }
 .carBox__title span {
-    font-size: 20px;
-    font-weight: bold;
-    color: #000;
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+
+  @include mediaQuerys.mobile {
+    font-size: 4.5vw;
+  }
 }
-.carBox__carIcon{
-    position: absolute;
-    top: 61px;
-    right: 9px;
+.carBox__carIcon {
+  position: absolute;
+  top: 61px;
+  right: 9px;
+
+  @include mediaQuerys.mobile {
+    top: 15vw;
+    right: 2vw;
+  }
 }
 .carBox__carIcon img {
-    object-fit: contain;
-    width: 180px;
+  object-fit: contain;
+  width: 180px;
+
+  @include mediaQuerys.mobile {
+    width: 45vw;
+  }
 }
-.carBox__icons{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    width: 175px;
-    gap: 5px;
-    position: absolute;
-    left: 10px;
-    top: 77px;
+.carBox__icons {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 162px;
+  gap: 5px;
+  position: absolute;
+  left: 10px;
+  top: 77px;
+
+  @include mediaQuerys.mobile {
+    width: 42.5vw;
+    top: 19vw;
+    left: 2vw;
+    gap: 2vw;
+  }
+}
+.carBox__icons img {
+  width: 25px;
+  height: 25px;
+
+  @include mediaQuerys.mobile {
+    width: 6.5vw;
+    height: 6.5vw;
+  }
 }
 .car-icons img {
-    width: 25px;
-    height: 25px;
+  width: 25px;
+  height: 25px;
+
+  @include mediaQuerys.mobile {
+    width: 6.5vw;
+    height: 6.5vw;
+  }
 }
 
-.CarBox:nth-child(2) .carBox__title img{
-    height: 35px;
+.CarBox:nth-child(2) .carBox__title img {
+  height: 35px;
+
+  @include mediaQuerys.mobile {
+    height: 9.1vw;
+  }
 }
 
 // Minor Progess
 
 .cash {
-    width: 312px;
-    height: 100px;
-    background: linear-gradient(264deg, #CA13C5 8.59%, #6D3CD0 100%);
-    border-radius: 16px;
-    position: relative;
-    padding: 10px;
+  width: 260px;
+  height: 100px;
+  background: linear-gradient(264deg, #ca13c5 8.59%, #6d3cd0 100%);
+  border-radius: 16px;
+  position: relative;
+  padding: 10px;
+
+  @include mediaQuerys.mobile {
+    width: 95%;
+    height: 25vw;
+    padding: 2.5vw;
+  }
 }
-.cash__title img{
-    width: 130px;
-    position: absolute;
-    left: 20px;
-    top: 24px;
+.cash__title img {
+  width: 130px;
+  position: absolute;
+  left: 9px;
+  top: 24px;
+
+  @include mediaQuerys.mobile {
+    width: 33.5vw;
+    top: 6vw;
+    left: 10vw;
+  }
 }
-.cash__icon{
-    height: 50px;
-    width: 50px;
-    position: absolute;
-    right: 80px;
-    z-index: 2;
+.cash:nth-child(2) .cash__title img {
+  top: 10px;
+  width: 150px;
+
+  @include mediaQuerys.mobile {
+    top: 2.5vw;
+    width: 38.5vw;
+  }
+}
+.cash:nth-child(3) .cash__title img {
+  top: 22px;
+  width: 100px;
+  left: 30px;
+
+  @include mediaQuerys.mobile {
+    top: 5.5vw;
+    width: 25.8vw;
+    left: 7.7vw;
+  }
+}
+.cash__icon {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  right: 53px;
+  z-index: 2;
+
+  @include mediaQuerys.mobile {
+    height: 12.8vw;
+    width: 12.8vw;
+    right: 26.5vw;
+  }
 }
 .cash__iconAmount {
-    background-color: rgba(0, 0, 0, 0.3);
-    padding: 5px;
-    color: #fff;
-    position: absolute;
-    right: 44px;
-    top: 25px;
-    border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 5px;
+  color: #fff;
+  position: absolute;
+  right: 5px;
+  top: 23px;
+  border-radius: 4px;
+
+  @include mediaQuerys.mobile {
+    padding: 1.5vw;
+    top: 5.8vw;
+    right: 13.3vw;
+  }
+}
+.cash:nth-child(2) .cash__iconAmount {
+  top: 20px;
+
+  @include mediaQuerys.mobile {
+    top: 5.1vw;
+  }
+}
+.cash__iconAmount span {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 0 1px;
+
+  @include mediaQuerys.mobile {
+    font-size: 5.3vw;
+  }
+}
+.cash__collectIcons {
+  display: flex;
+  justify-content: space-between;
+  width: 250px;
+  position: absolute;
+  top: 77px;
+  left: 5px;
+
+  @include mediaQuerys.mobile {
+    width: 86.5vw;
+    top: 19.5vw;
+    left: 1.3vw;
+  }
+}
+.cash__collectIcons span.active {
+  background-color: #7dff25;
+}
+.cash__collectIcons span {
+  width: 10px;
+  flex: 0 0 19px;
+  height: 3px;
+  border-radius: 1px;
+  background-color: rgba(0, 0, 0, 0.4);
+
+  @include mediaQuerys.mobile {
+    width: 2.5vw;
+    height: 0.8vw;
+    border-radius: 0.3vw;
+    flex: 0 0 7vw;
+  }
+}
+.cash__iconAmount span:nth-child(1) {
+  color: #7dff25;
 }

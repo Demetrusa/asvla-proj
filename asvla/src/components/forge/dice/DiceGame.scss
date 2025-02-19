@@ -1,3 +1,5 @@
+@use "../../../assets/styles/mediaQuerys.scss";
+
 .dice-game {
   display: flex;
   flex-direction: column;
@@ -12,6 +14,12 @@
   transform-style: preserve-3d;
   transition: transform 1s;
   margin-top: 10px;
+
+  @include mediaQuerys.mobile {
+    width: 20vw;
+    height: 20vw;
+    margin-top: 3vw;
+  }
 }
 
 .cube.rolling {
@@ -34,6 +42,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @include mediaQuerys.mobile {
+    width: 20vw;
+    height: 20vw;
+  }
 }
 
 .cube img {
@@ -44,26 +57,50 @@
 
 .front {
   transform: rotateY(0deg) translateZ(50px);
+
+  @include mediaQuerys.mobile {
+    transform: rotateY(0deg) translateZ(10vw);
+  }
 }
 
 .back {
   transform: rotateY(180deg) translateZ(50px);
+
+  @include mediaQuerys.mobile {
+    transform: rotateY(180deg) translateZ(10vw);
+  }
 }
 
 .right {
   transform: rotateY(90deg) translateZ(50px);
+
+  @include mediaQuerys.mobile {
+    transform: rotateY(90deg) translateZ(10vw);
+  }
 }
 
 .left {
   transform: rotateY(-90deg) translateZ(50px);
+
+  @include mediaQuerys.mobile {
+    transform: rotateY(-90deg) translateZ(10vw);
+  }
 }
 
 .top {
   transform: rotateX(90deg) translateZ(50px);
+
+  @include mediaQuerys.mobile {
+    transform: rotateX(90deg) translateZ(10vw);
+  }
 }
 
 .bottom {
   transform: rotateX(-90deg) translateZ(50px);
+
+  @include mediaQuerys.mobile {
+    transform: rotateX(-90deg) translateZ(10vw);
+  }
 }
 
 .diceGame__button {
@@ -74,10 +111,29 @@
   border: none;
   cursor: pointer;
   border-radius: 5px;
+
+  @include mediaQuerys.mobile {
+    padding: 2.5vw 5vw;
+    margin-top: 5vw;
+  }
+}
+
+.diceNumber {
+  color: #fff;
+  font-size: 15px;
+
+  @include mediaQuerys.mobile {
+    font-size: 4vw;
+  }
 }
 
 .diceNumber {
   margin-top: 20px;
   font-size: 24px;
   font-weight: bold;
+
+  @include mediaQuerys.mobile {
+    margin-top: 5vw;
+    font-size: 6vw;
+  }
 }

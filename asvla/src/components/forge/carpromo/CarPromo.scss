@@ -4,19 +4,49 @@
   background: transparent url(./carpromo-img/bg-main-en.webp) no-repeat 50%;
   background-position: top center;
   padding-bottom: 50px;
+
+  @include mediaQuerys.mobile {
+    padding-bottom: 10vw;
+  }
 }
 .carpromo__container {
   margin: 0 auto;
   width: 940px;
   padding-top: 900px;
+
+  @include mediaQuerys.mobile {
+    width: 100%;
+    background: transparent url(./carpromo-img/mob-en.webp) no-repeat 50%;
+    background-size: 100%;
+    padding-bottom: 40vw;
+    background-position: top center;
+    background-color: #000000;
+    padding-top: 170vw;
+  }
+}
+.carpRomoTitle {
+  color: #fff;
+  font-size: 25px;
+  margin: 10px auto;
+  text-align: center;
+
+  @include mediaQuerys.mobile {
+    font-size: 6.5vw;
+    margin: 2.5vw auto;
+  }
 }
 .multiple__progresses {
   width: 800px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: black;
   margin: 20px auto;
+
+  @include mediaQuerys.mobile {
+    width: 100%;
+    flex-direction: column;
+    gap: 5vw;
+  }
 }
 .multiple__progresses .progresses-prize {
   background: linear-gradient(82deg, #ffaa0e 0%, #ffd80a 94.98%);
@@ -24,7 +54,14 @@
   width: 48%;
   border-radius: 16px;
   position: relative;
+
+  @include mediaQuerys.mobile {
+    width: 100%;
+    height: 49vw;
+    border-radius: 4.267vw;
+  }
 }
+
 .prize-title {
   display: flex;
   justify-content: center;
@@ -34,8 +71,14 @@
   position: absolute;
   left: 20px;
   top: 20px;
-}
 
+  @include mediaQuerys.mobile {
+    gap: 3.5vw;
+    padding: 1.5vw;
+    left: 5vw;
+    top: 5vw;
+  }
+}
 
 .progresses-prize {
   .prize-title {
@@ -44,6 +87,11 @@
       background-size: 100%;
       width: 51px;
       height: 34px;
+
+      @include mediaQuerys.mobile {
+        width: 13.8vw;
+        height: 9.1vw;
+      }
     }
   }
 }
@@ -52,15 +100,26 @@
   background-repeat: no-repeat;
   background-size: 100%;
 
+  @include mediaQuerys.mobile {
+    height: 14.2vw;
+  }
 }
 .progresses-prize:nth-of-type(2) .prize-title {
   top: 10px;
+
+  @include mediaQuerys.mobile {
+    top: 2.7vw;
+  }
 }
 
 .prize-title span {
   font-weight: bolder;
   font-size: 24px;
   color: #000;
+
+  @include mediaQuerys.mobile {
+    font-size: 6.5vw;
+  }
 }
 .car-progress {
   display: flex;
@@ -69,26 +128,35 @@
   width: 140px;
   margin-top: 90px;
   margin-left: 24px;
+
+  @include mediaQuerys.mobile {
+    margin-top: 24vw;
+    margin-left: 6.5vw;
+  }
 }
-.carIconOne.active {
-  background-image: url(./carpromo-img/prize2-small-icon.svg);
-}
+
 .carIconOne {
-  background-image: url(./carpromo-img/incative-car-icon-one.svg);
   background-repeat: no-repeat;
   background-size: 100%;
   width: 30px;
   height: 30px;
+
+  @include mediaQuerys.mobile {
+    width: 8vw;
+    height: 8vw;
+  }
 }
-.carIconTwo.active {
-  background-image: url(./carpromo-img/prize1-small-icon.svg);
-}
+
 .carIconTwo {
-  background-image: url(./carpromo-img/prize1-small-icon-inactive.svg);
   background-repeat: no-repeat;
   background-size: 100%;
   width: 30px;
   height: 30px;
+
+  @include mediaQuerys.mobile {
+    width: 8vw;
+    height: 8vw;
+  }
 }
 .bigCar-icon {
   position: absolute;
@@ -98,15 +166,26 @@
   background-size: 100%;
   width: 48%;
   height: 64%;
+
+  @include mediaQuerys.mobile {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .bigCar-one {
   top: 40px;
-  background-image: url(./carpromo-img/prize2-big-icon.png);
+
+  @include mediaQuerys.mobile {
+    top: 10.8vw;
+  }
 }
 .bigCar-two {
   top: 65px;
-  background-image: url(./carpromo-img/prize1-big-icon.png);
+
+  @include mediaQuerys.mobile {
+    top: 17.5vw;
+  }
 }
 .minorPrize__progressBox {
   display: flex;
@@ -116,6 +195,14 @@
   flex-wrap: wrap;
   margin-top: 20px;
   width: 800px;
+
+  @include mediaQuerys.mobile {
+    width: 100%;
+    flex-direction: column;
+    margin: 3vw auto;
+    margin-top: 3vw;
+    gap: 5vw;
+  }
 }
 .minorPrize {
   width: 32.3%;
@@ -127,6 +214,12 @@
   padding: 25px;
   border-radius: 8px;
   position: relative;
+
+  @include mediaQuerys.mobile {
+    width: 100%;
+    padding: 6.5vw;
+    border-radius: 2.133vw;
+  }
 }
 .minorPrize-titleOne {
   display: flex;
@@ -141,6 +234,12 @@
   position: absolute;
   left: 16px;
   top: 19px;
+
+  @include mediaQuerys.mobile {
+    width: 27vw;
+    height: 8vw;
+    top: 5vw;
+  }
 }
 .minorPrize-icon.cashIcon-1 {
   background-image: url(./carpromo-img/10k.png);
@@ -150,11 +249,22 @@
   width: 130px;
   height: 30px;
   top: 8px;
+
+  @include mediaQuerys.mobile {
+    width: 35vw;
+    height: 8vw;
+    top: 2.1vw;
+  }
 }
 .minorPrize-icon.OneGIcon-1 {
   background-image: url(./carpromo-img/1k.png);
   width: 95px;
   height: 30px;
+
+  @include mediaQuerys.mobile {
+    width: 25.6vw;
+    height: 8vw;
+  }
 }
 
 .minorPrize-winIcon {
@@ -165,23 +275,48 @@
   width: 50px;
   position: absolute;
   left: 150px;
-    top: 1px;
+  top: 1px;
   z-index: 2;
+
+  @include mediaQuerys.mobile {
+    width: 13.5vw;
+    height: 13.5vw;
+    top: 1vw;
+    left: 40vw;
+  }
 }
 .minorPrize:nth-of-type(2) .minorPrize-winIcon {
   width: 45px;
   top: 5px;
   left: 154px;
+
+  @include mediaQuerys.mobile {
+    width: 12vw;
+    top: 1.3vw;
+    left: 40.5vw;
+  }
 }
 .minorPrize:nth-of-type(3) .minorPrize-winIcon {
   width: 45px;
   top: 5px;
   left: 154px;
+
+  @include mediaQuerys.mobile {
+    width: 12vw;
+    top: 1.3vw;
+    left: 40.5vw;
+  }
 }
-.minorPrize:nth-of-type(2) .minorPrize-icon{
+.minorPrize:nth-of-type(2) .minorPrize-icon {
   left: 16px;
   top: 5px;
   width: 129px;
+
+  @include mediaQuerys.mobile {
+    left: 4.3vw;
+    top: 1.3vw;
+    width: 34.4vw;
+  }
 }
 
 .minorPrize-winIcon.cashIcon-2 {
@@ -192,12 +327,22 @@
   top: 6px;
   left: 176px;
   z-index: 2;
+
+  @include mediaQuerys.mobile {
+    top: 1.6vw;
+    left: 47vw;
+  }
 }
 .minorPrize-winIcon.OneGIcon-2 {
   background-image: url(./carpromo-img/case-1.png);
   top: 1px;
   left: 176px;
   z-index: 2;
+
+  @include mediaQuerys.mobile {
+    top: 0.3vw;
+    left: 47vw;
+  }
 }
 .minorPrize-Amount {
   display: flex;
@@ -210,11 +355,22 @@
   position: absolute;
   left: 196px;
   top: 13px;
+
+  @include mediaQuerys.mobile {
+    gap: 1.3vw;
+    padding: 1.3vw;
+    left: 52vw;
+    top: 3.5vw;
+  }
 }
 .minorPrize-Amount span {
   font-size: 20px;
   font-weight: bold;
   color: #fff;
+
+  @include mediaQuerys.mobile {
+    font-size: 5.3vw;
+  }
 }
 .minorPrize-Amount span:nth-child(1) {
   color: rgb(147, 243, 4);
@@ -225,6 +381,11 @@
   justify-content: space-between;
   width: 245px;
   margin-top: 40px;
+
+  @include mediaQuerys.mobile {
+    width: 65vw;
+    margin-top: 10.7vw;
+  }
 }
 .minorPrizePoints span.active {
   background-color: #7dff25;
@@ -235,12 +396,22 @@
   height: 3px;
   border-radius: 1px;
   background-color: rgba(0, 0, 0, 0.4);
+
+  @include mediaQuerys.mobile {
+    width: 5.9vw;
+    height: 0.8vw;
+    border-radius: 0.3vw;
+  }
 }
 
-
-.carIcon{ 
+.carIcon {
   background-repeat: no-repeat;
   background-size: 100%;
   width: 25px;
   height: 25px;
+
+  @include mediaQuerys.mobile {
+    width: 6.7vw;
+    height: 6.7vw;
+  }
 }
