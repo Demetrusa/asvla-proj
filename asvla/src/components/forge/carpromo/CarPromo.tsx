@@ -27,6 +27,7 @@ import gelIcon from "./carpromo-img/1k.png";
 import gelWinIcon from "./carpromo-img/case-1.png";
 
 import bomb from "./carpromo-img/cross.svg";
+import TermsComponent from "../terms/TermsComponent";
 
 const majorPrizes = [
   {
@@ -262,6 +263,7 @@ const CarPromo: React.FC = () => {
             </div>
           </div>
         )}
+        <TermsComponent carPromoTerms={true} TermsBg={false} />
       </div>
     </div>
   );

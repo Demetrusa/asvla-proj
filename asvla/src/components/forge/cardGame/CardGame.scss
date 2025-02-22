@@ -8,10 +8,14 @@
   font-size: 25px;
   font-weight: bold;
   text-align: center;
+
+  @include mediaQuerys.mobile {
+    font-size: 4vw;
+  }
 }
 
 .cardGame__Container {
-  width: 800;
+  width: 800px;
   height: 700px;
   border-radius: 30px;
   background: linear-gradient(
@@ -26,6 +30,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @include mediaQuerys.mobile {
+    width: 90%;
+    height: 90%;
+    border-radius: 4.267vw;
+    padding: 1.5vw;
+  }
 }
 .cardGame__rule {
   font-weight: 700;
@@ -34,6 +45,11 @@
   text-align: center;
   color: #ffffff;
   margin-top: 15px;
+
+  @include mediaQuerys.mobile {
+    font-size: 4vw;
+    margin-top: 5vw;
+  }
 }
 
 .cardGame__rule .cross {
@@ -43,6 +59,12 @@
   background-size: contain;
   vertical-align: middle;
   margin: 0 5px 0 5px;
+
+  @include mediaQuerys.mobile {
+    width: 5.8vw;
+    height: 5.3vw;
+    margin: 0 1.3vw 0 1.3vw;
+  }
 }
 
 .card__container {
@@ -54,7 +76,12 @@
   gap: 10px;
   width: 530px;
   height: 580px;
-  background-color: black;
+
+  @include mediaQuerys.mobile {
+    width: 95%;
+    height: 95%;
+    gap: 2.5vw;
+  }
 }
 .card__container .cardGame__card {
   width: 100px;
@@ -62,6 +89,13 @@
   padding: 10px;
   border-radius: 10px;
   position: relative;
+
+  @include mediaQuerys.mobile {
+    width: 20vw;
+    height: 25vw;
+    padding: 2.5vw;
+    border-radius: 2.5vw;
+  }
 }
 .card__container .cardGame__card .backCard.active {
   visibility: visible;
@@ -82,6 +116,12 @@
   visibility: hidden;
   background: #e7e7e7;
   border-radius: 10px;
+
+  @include mediaQuerys.mobile {
+    font-size: 10vw;
+    line-height: 24vw;
+    border-radius: 2.5vw;
+  }
 }
 .card__container .cardGame__card .frontCard.active {
   visibility: visible;
@@ -99,4 +139,8 @@
   visibility: hidden;
   background: #e7e7e7;
   border-radius: 10px;
+
+  @include mediaQuerys.mobile {
+    border-radius: 2.5vw;
+  }
 }

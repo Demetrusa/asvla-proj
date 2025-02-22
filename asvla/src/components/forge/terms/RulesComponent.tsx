@@ -2,8 +2,12 @@ import React, { useState } from "react";
 
 type DropdownStateRules = {
   TermsBg: boolean;
+  carPromoTerms: boolean;
 };
-const RulesComponent: React.FC<DropdownStateRules> = ({ TermsBg }) => {
+const RulesComponent: React.FC<DropdownStateRules> = ({
+  TermsBg,
+  carPromoTerms,
+}) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const handleToggle = () => {
@@ -13,11 +17,9 @@ const RulesComponent: React.FC<DropdownStateRules> = ({ TermsBg }) => {
   return (
     <div className="newTerms newTerms__rules">
       <div
-        className={
-          TermsBg
-            ? "threePlusOneTerms "
-            : "newTerms__head newTerms__rules--head"
-        }
+        className={`newTerms__head newTerms__rules--head ${
+          TermsBg ? "threePlusOneTerms" : ""
+        } ${carPromoTerms ? "carPromoActive" : ""}`}
         onClick={handleToggle}
       >
         <p>ADDITIONAL TERMS AND CONDITIONS </p>
@@ -26,7 +28,7 @@ const RulesComponent: React.FC<DropdownStateRules> = ({ TermsBg }) => {
       <div
         className={`newTerms__content newTerms__rules--content ${
           isOpen ? "open" : ""
-        }`}
+        } ${carPromoTerms ? "carPromoActive" : ""}`}
       >
         <ol>
           <li className={TermsBg ? "li-terms-bg" : "rules-p"}>

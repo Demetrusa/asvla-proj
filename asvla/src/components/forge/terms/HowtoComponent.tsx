@@ -4,11 +4,15 @@ type DropdownState = {
   parent: string | null;
   child: string | null;
   TermsBg: boolean;
-  // headerText: string;
   championBG: boolean;
+  carPromoTerms: boolean;
 };
 
-const HowtoComponent: React.FC<DropdownState> = ({ TermsBg, championBG }) => {
+const HowtoComponent: React.FC<DropdownState> = ({
+  TermsBg,
+  championBG,
+  carPromoTerms,
+}) => {
   const [activeTab, setActiveTab] = useState<"one" | "two">("one");
   const [openDropdown, setOpenDropdown] = useState({
     parent: null,
@@ -27,7 +31,7 @@ const HowtoComponent: React.FC<DropdownState> = ({ TermsBg, championBG }) => {
       <div
         className={`newTerms__head ${TermsBg ? "threePlusOneTerms" : ""} ${
           championBG ? "championBGClass" : "newTerms__howto--head"
-        }`}
+        } ${carPromoTerms ? "carPromoActive" : ""}`}
         onClick={() => toggleContent("parent", "head")}
       >
         <div>Terms and Conditions</div>
@@ -42,7 +46,7 @@ const HowtoComponent: React.FC<DropdownState> = ({ TermsBg, championBG }) => {
             : championBG
             ? "championBGContentClass"
             : "newTerms__howto--content"
-        }`}
+        } ${carPromoTerms ? "carPromoActive" : ""}`}
       >
         <div className="newTerms__tabs">
           <div
@@ -66,12 +70,10 @@ const HowtoComponent: React.FC<DropdownState> = ({ TermsBg, championBG }) => {
           <div className="newTerms__contentOne">
             <div className="newTerms">
               <div
-                className={`${
-                  TermsBg
-                    ? "threePlusOneTerms"
-                    : championBG
-                    ? "championBGClass"
-                    : "newTerms__head"
+                className={`newTerms__head ${
+                  carPromoTerms ? "carPromoActive" : ""
+                } ${TermsBg ? "threePlusOneTerms" : ""} ${
+                  championBG ? "championBGClass" : ""
                 }`}
                 onClick={() => toggleContent("child", "one")}
               >
@@ -97,12 +99,10 @@ const HowtoComponent: React.FC<DropdownState> = ({ TermsBg, championBG }) => {
             </div>
             <div className="newTerms">
               <div
-                className={`${
-                  TermsBg
-                    ? "threePlusOneTerms"
-                    : championBG
-                    ? "championBGClass"
-                    : "newTerms__head"
+                className={`newTerms__head ${
+                  carPromoTerms ? "carPromoActive" : ""
+                } ${TermsBg ? "threePlusOneTerms" : ""} ${
+                  championBG ? "championBGClass" : ""
                 }`}
                 onClick={() => toggleContent("child", "one")}
               >
@@ -129,7 +129,9 @@ const HowtoComponent: React.FC<DropdownState> = ({ TermsBg, championBG }) => {
           <div className="newTerms__contentTwo">
             <div className="newTerms">
               <div
-                className={TermsBg ? "threePlusOneTerms" : "newTerms__head"}
+                className={`${
+                  TermsBg ? "threePlusOneTerms" : "newTerms__head"
+                } ${carPromoTerms ? "carPromoActive" : ""}`}
                 onClick={() => toggleContent("child", "three")}
               >
                 <div>WHEN DO I RECEIVE THE PRIZE? </div>

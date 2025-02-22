@@ -314,3 +314,24 @@
     margin: 5vw auto;
   }
 }
+.carPromoActive.newTerms__head {
+  background: linear-gradient(
+    180deg,
+    rgba(205, 39, 250, 0.7) 0%,
+    rgba(64, 60, 208, 0.7) 100%
+  );
+}
+.carPromoActive.newTerms__content {
+  background: linear-gradient(
+    180deg,
+    rgba(205, 39, 250, 0.7) 0%,
+    rgba(64, 60, 208, 0.7) 100%
+  );
+}
+.carPromoActive.newTerms__content > ol > li::before {
+  background: linear-gradient(
+    180deg,
+    rgba(205, 39, 250, 0.7) 0%,
+    rgba(64, 60, 208, 0.7) 100%
+  );
+}
