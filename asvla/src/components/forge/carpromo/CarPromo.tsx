@@ -213,7 +213,7 @@ const CarPromo: React.FC = () => {
           rotation={rotation}
           handleRoll={handleRoll}
         />
-        <h2 className="carpRomoTitle">Card Title</h2>
+        {/* <h2 className="carpRomoTitle">Card Title</h2> */}
         <div className="multiple__progresses">
           {majorPrizes.map((prize, index) => (
             <MultipleProgresses
