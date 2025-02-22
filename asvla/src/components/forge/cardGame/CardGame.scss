@@ -59,6 +59,9 @@
   background-size: contain;
   vertical-align: middle;
   margin: 0 5px 0 5px;
+  background-image: url(./cardgame-img/cross.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
 
   @include mediaQuerys.mobile {
     width: 5.8vw;
