@@ -21,7 +21,7 @@ const NewLogin: React.FC<NewLoginProps> = ({ onLogin }) => {
     ) {
       const token = Math.random().toString(36).substring(2);
       localStorage.setItem("authToken", token);
-      alert("Login successful!");
+      // alert("Login successful!");
       onLogin();
 
       navigate("/");
@@ -34,7 +34,7 @@ const NewLogin: React.FC<NewLoginProps> = ({ onLogin }) => {
 
   return (
     <div className="register-box">
-      <h2>Logino</h2>
+      <h2>Login</h2>
       <input
         type="email"
         placeholder="Email"

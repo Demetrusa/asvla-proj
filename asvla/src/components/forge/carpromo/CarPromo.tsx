@@ -144,7 +144,7 @@ const CarPromo: React.FC = () => {
       setRotation(getRotation(randomNumber));
       setRemainingFlips(randomNumber);
       setIsRolling(false);
-    }, 1000); // Duration of the animation
+    }, 1000); 
   };
 
   const getRotation = (number: number) => {
@@ -184,12 +184,16 @@ const CarPromo: React.FC = () => {
     updatePrizeProgress(flippedCard.id);
 
     if (flippedCard.id === 6) {
+      setTimeout(() => {
       setPopupMessage("You found the bomb! Start again?");
       setShowPopup(true);
+      }, 500); 
     } else if (remainingFlips - 1 === 0) {
+      setTimeout(() => {
       setPopupTitle("Please");
       setPopupMessage("Roll the dice again");
       setShowPopup(true);
+      },1000); 
     }
   };
 
@@ -207,13 +211,13 @@ const CarPromo: React.FC = () => {
   return (
     <div className="carpromoBody">
       <div className="carpromo__container">
+        <h2 className="carpRomoTitle">Roll The Dice and Win</h2>
         <DiceGame
           diceNumber={diceNumber}
           isRolling={isRolling}
           rotation={rotation}
           handleRoll={handleRoll}
         />
-        {/* <h2 className="carpRomoTitle">Card Title</h2> */}
         <div className="multiple__progresses">
           {majorPrizes.map((prize, index) => (
             <MultipleProgresses

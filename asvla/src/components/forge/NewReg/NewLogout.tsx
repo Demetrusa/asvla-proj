@@ -8,7 +8,7 @@ interface NewLogoutProps {
 const NewLogout: React.FC<NewLogoutProps> = ({ onLogout }) => {
   const handleLogout = () => {
     localStorage.removeItem("authToken");
-    alert("Logged out successfully!");
+    // alert("Logged out successfully!");
     onLogout();
   
     window.dispatchEvent(new Event("authStatusChanged"));

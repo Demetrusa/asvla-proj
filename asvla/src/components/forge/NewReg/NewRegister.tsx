@@ -25,7 +25,7 @@ const NewRegister: React.FC<NewRegisterProps> = ({ onRegister }) => {
     localStorage.setItem("username", username);
     localStorage.setItem("email", email);
 
-    alert("Registration successful! You can now log in.");
+    // alert("Registration successful! You can now log in.");
     onRegister();
 
     window.dispatchEvent(new Event("authStatusChanged"));

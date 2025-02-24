@@ -25,14 +25,18 @@
   }
 }
 .carpRomoTitle {
-  color: #fff;
+  color: #872d2d;
   font-size: 25px;
-  margin: 10px auto;
   text-align: center;
+  position: absolute;
+  top: 745px;
+  left: 0;
+  right: 0;
 
   @include mediaQuerys.mobile {
-    font-size: 6.5vw;
+    font-size: 5.2vw;
     margin: 2.5vw auto;
+    top: 96vw;
   }
 }
 .multiple__progresses {
