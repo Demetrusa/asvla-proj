@@ -71,4 +71,3 @@ const RegistrationForm: React.FC = () => {
 };
 
 export default RegistrationForm;
-``;
